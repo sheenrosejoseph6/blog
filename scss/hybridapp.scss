@@ -1,8 +1,9 @@
 $color-1: #55bcdf;
+$grey-1: #555;
 $color-trim: #ccfe04;
 $color-greyblue: #30333d;
 body {
-  background:#666;
+  background:$grey-1();
   padding: 30px 0px;
   background: url(http://web5280.com/wp-content/themes/Web5280_Hybrid_1.0/images/bg_whitewood.jpg);
   /*box-shadow:00px 00px 200px 100px #333 inset;*/
