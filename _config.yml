@@ -4,13 +4,14 @@ highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
+server: true
 
 # Server
 source:           docs
 destination:      _site
 host:             0.0.0.0
 port:             8001
-baseurl:          
+baseurl:          /
 url:              http://localhost:8001
 encoding:         UTF-8
 
