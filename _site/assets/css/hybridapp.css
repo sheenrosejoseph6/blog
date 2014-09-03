@@ -429,3 +429,10 @@ footer nav .active
 {
     -webkit-transform: translateX(-960px);
 }
+
+#faceshot img
+{
+    max-height: 20%;
+
+    border-radius: 200px;
+}
