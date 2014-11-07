@@ -13,6 +13,16 @@ body
     background: #f3f3f3;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    color: #ccc;
+}
+
 ul
 {
     margin: 0;
@@ -104,6 +114,26 @@ ul.entries a
 ul.entries a:hover
 {
     color: #fff;
+}
+
+/* Article */
+article
+{
+    margin: 0;
+    padding: 0;
+}
+article li
+{
+    margin: 4px 14px;
+
+    list-style-type: none;
+}
+article section
+{
+    padding: 10px;
+
+    border-bottom: #ccc solid 2px; 
+    background: #f3f3f3;
 }
 
 footer
