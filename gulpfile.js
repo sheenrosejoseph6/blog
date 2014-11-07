@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 // Source paths
 var scssDir = 'scss/',
 	srcDir = 'docs/',
-	scssSrc = scssDir + 'hybridapp.scss',
+	scssSrc = scssDir + 'style-jekyll.scss',
 	cssDest = srcDir + 'assets/css/';
 
 // Javascript files to be concatenated    
@@ -56,7 +56,7 @@ gulp.task('compile-css', function(){
 
 // CSS Lint
 gulp.task('csslint', function(){
-	return gulp.src(appDir + 'css/hybridapp.css')
+	return gulp.src(appDir + 'css/style-jekyll.css')
 		.pipe(csslint(scssDir + '.csslintrc'))
 		.pip(csslint.reporter(cssLintReporter))
 });
@@ -75,7 +75,7 @@ gulp.task('csslint', function(){
 // Watch Task
 gulp.task('watch', function(){
 	var server = plugins.livereload();
-	gulp.watch(['hybridapp.scss',scssDir + '**/*.scss', scssDir + '**/**/*.scss']).on('change',function(file){
+	gulp.watch(['style-jekyll.scss',scssDir + '**/*.scss', scssDir + '**/**/*.scss']).on('change',function(file){
 		gulp.start('css', function(){
 			setTimeout(function(){
 				server.changed(file.path);

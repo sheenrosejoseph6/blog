@@ -1,0 +1,114 @@
+/*
+* THIS IS PLACEHOLDER CSS
+* THIS IS WHERE ALL GULP'ED CSS WILL LIVE
+*/
+body
+{
+    font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
+
+    margin: 0; 
+    padding: 0;
+
+    color: #444;
+    background: #f3f3f3;
+}
+
+ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+a
+{
+    text-decoration: none; 
+
+    color: #333;
+}
+
+a:hover
+{
+    text-decoration: underline; 
+
+    color: #444;
+}
+
+#main
+{
+    width: 960px;
+    margin: 0 auto;
+
+    background: #fff;
+}
+
+header
+{
+    overflow: hidden; 
+
+    padding: 0 10px;
+}
+
+h1
+{
+    margin: 0;
+}
+
+nav ul,
+ul.entries
+{
+    list-style-type: none;
+}
+
+nav li a
+{
+    float: left;
+
+    margin: 5px;
+}
+
+.content
+{
+    padding: 10px;
+}
+
+ul.entries li
+{
+    position: relative;
+
+    width: 600px; 
+    margin: 20px auto;
+    padding: 20px;
+
+    background: #ececec;
+}
+
+ul.entries img
+{
+    width: 600px;
+}
+
+ul.entries li h3
+{
+    font-size: 2em; 
+
+    position: absolute;
+    bottom: -18px;
+    left: 17px;
+}
+
+ul.entries a
+{
+    color: #ececec;
+}
+
+ul.entries a:hover
+{
+    color: #fff;
+}
+
+footer
+{
+    font-size: .65em;
+
+    text-align: center;
+}

@@ -1,12 +1,12 @@
 /*
-*	THIS IS PLACEHOLDER CSS
-*	THIS IS WHERE ALL GULP'ED CSS WILL LIVE
+* THIS IS PLACEHOLDER CSS
+* THIS IS WHERE ALL GULP'ED CSS WILL LIVE
 */
 
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
-  background: black;
-  color: #ececec;
+  background: #f3f3f3;
+  color: #444;
   padding: 0;
   margin: 0;
 }
@@ -15,19 +15,19 @@ ul {
   padding: 0;
 }
 a {
-  color: #ccc;
+  color: #333;
   text-decoration: none;
 }
  
 a:hover {
-  color: #ececec;
+  color: #444;
   text-decoration: underline;
 }
  
 #main {
   width: 960px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.4);
+  background: #fff;
 }
 header {
   padding: 0 10px;
