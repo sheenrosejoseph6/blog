@@ -13,6 +13,7 @@ body
     background: #f3f3f3;
 }
 
+<<<<<<< HEAD
 h1,
 h2,
 h3,
@@ -23,6 +24,8 @@ h6
     color: #ccc;
 }
 
+=======
+>>>>>>> 1134233390ef069ab75afbfcf414d659e602868a
 ul
 {
     margin: 0;
@@ -116,6 +119,7 @@ ul.entries a:hover
     color: #fff;
 }
 
+<<<<<<< HEAD
 /* Article */
 article
 {
@@ -136,6 +140,8 @@ article section
     background: #f3f3f3;
 }
 
+=======
+>>>>>>> 1134233390ef069ab75afbfcf414d659e602868a
 footer
 {
     font-size: .65em;
