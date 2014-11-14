@@ -29,4 +29,16 @@ image: /assets/img/pipeline.png
 			</ul>
 		</li>
 	</ul>
+	<hr>
+	<hr>
+	<ul>
+		<li><a href="https://github.com/">Step 1 - Sign up for GitHub</a></li>
+		<li><a href="http://code.tutsplus.com/tutorials/how-to-install-ruby-on-a-mac--net-21664">Step 2 - How to Install Ruby on a Mac</a>
+		</li>
+		<li><a href="http://brew.sh/">Step 3 - Install Homebrew</a></li>
+		<li><a href="http://blog.npmjs.org/post/85484771375/how-to-install-npm">Step 4 - NPM Install </a><i> Install Node from the website</i></li>
+		<li><a href="https://www.youtube.com/watch?v=O5sAN8N9IbA">Step 5 - Install Gulp </a></li>
+		<li><a href="https://laracasts.com/lessons/gulp-this">Gulp Tutorial</a></li>
+		<li><a href="http://code.tutsplus.com/articles/building-s%E2%80%A6%E2%80%A6tatic-sites-with-jekyll--net-22211">Install Jekyll -- Building static sites with Jekyll</a></li>
+	</ul>
 </article>

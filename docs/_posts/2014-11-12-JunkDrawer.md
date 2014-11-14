@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Junk Drawer
+title: Junk Drawer - Intro to FrontEnd Development
 //image: /assets/img/road.jpg
 ---
 
