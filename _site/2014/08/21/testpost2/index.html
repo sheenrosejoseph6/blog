@@ -1,28 +1,73 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset=utf-8 />
-  <title>  Stone Bridge |  HTML5 APP </title>
-  <link rel="stylesheet" href="/assets/css/style-jekyll.css" />
-  <link rel="stylesheet" href="/assets/css/prism.css" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Arrow Framework">
+<meta name="author" content="Michael Bowlin">
 
-</head>
-<body>
- 
-  <div id="main">
- 
-    <header>
-      <h1> </h1>
-    <header>
- 
-    <nav role="navigation">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog/">Blog Posts</a></li>
-      </ul>
-    </nav>
- 
-    <h2 class="content">Stone Bridge</h2>
+<title>
+  
+    Stone Bridge &middot; 5daily.io || Blog
+  
+</title>
+
+<!--  -->
+  <!-- Stylesheets -->
+  <link href="/dist/css/blog-base.css" rel="stylesheet">
+  <link href="/dist/css/blog-components.css" rel="stylesheet">
+  <!-- NEEDS A HOME -->
+  <link href="/dist/css/needsahome.css" rel="stylesheet">
+
+
+
+<!--   <link href="/assets/css/docs.css" rel="stylesheet"> -->
+
+  <!-- Favicons -->
+  <link rel="../apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-precomposed.png">
+  <link rel="../shortcut icon" href="../assets/ico/favicon.ico">
+<!--  -->
+
+
+
+  <!-- Modernizr for touch detection and IE8 support of HTML5 elements
+       Keep this at the top for as long as you support IE8 -->
+<!-- 
+  <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+ -->
+
+<!-- App stuff -->
+<meta name="apple-mobile-web-app-title" content="Blog Framework">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Place anything custom after this. -->
+  </head>
+  <body>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col md-12">
+      <div class="row">
+        <!-- HEADER -->
+        <div class="col md-2" id="side-nav">
+          <ul>
+            <li><a href="#">HTML5</a></li>
+            <li><a href="#">CSS3</a></li>
+            <li><a href="#">JAVASCRIPT</a></li>
+            <li><a href="#">UI/UX</a></li>
+          </ul>   
+        </div>
+        <div class="col md-10" id="body">
+          <div class="row">
+            <div class="col md-12" id="banner"></div>
+          </div>
+          <div class="row col md-12">
+             <div class="content">
+                <h2 class="content">Stone Bridge</h2>
 
 <img src="/assets/img/bridge.jpg">
 
@@ -31,13 +76,73 @@
 
 </div> <!--/. content-->
 
+            </div>            
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </div><!--/. row--> 
+
+
+
+
+</div><!--/. container-->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+ <footer class="ar-footer" role="contentinfo">
+<!--   <section class="colophon">
+
+        
+    <ul class="list inline">
+      <li>Framework v0.1.0</li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog">GitHub</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog/issues?state=open">Issues</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog/releases">Releases</a></li>
+    </ul>
+  </section> -->
+  <section class="copyright-info">
+    <p class="copyright">&copy; 2014-15 || 5daily.io || All Rights Reserved</p>
+    <ul class="footer-links">
+<!--       <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Use</a></li> -->
+    </ul>
+  </section>
+</footer>
+
+
+<!-- JavaScript
+================================================== -->
+
+<script src="https://apex.oracle.com/i/libraries/apex/minified/desktop_all.min.js?v=4.2.5.00.08"></script>
+<script src="https://apex.oracle.com/i/libraries/apex/minified/legacy.min.js?v=4.2.5.00.08"></script>
+
+
+
  
-    <footer>
-      <p>@copy; 5daily 2014-15 | All Rights Reserved. </p>
-    </footer>
- 
-  </div>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/jquery.sortable.min.js"></script>
   <script src="/assets/js/mySortable.js"></script>
@@ -67,8 +172,30 @@
   });
  </script>
 
-<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)--> 
+<script></script>
 
 
-</body>
+
+<!-- IE8 support
+     Includes Selectivizr, Respond.js and IE8 Resposive File Warning -->
+<!--[if lt IE 9]>
+<script src="../assets/js/ie/selectivizr-1.0.2.min.js"></script>
+<script src="../assets/js/ie/respond-1.4.2.min.js"></script>
+<script src="../assets/js/ie/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+
+<!-- Docs min Javascript
+     Includes jQuery 1.11.1, Holder 2.4.0, Zero Clipboard 1.3.5 and the application JS -->
+<!-- <script src="../assets/js/docs.min.js"></script> -->
+
+<!-- More IE stuff:
+     Includes IE10 Grayscale fix, emulation modes warning & viewport hacks for Surface/desktop Windows 8 bug -->
+
+<!--[if IE]>
+<script src="../assets/js/docs-ie.js"></script>
+<![endif]-->
+
+ 
+  </body>
 </html>

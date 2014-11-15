@@ -1,20 +1,38 @@
-#banner {
-  background: url(http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg)  66px -4px no-repeat #000 ;
-  width:100%;
-  height: 351px;
-  border-top:10px #ccfe04 solid;
+body {
+    background:#333;
+    border-top: 4px #ccfe04 solid;
 
+}
+#banner {
+  background:url(/assets/img/5html-logo.jpg) 3px 25px no-repeat #000;
+  height: 303px;
 }
 #body {
-  background:#333 !important;
+  background:#444 !important;
 }
 
-.main {
-  background:#444;
-}
+ 
 
 .content {
   background:#fff;
   padding:10px 20px;
   margin:10px 0 0 0;
+}
+
+#side-nav {
+  background:#000;
+  height: 303px;
+}
+#side-nav ul {
+  margin:0;
+  padding: 78px 0 0 0;
+  
+}
+#side-nav li {
+  margin:0;
+  padding:0 0 0 20px;
+  list-style-type:none;
+  
+  display: block;
+  border-left: #ccfe04 solid 1px;
 }
