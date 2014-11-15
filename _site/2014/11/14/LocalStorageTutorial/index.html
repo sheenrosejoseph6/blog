@@ -24,49 +24,67 @@
 
 <img src="/assets/img/localstorage-feature.png">
 
-<p># Arrow Mobile</p>
+<p># Local Storage Tutorial</p>
 
-<p>Development framework for Arrow ECS mobile web products. Alpha pre-release version 0.1.0</p>
+<blockquote>
+  <p>HTML 5 technologies used:</p>
+
+  <blockquote>
+    <ol>
+      <li>Contenteditable</li>
+      <li>Drag and Drop</li>
+      <li>Local Storage  </li>
+    </ol>
+  </blockquote>
+</blockquote>
 
 <ul>
-  <li><a href="#gulp">Gulp instructions</a></li>
+  <li><a href="#contenteditable">Contenteditable</a></li>
+  <li><a href="#drag-and-drop">Drag and Drop</a></li>
+  <li><a href="#simple">Local Storage Simple Example</a></li>
   <li><a href="#application">Documentation</a></li>
   <li><a href="#technologies">Technologies used</a></li>
   <li><a href="#contributing">Contributing</a></li>
   <li><a href="#versioning">Versioning</a></li>
 </ul>
 
-<h2 id="mobile-only-build-instructions">Mobile-Only build instructions</h2>
+<h2 id="contenteditable">Contenteditable</h2>
+<ul>
+  <li>makes any page area editable in the browser</li>
+  <li>single attribute: contenteditable
+ 		* “true”
+ 		* “false”
+ 		* “inherit”</li>
+  <li>Browser support
+      * <a href="http://caniuse.com/#search=contenteditable">Current support - Caniuse.com </a></li>
+</ul>
+
+<h2 id="drag-and-drop">Drag and Drop</h2>
+<ul>
+  <li>HTML5 Attribute
+      * One attribute called draggable.
+          * &lt;div id=”” class=”” draggable=”true”&gt;&lt;/div&gt;</li>
+  <li>Javascript API
+      * Seven JS Events
+          * dragstart();
+          * drag();
+          * dragover();
+          * dragenter();
+          * dragleave();
+          * dragenter();
+          * drop();</li>
+</ul>
+
+<h2 id="simple">Simple</h2>
+
+<p>Local Storage Simple Example</p>
+
 <p>```</p>
 
 <ol>
-  <li>_assets
- 			-ico(all icons)
- 			-js
- 				-ie(all the IE related files and viewport info)
- 				-vendor(minified third party js files)
- 			-images(add all the compressed images)</li>
-  <li>_base(Add the templates availiable. As of now we have RWD template and mobile only template)
- 			-ecs-template(The RWD template)
- 				-v0.4.1(take everything from dist folder and add under this folder)
- 					-css
- 					-fonts
- 					-images
- 					-js
- 			-ecs-mobile-only	
- 				-v0.3.0(take everything from dist folder and add under this folder)
- 					-css
- 					-fonts
- 					-images
- 					-js	</li>
-  <li>_apps
- 			-app205(just as an example)
- 				-css
- 				-fonts
- 				-images (Images specific to this app)
- 				-index.html
- 				-js
-Take the -app205 folder and put it on the server and make build folder 				
+  <li>_assets</li>
+  <li>_base(Add the templates availiable. As of now we </li>
+  <li>_apps				
 ```</li>
 </ol>
 

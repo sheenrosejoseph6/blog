@@ -4,47 +4,60 @@ title: Local Storage Tutorial 2
 image: /assets/img/localstorage-feature.png
 ---
 
- # Arrow Mobile
+ # Local Storage Tutorial
 
-Development framework for Arrow ECS mobile web products. Alpha pre-release version 0.1.0
+> HTML 5 technologies used:
+> 
+> > 1. Contenteditable
+> > 2. Drag and Drop
+> > 3. Local Storage  
+ 
 
- - [Gulp instructions](#gulp)
+
+ - [Contenteditable](#contenteditable)
+ - [Drag and Drop](#drag-and-drop)
+ - [Local Storage Simple Example](#simple)
  - [Documentation](#application)
  - [Technologies used](#technologies)
  - [Contributing](#contributing)
  - [Versioning](#versioning)
 
+## Contenteditable
+* makes any page area editable in the browser
+* single attribute: contenteditable
+ 		* "true"
+ 		* "false"
+ 		* "inherit"
+* Browser support
+		* [Current support - Caniuse.com ](http://caniuse.com/#search=contenteditable)
 
-## Mobile-Only build instructions
+## Drag and Drop
+* HTML5 Attribute
+		* One attribute called draggable.
+			* \<div id="" class="" draggable="true"></div>
+* Javascript API
+		* Seven JS Events
+			* dragstart();
+			* drag();
+			* dragover();
+			* dragenter();
+			* dragleave();
+			* dragenter();
+			* drop();
+
+
+
+
+
+## Simple 
+
+Local Storage Simple Example
+
 ```
 
 1. _assets
- 			-ico(all icons)
- 			-js
- 				-ie(all the IE related files and viewport info)
- 				-vendor(minified third party js files)
- 			-images(add all the compressed images)
-2. 	_base(Add the templates availiable. As of now we have RWD template and mobile only template)
- 			-ecs-template(The RWD template)
- 				-v0.4.1(take everything from dist folder and add under this folder)
- 					-css
- 					-fonts
- 					-images
- 					-js
- 			-ecs-mobile-only	
- 				-v0.3.0(take everything from dist folder and add under this folder)
- 					-css
- 					-fonts
- 					-images
- 					-js	
-3. 	_apps
- 			-app205(just as an example)
- 				-css
- 				-fonts
- 				-images (Images specific to this app)
- 				-index.html
- 				-js
-Take the -app205 folder and put it on the server and make build folder 				
+2. 	_base(Add the templates availiable. As of now we 
+3. 	_apps				
 ```
 
  				
