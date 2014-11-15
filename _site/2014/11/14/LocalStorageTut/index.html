@@ -170,5 +170,31 @@
     </footer>
  
   </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+<script>
+  $(document).ready(function(){
+ 
+    var theList = document.getElementById('list2');
+    $("#saveAll").click(function(e) {
+      e.preventDefault();
+      localStorage.setItem('todoList', theList.innerHTML);
+    });
+    $("#clearAll").click(function(e) {
+      e.preventDefault();
+      localStorage.clear();
+      location.reload();
+    });
+    
+    loadToDo();
+    
+    function loadToDo() {
+      if ( localStorage.getItem('todoList') ) {
+      theList.innerHTML = localStorage.getItem('todoList'); 
+      }
+    }
+  });
+ </script>
 </body>
 </html>

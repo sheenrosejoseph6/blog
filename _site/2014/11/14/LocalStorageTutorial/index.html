@@ -29,158 +29,181 @@
 <blockquote>
   <p>HTML 5 technologies used:</p>
 
-  <blockquote>
-    <ol>
-      <li>Contenteditable</li>
-      <li>Drag and Drop</li>
-      <li>Local Storage  </li>
-    </ol>
-  </blockquote>
+  <ul>
+    <li><a href="#contenteditable-overview">Contenteditable</a></li>
+    <li><a href="#drag-and-drop-overview">Drag and Drop</a></li>
+    <li><a href="#local-storage-overview">Local Storage</a> </li>
+  </ul>
 </blockquote>
 
-<ul>
-  <li><a href="#contenteditable">Contenteditable</a></li>
-  <li><a href="#drag-and-drop">Drag and Drop</a></li>
-  <li><a href="#simple">Local Storage Simple Example</a></li>
-  <li><a href="#application">Documentation</a></li>
-  <li><a href="#technologies">Technologies used</a></li>
-  <li><a href="#contributing">Contributing</a></li>
-  <li><a href="#versioning">Versioning</a></li>
-</ul>
-
-<h2 id="contenteditable">Contenteditable</h2>
+<h2 id="contenteditable-overview">Contenteditable Overview</h2>
 <ul>
   <li>makes any page area editable in the browser</li>
   <li>single attribute: contenteditable
- 		* “true”
- 		* “false”
- 		* “inherit”</li>
-  <li>Browser support
-      * <a href="http://caniuse.com/#search=contenteditable">Current support - Caniuse.com </a></li>
-</ul>
-
-<h2 id="drag-and-drop">Drag and Drop</h2>
-<ul>
-  <li>HTML5 Attribute
-      * One attribute called draggable.
-          * &lt;div id=”” class=”” draggable=”true”&gt;&lt;/div&gt;</li>
-  <li>Javascript API
-      * Seven JS Events
-          * dragstart();
-          * drag();
-          * dragover();
-          * dragenter();
-          * dragleave();
-          * dragenter();
-          * drop();</li>
-</ul>
-
-<h2 id="simple">Simple</h2>
-
-<p>Local Storage Simple Example</p>
-
-<p>```</p>
-
-<ol>
-  <li>_assets</li>
-  <li>_base(Add the templates availiable. As of now we </li>
-  <li>_apps				
-```</li>
-</ol>
-
-<h2 id="server-directory-structure-dev">Server Directory Structure (DEV)</h2>
-
-<p>Directory structure:
-<code>
-├── apexd_media
-│   ├── _apps (instructions)
-│   │   ├──  app1016
-│   │   │   ├── css
-│   │   │   ├── js
-│   │   │   ├── fonts
-│   │   │   ├── images
-│   │   │   ├── index.html (mock-up for business)
-│   │   ├──  app205
-│   ├── _assets
-│   │   │   ├── ico
-│   │   │   ├── images
-│   │   │   ├── js
-│   ├── _base
-│   ├──  app205 (** Needs to be removed)
-</code></p>
-
-<h2 id="gulp-instructions">Gulp instructions</h2>
-
-<p>To get up and running with <a href="http://gulpjs.com/">Gulp</a> using this framework’s <code>gulpfile.js</code>, follow these instructions:</p>
-
-<p>First, install Gulp into your system. If you have <code>npm</code>, Node.js’s package manager, already installed, the command is one step:</p>
-
-<p><code>
-npm install -g gulp
-</code></p>
-
-<p>If you do not have Node and npm installed, the directions for how to do that can be found at <a href="http://nodejs.org/download/">Node’s official site</a>.</p>
-
-<p>Once you have Gulp installed, <code>cd</code> into your project directory:</p>
-
-<p><code>
-cd yourpath/toreponamed/arrow-mobile
-</code></p>
-
-<p>Because the required dependancies are in your <code>package.json</code> file already, all you need to do type in the following command:</p>
-
-<p><code>
-npm install
-</code> 
-That will load in all the dependancies required to run your Gulp tasks.</p>
-
-<p>When you want to change something in the source Sass files <code>*.scss</code> or Javascript files, the default task required to complie new file is simply <code>gulp</code>. For CSS only, the command is <code>gulp-css</code>; for Javascript <code>gulp-js</code>. You can also run <code>gulp watch</code> to automatically detect changes in these files and do the compilation automatically. The <code>watch</code> task also works with <a href="http://livereload.com/">Live Reload</a>, which is a browser plugin enables the browser to refresh on command. </p>
-
-<h2 id="application">Application</h2>
-
-<p>This framework’s application, included in this repo in the root directory, is built with <a href="http://jekyllrb.com">Jekyll</a>.</p>
-
-<h3 id="running-documentation-locally">Running documentation locally</h3>
-
-<ol>
-  <li>If necessary, <a href="http://jekyllrb.com/docs/installation">install Jekyll</a> (requires v2.1.x).
     <ul>
-      <li><strong>Windows users:</strong> Read <a href="https://github.com/juthilo/run-jekyll-on-windows/">this unofficial guide</a> to get Jekyll up and running without problems.</li>
+      <li>“true”</li>
+      <li>“false”</li>
+      <li>“inherit”</li>
     </ul>
   </li>
-  <li>Install the Ruby-based syntax highlighter, <a href="https://github.com/jneen/rouge">Rouge</a>, with <code>gem install rouge</code>.</li>
-  <li>From the root <code>/arrow-mobile</code> directory, run <code>jekyll serve</code> in the command line.</li>
-  <li>Open <a href="http://localhost:8001">http://localhost:8001</a> in your browser.</li>
-</ol>
-
-<p>Learn more about using Jekyll by reading its <a href="http://jekyllrb.com/docs/home/">documentation</a>.</p>
-
-<h2 id="technologies-used">Technologies used</h2>
-
-<p>This will document all the third-party code we use. So far, this includes:</p>
-
-<ul>
-  <li>Bootstrap SASS version (currently version 3.2)</li>
-  <li>Foundation (CSS/JS framework – using only select elements from this)</li>
-  <li>Bourbon (SASS mixins)</li>
-  <li>FontAwesome (Icon font library)</li>
-  <li>Webicons (Social icon SVG/PNG library)</li>
-  <li>Animate.css (CSS3 animations library)</li>
-  <li>Modernizr (Feature detection library and HTML5 polyfill)</li>
-  <li>FastClick (JS lib that eliminates delay on click for mobile devices)</li>
-  <li>iScroll (JS Scrolling plugin for HTML5 mobile)</li>
-  <li>Moment.js (JS library for handling dates)</li>
+  <li>Browser support
+    <ul>
+      <li><a href="http://caniuse.com/#search=contenteditable">Current support - Caniuse.com </a></li>
+    </ul>
+  </li>
+  <li>Making content editable
+    <ul>
+      <li>To make content editable to any element in an HTML document you simply need to add the contentediable attribute:</li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="contributing">Contributing</h2>
+<!-- Code Snippet -->
+<pre><code>&lt;div id="container"&gt;
+	&lt;ul id="list" contenteditable&gt;
+		&lt;li&gt;Item 1&lt;/li&gt;
+		&lt;li&gt;Item 2&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
 
-<p>Please read through our <a href="https://github.com/jboho/arrow-mobile/blob/master/CONTRIBUTING.md">contributing guidelines</a>. Included are directions for opening issues, coding standards, and notes on development.</p>
+<!-- CodePen -->
+<p data-height="204" data-theme-id="10000" data-slug-hash="RNwMeJ" data-default-tab="result" data-user="5daily" class="codepen">See the Pen <a href="http://codepen.io/5daily/pen/RNwMeJ/">HTML5 - contenteditable example</a> by 5daily (<a href="http://codepen.io/5daily">@5daily</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<p>Editor preferences are available in the <a href="https://github.com/jboho/arrow-mobile/blob/master/.editorconfig">editor config</a> for easy use in common text editors. Read more and download plugins at <a href="http://editorconfig.org">http://editorconfig.org</a>.</p>
+<h2 id="drag-and-drop-overview">Drag and Drop Overview</h2>
+<ul>
+  <li>HTML5 Attribute
+    <ul>
+      <li>One attribute called draggable.</li>
+    </ul>
+  </li>
+</ul>
 
-<h2 id="versioning">Versioning</h2>
+<pre><code>&lt;div id="" class="" draggable="true"&gt;&lt;/div&gt;
+</code></pre>
+<ul>
+  <li>Javascript API
+    <ul>
+      <li>Seven JS Events
+        <ul>
+          <li>dragstart();</li>
+          <li>drag();</li>
+          <li>dragover();</li>
+          <li>dragenter();</li>
+          <li>dragleave();</li>
+          <li>dragenter();</li>
+          <li>drop();</li>
+        </ul>
+      </li>
+      <li>Data Transfer (key related object)
+        <ul>
+          <li>dataTransfer
+      * used to drag the data from a dragged object
+            <ul>
+              <li>Set: in the dragstart() event</li>
+              <li>Put: in the drop() event</li>
+            </ul>
+          </li>
+          <li><a href="http://caniuse.com/#search=drag%20and%20drop">Current support - Caniuse.com </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-<p>For transparency into our release cycle and in striving to maintain backward compatibility, this framework is maintained under <a href="http://semver.org/">the Semantic Versioning guidelines</a>.</p>
+<h2 id="local-storage-overview">Local Storage Overview</h2>
+<ul>
+  <li>Simple and brings the concept of “state” to websites without server-side coding.
+    <ul>
+      <li>Local Storage vs. Cookies
+        <ul>
+          <li>Unlike cookie, it is stored in the browser</li>
+          <li>5 MB limit vs. 4kb for cookie</li>
+        </ul>
+      </li>
+      <li>Uses simple name/value pair structure (string only)
+        <ul>
+          <li>Two simple commands:
+            <ul>
+              <li>Set Item
+                <ul>
+                  <li>localStorage.setItem(“ItemName”, “ItemValue”);</li>
+                </ul>
+              </li>
+              <li>Get Item
+                <ul>
+                  <li>localStorage.getItem(“ItemName”);</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="http://caniuse.com/#search=web%20storage">Current support - Caniuse.com </a>	</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Code Snippet -->
+<p>HTML code:</p>
+
+<pre><code>&lt;div id="container"&gt;
+	&lt;ul id="list2" contenteditable&gt;
+		&lt;li&gt;Item 1&lt;/li&gt;
+		&lt;li&gt;Item 2&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;p&gt;&lt;a href=javascript.void(); id="saveAll"&gt; Save All &lt;/a&gt;&lt;/p&gt;
+	&lt;p&gt;&lt;a href=javascript.void(); id="clearAll"&gt; Clear All &lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<!-- Code Snippet -->
+<p>Javascript code:</p>
+
+<pre><code>&lt;script&gt;
+	$(document).ready(function(){
+		var theList = document.getElementById('list2');
+		$('#saveAll').click(function(e){
+			e.preventDefault();
+			// set item (todoList) and put in theList
+			localStorage.setItem('todoList', theList.innerHTML);
+		});
+		$('#clearAll').click(function(e){
+			e.preventDefault();
+			// clear all the items
+			localStorage.clear();
+			// reload the page
+			location.reload();
+		});
+
+		// Bring in local storage items when page loads
+		loadToDo();
+
+		function loadToDo(){
+			// only load in entries if they exist
+			if(localStorage.getItem('todoList')) {
+
+				theList.innerHTML = localStorage.getItem('todoList');
+			}
+		}
+	});
+&lt;/script&gt;
+</code></pre>
+
+<!-- 
+	Above code in practice
+	script lives in default.html
+ -->
+
+<div id="container">
+    <ul id="list2" contenteditable="">
+      <li>Enjoy life :)</li>
+    </ul>
+  <p>
+  	<a href="#" id="saveAll">Save All</a>
+  	<a href="#" id="clearAll">Clear All</a></p>
+</div>
 
 
  
@@ -189,5 +212,31 @@ That will load in all the dependancies required to run your Gulp tasks.</p>
     </footer>
  
   </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+<script>
+  $(document).ready(function(){
+ 
+    var theList = document.getElementById('list2');
+    $("#saveAll").click(function(e) {
+      e.preventDefault();
+      localStorage.setItem('todoList', theList.innerHTML);
+    });
+    $("#clearAll").click(function(e) {
+      e.preventDefault();
+      localStorage.clear();
+      location.reload();
+    });
+    
+    loadToDo();
+    
+    function loadToDo() {
+      if ( localStorage.getItem('todoList') ) {
+      theList.innerHTML = localStorage.getItem('todoList'); 
+      }
+    }
+  });
+ </script>
 </body>
 </html>

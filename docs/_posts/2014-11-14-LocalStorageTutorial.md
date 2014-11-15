@@ -7,155 +7,150 @@ image: /assets/img/localstorage-feature.png
  # Local Storage Tutorial
 
 > HTML 5 technologies used:
-> 
-> > 1. Contenteditable
-> > 2. Drag and Drop
-> > 3. Local Storage  
+>   
+> - [Contenteditable](#contenteditable-overview)
+> - [Drag and Drop](#drag-and-drop-overview)
+> - [Local Storage](#local-storage-overview) 
+
+
+
  
 
-
- - [Contenteditable](#contenteditable)
- - [Drag and Drop](#drag-and-drop)
- - [Local Storage Simple Example](#simple)
- - [Documentation](#application)
- - [Technologies used](#technologies)
- - [Contributing](#contributing)
- - [Versioning](#versioning)
-
-## Contenteditable
+## Contenteditable Overview
 * makes any page area editable in the browser
 * single attribute: contenteditable
- 		* "true"
- 		* "false"
- 		* "inherit"
+	* "true"
+	* "false"
+	* "inherit"
 * Browser support
-		* [Current support - Caniuse.com ](http://caniuse.com/#search=contenteditable)
+	* [Current support - Caniuse.com ](http://caniuse.com/#search=contenteditable)
+* Making content editable
+	* To make content editable to any element in an HTML document you simply need to add the contentediable attribute:
 
-## Drag and Drop
+<!-- Code Snippet -->
+~~~~~~~~~~~~~~~~~~~~
+<div id="container">
+	<ul id="list" contenteditable>
+		<li>Item 1</li>
+		<li>Item 2</li>
+	</ul>
+</div>
+~~~~~~~~~~~~~~~~~~~~
+
+<!-- CodePen -->
+<p data-height="204" data-theme-id="10000" data-slug-hash="RNwMeJ" data-default-tab="result" data-user="5daily" class='codepen'>See the Pen <a href='http://codepen.io/5daily/pen/RNwMeJ/'>HTML5 - contenteditable example</a> by 5daily (<a href='http://codepen.io/5daily'>@5daily</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+## Drag and Drop Overview
 * HTML5 Attribute
-		* One attribute called draggable.
-			* \<div id="" class="" draggable="true"></div>
+	* One attribute called draggable.
+
+~~~~~~~~~~~~~~~~~~~~
+<div id="" class="" draggable="true"></div>
+~~~~~~~~~~~~~~~~~~~~
 * Javascript API
-		* Seven JS Events
-			* dragstart();
-			* drag();
-			* dragover();
-			* dragenter();
-			* dragleave();
-			* dragenter();
-			* drop();
+	* Seven JS Events
+		* dragstart();
+		* drag();
+		* dragover();
+		* dragenter();
+		* dragleave();
+		* dragenter();
+		* drop();
+	* Data Transfer (key related object)
+		* dataTransfer
+				* used to drag the data from a dragged object
+			* Set: in the dragstart() event
+			* Put: in the drop() event
+		* [Current support - Caniuse.com ](http://caniuse.com/#search=drag%20and%20drop)
+
+## Local Storage Overview
+* Simple and brings the concept of "state" to websites without server-side coding.
+	* Local Storage vs. Cookies
+		* Unlike cookie, it is stored in the browser
+		* 5 MB limit vs. 4kb for cookie
+	* Uses simple name/value pair structure (string only)
+		* Two simple commands:
+			* Set Item
+				* localStorage.setItem("ItemName", "ItemValue");
+			* Get Item
+				* localStorage.getItem("ItemName");
+	* [Current support - Caniuse.com ](http://caniuse.com/#search=web%20storage)	
+
+<!-- Code Snippet -->
+HTML code:
+
+~~~~~~~~~~~~~~~~~~~~
+<div id="container">
+	<ul id="list2" contenteditable>
+		<li>Item 1</li>
+		<li>Item 2</li>
+	</ul>
+	<p><a href=javascript.void(); id="saveAll"> Save All </a></p>
+	<p><a href=javascript.void(); id="clearAll"> Clear All </a></p>
+</div>
+~~~~~~~~~~~~~~~~~~~~
+
+<!-- Code Snippet -->
+Javascript code:
+
+~~~~~~~~~~~~~~~~~~~~
+<script>
+	$(document).ready(function(){
+		var theList = document.getElementById('list2');
+		$('#saveAll').click(function(e){
+			e.preventDefault();
+			// set item (todoList) and put in theList
+			localStorage.setItem('todoList', theList.innerHTML);
+		});
+		$('#clearAll').click(function(e){
+			e.preventDefault();
+			// clear all the items
+			localStorage.clear();
+			// reload the page
+			location.reload();
+		});
+
+		// Bring in local storage items when page loads
+		loadToDo();
+
+		function loadToDo(){
+			// only load in entries if they exist
+			if(localStorage.getItem('todoList')) {
+
+				theList.innerHTML = localStorage.getItem('todoList');
+			}
+		}
+	});
+</script>
+~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+<!-- 
+	Above code in practice
+	script lives in default.html
+ -->
+ 
+<div id="container">
+    <ul id="list2" contenteditable >
+      <li>Enjoy life :)</li>
+    </ul>
+  <p>
+  	<a href="#" id="saveAll">Save All</a>
+  	<a href="#" id="clearAll">Clear All</a></p>
+</div>
+    
 
 
 
 
 
-## Simple 
-
-Local Storage Simple Example
-
-```
-
-1. _assets
-2. 	_base(Add the templates availiable. As of now we 
-3. 	_apps				
-```
-
- 				
 
 
 
 
-## Server Directory Structure (DEV)
 
-Directory structure:
-```
-├── apexd_media
-│   ├── _apps (instructions)
-│   │   ├──  app1016
-│   │   │   ├── css
-│   │   │   ├── js
-│   │   │   ├── fonts
-│   │   │   ├── images
-│   │   │   ├── index.html (mock-up for business)
-│   │   ├──  app205
-│   ├── _assets
-│   │   │   ├── ico
-│   │   │   ├── images
-│   │   │   ├── js
-│   ├── _base
-│   ├──  app205 (** Needs to be removed)
-```
-
-
-
-
-## Gulp instructions
-
-To get up and running with [Gulp](http://gulpjs.com/) using this framework's `gulpfile.js`, follow these instructions:
-
-First, install Gulp into your system. If you have `npm`, Node.js's package manager, already installed, the command is one step:
-
-```
-npm install -g gulp
-```
-
-If you do not have Node and npm installed, the directions for how to do that can be found at [Node's official site](http://nodejs.org/download/).
-
-Once you have Gulp installed, `cd` into your project directory:
-
-```
-cd yourpath/toreponamed/arrow-mobile
-```
-
-Because the required dependancies are in your `package.json` file already, all you need to do type in the following command:
-
-```
-npm install
-``` 
-That will load in all the dependancies required to run your Gulp tasks.
-
-When you want to change something in the source Sass files `*.scss` or Javascript files, the default task required to complie new file is simply `gulp`. For CSS only, the command is `gulp-css`; for Javascript `gulp-js`. You can also run `gulp watch` to automatically detect changes in these files and do the compilation automatically. The `watch` task also works with [Live Reload](http://livereload.com/), which is a browser plugin enables the browser to refresh on command. 
-
-## Application
-
-This framework's application, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com).
-
-### Running documentation locally
-
-1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) (requires v2.1.x).
-  - **Windows users:** Read [this unofficial guide](https://github.com/juthilo/run-jekyll-on-windows/) to get Jekyll up and running without problems.
-2. Install the Ruby-based syntax highlighter, [Rouge](https://github.com/jneen/rouge), with `gem install rouge`.
-3. From the root `/arrow-mobile` directory, run `jekyll serve` in the command line.
-4. Open <http://localhost:8001> in your browser.
-
-Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).
-
-
-## Technologies used
-
-This will document all the third-party code we use. So far, this includes:
-
-- Bootstrap SASS version (currently version 3.2)
-- Foundation (CSS/JS framework -- using only select elements from this)
-- Bourbon (SASS mixins)
-- FontAwesome (Icon font library)
-- Webicons (Social icon SVG/PNG library)
-- Animate.css (CSS3 animations library)
-- Modernizr (Feature detection library and HTML5 polyfill)
-- FastClick (JS lib that eliminates delay on click for mobile devices)
-- iScroll (JS Scrolling plugin for HTML5 mobile)
-- Moment.js (JS library for handling dates)
-
-## Contributing
-
-Please read through our [contributing guidelines](https://github.com/jboho/arrow-mobile/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
-
-Editor preferences are available in the [editor config](https://github.com/jboho/arrow-mobile/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-## Versioning
-
-For transparency into our release cycle and in striving to maintain backward compatibility, this framework is maintained under [the Semantic Versioning guidelines](http://semver.org/).
 
 
 
