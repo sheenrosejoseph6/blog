@@ -24,11 +24,12 @@
  
     <h2 class="content">Local Storage Tutorial 2</h2>
 
-<img src="/assets/img/localstorage-feature.png">
+<img src="http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg">
 
+<div id="content">
 <!--!!!!!!!!!!!!!!!!! PRISMjs need class language-css-->
 
-<p># Local Storage Tutorial</p>
+<h2 id="local-storage-tutorial">Local Storage Tutorial</h2>
 
 <blockquote>
   <p>HTML 5 technologies used:</p>
@@ -36,7 +37,11 @@
   <ul>
     <li><a href="#contenteditable-overview">Contenteditable</a></li>
     <li><a href="#local-storage-overview">Local Storage</a> </li>
-    <li><a href="#drag-and-drop-overview">Drag and Drop</a></li>
+    <li><a href="#drag-and-drop-overview">Drag and Drop</a>
+      <ul>
+        <li><i style="font-size:10px;">based on Advanced To-Do List with Joseph Lowery</i></li>
+      </ul>
+    </li>
   </ul>
 </blockquote>
 
@@ -47,7 +52,8 @@
 	*
 	*
 -->
-<p>## Contenteditable Overview</p>
+
+<h2 id="contenteditable-overview">Contenteditable Overview</h2>
 
 <ul>
   <li>makes any page area editable in the browser</li>
@@ -71,14 +77,13 @@
 </ul>
 
 <!-- Code Snippet -->
-<p>~~~~~~~~~~~~~~~~~~~~.language-javascript
-&lt;div id="container"&gt;
+<pre><code>&lt;div id="container"&gt;
 	&lt;ul id="list" contenteditable&gt;
 		&lt;li&gt;Item 1&lt;/li&gt;
 		&lt;li&gt;Item 2&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/div&gt;
-~~~~~~~~~~~~~~~~~~~~</p>
+</code></pre>
 
 <!-- CodePen -->
 <p data-height="204" data-theme-id="10000" data-slug-hash="RNwMeJ" data-default-tab="result" data-user="5daily" class="codepen">See the Pen <a href="http://codepen.io/5daily/pen/RNwMeJ/">HTML5 - contenteditable example</a> by 5daily (<a href="http://codepen.io/5daily">@5daily</a>) on <a href="http://codepen.io">CodePen</a>.</p>
@@ -444,6 +449,7 @@ $(document).ready(function(){
  	<p id="doClearAll"><a href="#"> Clear All </a></p>
  </div>
 
+</div> <!--/. content-->
 
  
     <footer>

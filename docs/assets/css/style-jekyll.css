@@ -10,7 +10,8 @@ body
     padding: 0;
 
     color: #444;
-    background: #f3f3f3;
+    background: #333;
+    border-top: 10px #ccfe04 solid;
 }
 
 <<<<<<< HEAD
@@ -29,6 +30,11 @@ blockquote {
     padding: 10px 20px;
     margin:0;
     width:70%;
+    background: #fff !important;
+}
+ul {
+    background:#f3f3f3;
+    width:60%;
 }
 
 =======
@@ -53,12 +59,18 @@ a:hover
     color: #444;
 }
 
+img {
+    position:absolute; top:10px;border-right:2000px solid #000;border-left:200px solid #000;left:0;
+}
+
 #main
 {
     width: 960px;
-    margin: 0 auto;
+    margin: 0;
 
-    background: #fff;
+    background: #444;
+    width: 83%;
+    float: right;
 }
 
 header
@@ -86,6 +98,12 @@ nav li a
     margin: 5px;
 }
 
+#content {
+    background:#f3f3f3;
+    width:80%;
+    margin-top:300px;
+    padding:20px;
+}
 .content
 {
     padding: 10px;

@@ -116,10 +116,10 @@ $(document).ready(function(){
 
 	// clear all link
 	// #doClearAll assigned to p tag that's holding link
-	$('#doClearAll').on('click','#clearAll', function(){
+	$('#doClearAll').on('click','#clearAll', function(e){
 		e.preventDefault();
 		// remove all childen of the list
-		$('#thisList').childen().remove();
+		$('#theList').childen().remove();
 
 		// House-keeping
 		newList = true;

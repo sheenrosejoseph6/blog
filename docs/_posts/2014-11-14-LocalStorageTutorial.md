@@ -1,18 +1,20 @@
 ---
 layout: blog
 title: Local Storage Tutorial 2
-image: /assets/img/localstorage-feature.png
+image: http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg
 ---
 
 <!--!!!!!!!!!!!!!!!!! PRISMjs need class language-css-->
 
- # Local Storage Tutorial
+
+## Local Storage Tutorial
 
 > HTML 5 technologies used:
 >   
 > - [Contenteditable](#contenteditable-overview)
 > - [Local Storage](#local-storage-overview) 
 > - [Drag and Drop](#drag-and-drop-overview)
+> 	- <i style="font-size:10px;">based on Advanced To-Do List with Joseph Lowery</i>
  
 <!--
 	*
@@ -21,6 +23,7 @@ image: /assets/img/localstorage-feature.png
 	*
 	*
 -->
+
 ## Contenteditable Overview
 
 * makes any page area editable in the browser
@@ -34,7 +37,7 @@ image: /assets/img/localstorage-feature.png
 	* To make content editable to any element in an HTML document you simply need to add the contentediable attribute:
 
 <!-- Code Snippet -->
-~~~~~~~~~~~~~~~~~~~~.language-javascript
+~~~~~~~~~~~~~~~~~~~~
 <div id="container">
 	<ul id="list" contenteditable>
 		<li>Item 1</li>
@@ -376,4 +379,3 @@ $(document).ready(function(){
  	</ul>
  	<p id="doClearAll"><a href="#"> Clear All </a></p>
  </div>
-
