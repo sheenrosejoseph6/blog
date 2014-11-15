@@ -1,0 +1,20 @@
+#banner {
+  background: url(http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg)  66px -4px no-repeat #000 ;
+  width:100%;
+  height: 351px;
+  border-top:10px #ccfe04 solid;
+
+}
+#body {
+  background:#333 !important;
+}
+
+.main {
+  background:#444;
+}
+
+.content {
+  background:#fff;
+  padding:10px 20px;
+  margin:10px 0 0 0;
+}

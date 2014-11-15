@@ -3019,8 +3019,8 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
 
 }(jQuery);
 /* ========================================================================
- * 5daily Framework: responsive-tables.js v1.0.0
- * http:// 
+ * Arrow Framework: responsive-tables.js v1.0.0
+ * http://usmlrs1278.arrow.com/framework/javascript-base/#rtables
  * ======================================================================== */
 
 +function ($) {
