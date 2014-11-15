@@ -1,0 +1,94 @@
+  <!-- What's included
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="whats-included" class="page-header">What's included</h1>
+    <p class="lead">The Arrow framework is downloadable in two forms, within which you'll find the following directories and files, logically grouping common resources and providing both compiled and minified variations.</p>
+    <div class="callout danger">
+      <h4>jQuery required</h4>
+      <p>Please note that <strong>all Arrow JavaScript plugins require <a href="http://jquery.com/">jQuery</a></strong> to be included, as shown in the <a class="inline-link" href="#template">starter template</a>.</p>
+    </div>
+    <h3 id="whats-included-precompiled">Precompiled framework files</h3>
+    <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) this framework. You'll see something like this:</p>
+
+{% highlight bash %}
+arrow-framework/
+├── css/
+│   ├── arrow-base.css
+│   └── arrow-base.min.css
+│   ├── arrow-components.css
+│   └── arrow-components.min.css
+├── fonts/
+│   ├── arrow/
+│   └── font-awesome/
+├── images/
+│    └── webicons/
+└── js/
+    ├── arrow-base.js
+    ├── arrow-base.min.js
+    ├── arrow-components.js
+    └── arrow-components.min.js
+
+
+{% endhighlight %}
+
+    <p>This is the most basic form of this framework: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS, as well as compiled and minified CSS and JS. Fonts from Font Awesome as well as Arrow's base display fonts are included and images from Fairfield Creative's FC Webicons.</p>
+
+    <h3 id="whats-included-source">Source code</h3>
+    <p>The Arrow framework source code download includes the precompiled CSS, JavaScript, font and image assets, along with source SASS, JavaScript, and documentation. More specifically, it includes the following and more:</p>
+{% highlight bash %}
+arrow-framework/
+├── dist/
+│   ├── css/
+│   ├── fonts/
+│   ├── images/
+│   └── js/
+└── docs/
+│   └── examples/
+├── fonts/
+├── images/
+├── scss/
+└── scripts/
+{% endhighlight %}
+        <p>The <code>scss/</code>, <code>scripts/</code>, <code>fonts/</code> and <code>images/</code> folder contain the source code for our CSS, JS, icon/display fonts and webicons (respectively). The <code>dist/</code> folder includes everything listed in the precompiled download section above. The <code>docs/</code> folder includes the source code for our documentation, and <code>examples/</code> of this framework usage. Beyond that, any other included file provides support for packages, license information, and development.</p>
+
+    <h3 id="whats-included-sass">SASS source code structure</h3>
+    <p class="lead">If you download the source code, you'll need to know something about the structure of the SASS files within.</p>
+    <p>Unzip the compressed folder of the source code and look within the folder named <code>scss</code> to see this framework's pre-complied structure.</p>
+
+{% highlight bash %}
+scss/
+├── framework/
+│   ├── *.scss
+├── prop/
+│   ├── _application.scss
+│   ├── _arrow-styles.scss
+│   ├── _fonts.scss
+│   └── _variables.scss
+├── vendor/
+│   ├── animate.css/
+│   ├── bourbon/
+│   └── font-awesome/
+│   └── foundation/
+│   └── neat/
+│   └── webicons/
+├── arrow-base.scss
+└── arrow-components.scss
+
+{% endhighlight %}
+    <p>The <code>framework</code> folder contains all the base style files including the CSS reset, grid, typography and UI objects that come from Bootstrap, Foundation and elsewhere.</p>
+    <p>The <code>prop</code> folder contains four files <code>_application.scss</code>, <code>_arrow-styles.scss</code>, <code>_fonts.scss</code> and <code>_variables.scss</code>. This folder is where the custom files for your site should go. It also includes the fonts and variables file that will determine the color palette, spacing and typography choices.</p>
+     <p>The <code>_application.scss</code> file serves as a complier for the custom SASS files you create &mdash; similar to the <code>arrow-base.scss</code> and <code>arrow-components.scss</code> files contained in the root folder. When you open <code>arrow-components.scss</code>, for example, you will notice that <code>_application.scss</code> is one of the last file within the compliation chain. <code>arrow-base.scss</code> and <code>arrow-components.scss</code> is also where you can comment out the styles you may not need from the master framework files.</p>
+     <p>Finally, the <code>vendor</code> folder should contain any third-party plugin style files you want to add into your project. By default, the <code>animate.css</code>, <code>bourbon.scss</code>, <code>font-awesome.scss</code>, <code>foundaton</code>, <code>neat</code> and <code>webicon</code> files are contained here.</p>
+
+    <h3 id="whats-included-sass-compilation">SASS compilation</h3>
+    <p class="lead">If you download the original files, you need to compile this framework's SASS files into usable CSS. To do that, you will need a complier. Here are some options:</p>
+      <h4>Third party compliers</h4>
+      <p>Compliers run alongside your browser and recompile your SASS files per save. For Mac users, <a href="http://incident57.com/codekit/">CodeKit</a> or <a href="http://livereload.com/">LiveReload</a> are good options. For PC users, <a href="http://alphapixels.com/prepros/">Prepos</a> or <a href="http://koala-app.com/">Koala</a> are reccommended.</p>
+      <h4>Command-line compliers</h4>
+      <p>SASS is available as a Ruby Gem which can be run from the command line. If you already have Ruby Gems installed on a Linux machine, installing SASS is easy with the following command:</p>
+{% highlight bash %}
+gem install sass
+{% endhighlight %}
+      Ruby comes pre-installed on a Mac. For Windows machines, you may need to first install Ruby. <a href="http://www.rubyinstaller.org/">Ruby Installer</a> is the quickest way to accomplish that.
+      More documentation on how to work with SASS from the command line is <a href="http://sass-lang.com/install">available at the SASS website</a>.
+  </div>

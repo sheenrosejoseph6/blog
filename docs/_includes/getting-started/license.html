@@ -1,0 +1,72 @@
+  <!-- License
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="customizing" class="page-header">Customizing this framework</h1>
+    <p class="lead">Customizing this framework is best accomplished when you treat it as another dependency in your development stack. Doing so ensures future upgrades are as easy as possible while also familiarizing yourself to the intricacies of the framework.</p>
+
+    <p>Once you've downloaded and included this framework's CSS into your templates, you can move on to customizing the included components. To do so, create a new stylesheet (SASS, if you like, or just plain CSS) to house your customizations.</p>
+
+    <div class="callout info">
+      <h4>Compiled or minified?</h4>
+      <p>For quick development and prototyping purposes, using the minified code is the way to go. For all other use cases, it is best to go with the compiled version for easier reading.</p>
+    </div>
+
+    <p>From there, include whatever this framework components and HTML content you need to get your template setup. It's best to have a rough idea in mind of modifications to make and content to include, so be sure to spend a brief amount of time on that before moving on.</p>
+
+    <h3>Customizing components</h3>
+    <p>There are varying degrees to customizing components, but most fall into two camps: light customizations and complete visual overhauls. Luckily, there are plenty of examples of both.</p>
+    <p>Light customizations are defined as mostly surface layer changes, things like a color and font changes to existing this framework components. As an example, look at how to implement the custom button written for the <a href="http://translate.twitter.com">Twitter Translation Center</a> (coded by @mdo).</p>
+    <p>Instead of using the provided this framework buttons, which only require just one class to start, <code>.btn</code>, we add a modifier class, <code>.btn-ttc</code>. This will give us a slightly custom look with minimal effort.</p>
+{% highlight html %}
+<button type="button" class="btn btn-ttc">Save changes</button>
+{% endhighlight %}
+
+  <p>In the custom stylesheet, add the following CSS:</p>
+
+{% highlight scss %}
+/* Custom button
+-------------------------------------------------- */
+
+/* Override base .btn styles */
+/* Apply text and background changes to three key states: default, hover, and active (click). */
+.btn-ttc,
+.btn-ttc:hover,
+.btn-ttc:active {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #007da7;
+}
+
+/* Apply the custom-colored gradients */
+/* Note: you'll need to include all the appropriate gradients for various browsers and standards. */
+.btn-ttc {
+  background-repeat: repeat-x;
+  background-image: linear-gradient(top, #009ED2 0%, #007DA7 100%);
+  ...
+}
+
+/* Set the hover state */
+/* An easy hover state is just to move the gradient up a small amount. Add other embellishments as you see fit. */
+.btn-ttc:hover {
+  background-position: 0 -15px;
+}
+{% endhighlight %}
+
+    <p>Customizing this framework components takes time, but should be straightforward. <strong>Look to the source code often and duplicate the selectors you need for your modifications.</strong> Placing them after the this framework source makes for easy overriding without complication. <strong>To recap, here's the basic workflow:</strong></p>
+    <ul class="list">
+      <li>For each element you want to customize, find its code in the compiled this framework CSS or, if you are working with SASS files, from the SASS source in the <code>framework</code> folder. Copy and paste the selector for a component as-is. For instance, to customize the navbar background, just snag <code>.navbar</code>.</li>
+      <li>Add all your custom CSS in a separate stylesheet or SASS file using the selectors you just copied from the this framework source. No need for prefacing with additional classes or using <code>!important</code> here.</li>
+      <li>Rinse and repeat until you're happy with your customizations.</li>
+    </ul>
+
+    <div class="callout danger">
+      <h4>But why can't I just modify the SASS code in the framework and recompile?</h4>
+      <p>A fair question. For example say you know want your <code>.navbar</code> to always look and act a certain way. Why not just change the original <code>.navbar</code> file in the SASS folder rather than copy and paste, which may duplicate code?</p>
+      <p>The answer is you want to be thinking long-term. If you alter the source code, a copuple of things happen: 1) updates will break and 2) suppose you want the original <code>.navbar</code> at some point? This is why it is generally better to override or extend existing code than to alter the framework.</p>
+    <p>An exception to the override method might just be the example given above. But the optimal solution would be to comment out the original <code>.navbar.scss</code> file in your <code>style.scss</code> file and recreate the code in a new SASS file in the <code>prop</code> folder.</p>
+    <p>In addition, this framework contains numerous plugins for making your own custom components through mixins. You can create an entire button set or grid system using just the mixins available in the <code>mixins.scss</code> and <code>mixins-custom.scss</code>files without needing any code from either <code>grid.scss</code> or <code>buttons.scss</code>.</p>
+        </div>
+
+    <h3>Removing potential bloat</h3>
+    <p>Not all sites and applications need to make use of everything this framework has to offer, especially in production environments where bandwidth literally becomes a financial issue. We encourage folks to remove whatever is unused within the <code>style.scss</code> contained within the SASS folders and recompile the SASS as needed.</p>
+  </div>

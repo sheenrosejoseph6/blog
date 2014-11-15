@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Arrow Framework">
+<meta name="author" content="Michael Bowlin">
+
+<title>
+  {% if page.title == "COMING SOON" %}
+    {{ page.title }}
+  {% else %}
+    {{ page.title }} &middot; 5daily.io || Blog
+  {% endif %}
+</title>
+
+{% if page.layout == "COMINGSOON" %}
+  <!-- Stylesheets -->
+  <link href="/dist/css/arrow-base.css" rel="stylesheet">
+  <link href="/dist/css/arrow-components.css" rel="stylesheet">
+<!--   <link href="/assets/css/docs.css" rel="stylesheet">
+ -->
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+{% else %}
+  <!-- Stylesheets -->
+  <link href="/dist/css/blog-base.css" rel="stylesheet">
+  <link href="/dist/css/blog-components.css" rel="stylesheet">
+<!--   <link href="/assets/css/docs.css" rel="stylesheet"> -->
+
+  <!-- Favicons -->
+  <link rel="../apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-precomposed.png">
+  <link rel="../shortcut icon" href="../assets/ico/favicon.ico">
+{% endif %}
+
+
+
+  <!-- Modernizr for touch detection and IE8 support of HTML5 elements
+       Keep this at the top for as long as you support IE8 -->
+<!-- {% if page.layout == "COMINGSOON" %}
+  <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+{% else %}
+  <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+{% endif %} -->
+
+<!-- App stuff -->
+<meta name="apple-mobile-web-app-title" content="Blog Framework">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">

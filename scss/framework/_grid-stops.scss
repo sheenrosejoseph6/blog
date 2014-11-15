@@ -1,0 +1,17 @@
+// Grid system -- Container stops for fluid version
+// --------------------------------------------------
+
+.container {
+  @media (min-width: $breakpoint-md) {
+    @include rem-fallback(width, $container-sm);
+  }
+  @media (min-width: $breakpoint-lg) {
+    @include rem-fallback(width, $container-md);
+  }
+  @media (min-width: $breakpoint-xl) {
+    @include rem-fallback(width, $container-lg);
+  }
+  @media (min-width: ($site-max-width + $grid-gutter-width)) {
+    @include rem-fallback(width, $site-max-width);
+  }
+}

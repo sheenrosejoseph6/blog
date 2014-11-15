@@ -1,0 +1,18 @@
+@if $local {
+  @include font-face('TheinhardtBold',    '../#{$arrow-font-path}/theinhardt-bold-webfont');
+  @include font-face('TheinhardtLight',   '../#{$arrow-font-path}/theinhardt-light-webfont');
+  @include font-face('TheinhardtRegular', '../#{$arrow-font-path}/theinhardt-regular-webfont');
+  @include font-face('TheinhardtThin',    '../#{$arrow-font-path}/theinhardt-thin-webfont');
+} @else {
+  @if $production {
+      @include font-face('TheinhardtBold',    '#{$prod-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-bold-webfont');
+      @include font-face('TheinhardtLight',   '#{$prod-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-light-webfont');
+      @include font-face('TheinhardtRegular', '#{$prod-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-regular-webfont');
+      @include font-face('TheinhardtThin',    '#{$prod-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-thin-webfont');
+  } @else {
+      @include font-face('TheinhardtBold',    '#{$dev-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-bold-webfont');
+      @include font-face('TheinhardtLight',   '#{$dev-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-light-webfont');
+      @include font-face('TheinhardtRegular', '#{$dev-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-regular-webfont');
+      @include font-face('TheinhardtThin',    '#{$dev-base-url}#{$version-number}/#{$arrow-font-path}/theinhardt-thin-webfont');
+  }
+}

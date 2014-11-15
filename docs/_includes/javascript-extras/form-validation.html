@@ -1,0 +1,899 @@
+<div class="ar-docs-section">
+    <div class="page-header">
+      <h1 id="validate">Form validation <small>validator.js</small></h1>
+    </div>
+    <p>Form validation ensures users provide necessary data and that the data is propertly entered.  This client-side jQuery validation plugin, named <a href="http://bootstrapvalidator.com/">Bootstrap Validator</a> is developed by Nguyen Huu Phuoc and maintained on <a href="https://github.com/nghuuphuoc/bootstrapvalidator">this GitHub repo</a>. The Bootstrap Validator site also includes <a href="http://bootstrapvalidator.com/getting-started/">documentation</a> and <a href="http://bootstrapvalidator.com/examples/">examples</a>.</p>
+    <div class="callout warning">
+      <h4>Client-side vs. server-side validation</h4>
+      <p>While client-side validation is good for immediate user feedback on the data that is being entered, if you are validating input due to security concerns, it is recommended to have server-side validation also applied to the input since it is relatively easy to disable Javascript validation. Read this <a href="http://stackoverflow.com/questions/162159/javascript-client-side-vs-server-side-validation">Stack Overflow topic</a> for a broader discussion on this topic.</p>
+    </div>
+    <h2 id="validate-types">Included validation types</h2>
+    <p>Boostrap Validator can validate almost anything. However, for the base build and in the interest of keeping the file size to a minimum, the Arrow Framework's version includes only the validations listed below.</p>
+    <p>We have also listed the validations that are available but not added into this version of the plugin. If you need too add any back, these validators can be found either by <a href="https://github.com/nghuuphuoc/bootstrapvalidator/releases/download/v0.5.1/bootstrapvalidator-dist-0.5.1.zip">downloading the current full plugin</a>, or by <a href="https://github.com/nghuuphuoc/bootstrapvalidator/tree/master/src/js/validator">pulling the standalone validators from GitHub</a> and adding them to your build.</p>
+    <div class="callout info">
+      <h4>Build your own validators</h4>
+      <p>Bootstrap Validator also allows you to write your own validation patterns. <a href="http://bootstrapvalidator.com/developing/">View the instructions</a> on how to build your own validators here.</p>
+    </div>
+    <div class="table-responsive">
+      <table class="table condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Enabled</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/base64/" >base64</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a base64 encoded string</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/between/">between</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if the input value is between (strictly or not) two given numbers</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/callback/">callback</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Return the validity from a callback method</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/choice/">choice</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if the number of checked boxes are less or more than a given number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/creditCard/">creditCard</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate a credit card number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/cusip/">cusip</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a CUSIP</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/cvv/">cvv</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate a CVV number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/date/">date</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate date</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/different/">different</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Return true if the input value is different with given field's value</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/digits/">digits</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Return true if the value contains only digits</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/ean/">ean</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an EAN (International Article Number)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/emailAddress/">emailAddress</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate an email address</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/file/">file</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate file</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/greaterThan/">greaterThan</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Return true if the value is greater than or equals to given number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/grid/">grid</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a GRId (Global Release Identifier)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/hex/">hex</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a hexadecimal number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/hexColor/">hexColor</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a hex color</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/iban/">iban</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an International Bank Account Number (IBAN)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/id/">id</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate identification number. Support 25 countries</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/identical/">identical</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if the value is the same as one of particular field</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/imei/">imei</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an IMEI (International Mobile Station Equipment Identity)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/imo/">imo</a> <span class="pull-right bv-news"></span></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an IMO (International Maritime Organization)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/integer/">integer</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate an integer number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/ip/">ip</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an IP address. Support both IPv4 and IPv6</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/isbn/">isbn</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate an ISBN (International Standard Book Number). Support both ISBN 10 and ISBN 13</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/isin/">isin</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an ISIN (International Securities Identification Number)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/ismn/">ismn</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an ISMN (International Standard Music Number)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/issn/">issn</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate an ISSN (International Standard Serial Number)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/lessThan/">lessThan</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Return true if the value is less than or equals to given number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/mac/">mac</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a MAC address</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/meid/">meid</a> <span class="pull-right bv-news"></span></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a MEID (mobile equipment identifier)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/notEmpty/">notEmpty</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if the value is empty</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/numeric/">numeric</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if the value is numeric</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/phone/">phone</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate a phone number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/regexp/">regexp</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if the value matches given Javascript regular expression</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/remote/">remote</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Perform remote checking via Ajax request</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/rtn/">rtn</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate a RTN (Routing transit number)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/sedol/">sedol</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a SEDOL (Stock Exchange Daily Official List)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/siren/">siren</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a Siren number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/siret/">siret</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate a Siret number</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/step/">step</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if the value is valid step one</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/stringCase/">stringCase</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Check if a string is a lower or upper case one</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/stringLength/">stringLength</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate the length of a string</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/uri/">uri</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate an URL address</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/uuid/">uuid</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an UUID, support v3, v4, v5</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/vat/">vat</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate VAT number. Support 32 countries</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/vin/">vin</a></td>
+                <td><span class="text-danger fa fa-times"></span></td>
+                <td>Validate an US VIN (Vehicle Identification Number)</td>
+            </tr>
+      
+            <tr>
+                <td><a href="http://bootstrapvalidator.com/validators/zipCode/">zipCode</a></td>
+                <td><span class="text-success fa fa-check"></span></td>
+                <td>Validate a zip code</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+      
+    <h2 id="validate-examples">Examples</h2>
+    <div class="ar-example">
+     <form class="registerForm">
+       <div class="form-group">
+           <label>Username</label>
+           <input type="text" class="form-control" name="username" />
+       </div>
+       <div class="form-group">
+           <label>Email address</label>
+           <input type="text" class="form-control" name="email" />
+       </div>
+     </form>
+    </div>
+{% highlight html %}
+<form class="registerForm">
+ <div class="form-group">
+     <label>Username</label>
+     <input type="text" class="form-control" name="username" />
+ </div>
+ <div class="form-group">
+     <label>Email address</label>
+     <input type="text" class="form-control" name="email" />
+ </div>
+</form>
+{% endhighlight %}
+  <p>To validate this form, you would need the following Javascript:</p>
+  
+{% highlight js %}
+  $('.registerForm').bootstrapValidator({
+    message: 'This value is not valid',
+    feedbackIcons: {
+      valid: 'fa fa-check',
+      invalid: 'fa fa-times',
+      validating: 'fa fa-refresh'
+    },
+    fields: {
+      username: {
+        message: 'The username is not valid',
+        validators: {
+           notEmpty: {
+            message: 'The username is required and cannot be empty'
+          },
+          stringLength: {
+            min: 6,
+            max: 30,
+            message: 'The username must be more than 6 and less than 30 characters long'
+          },
+          regexp: {
+            regexp: /^[a-zA-Z0-9_]+$/,
+            message: 'The username can only consist of alphabetical, number and underscore'
+          }
+        }
+      },
+      email: {
+        validators: {
+          notEmpty: {
+            message: 'The email is required and cannot be empty'
+          },
+          emailAddress: {
+             message: 'The input is not a valid email address'
+          }
+        }
+      }
+    }
+  });
+{% endhighlight %}
+
+    <h2 id="validate-other-examples">Other Examples</h2>
+    <h4>Horizontal example</h4>
+    <div class="ar-example">
+      <form class="form-horizontal registerForm">
+          <div class="form-group">
+              <label class="col md-3 control-label">Username</label>
+              <div class="col md-5">
+                  <input type="text" class="form-control" name="username" />
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col md-3 control-label">Email address</label>
+              <div class="col md-5">
+                  <input type="text" class="form-control" name="email" />
+              </div>
+          </div>
+      </form>
+    </div>
+{% highlight html %}
+<form class="form-horizontal registerForm">
+  <div class="form-group">
+    <label class="col md-3 control-label">Username</label>
+    <div class="col md-5">
+      <input type="text" class="form-control" name="username" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col md-3 control-label">Email address</label>
+    <div class="col md-5">
+      <input type="text" class="form-control" name="email" />
+    </div>
+  </div>
+</form>
+{% endhighlight %}
+    <h4>Multiple fields — same row</h4>
+    <div class="ar-example">
+      <form class="form-horizontal registerForm">
+          <div class="form-group">
+              <label class="col md-2 control-label">Account</label>
+              <div class="col md-4">
+                  <input type="text" class="form-control" name="username" placeholder="Username" />
+              </div>
+              <div class="col md-4">
+                  <input type="text" class="form-control" name="email" placeholder="Email address" />
+              </div>
+          </div>
+      </form>
+    </div>
+{% highlight html %}
+<form class="form-horizontal registerForm">
+  <div class="form-group">
+    <label class="col md-2 control-label">Account</label>
+    <div class="col md-4">
+      <input type="text" class="form-control" name="username" placeholder="Username" />
+    </div>
+    <div class="col md-4">
+      <input type="text" class="form-control" name="email" placeholder="Email address" />
+    </div>
+  </div>
+</form>
+{% endhighlight %}
+  <h4>Registration form</h4>
+  <div class="ar-example">
+    <form id="registrationForm" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label class="col md-3 control-label">Username</label>
+            <div class="col md-5">
+                <input type="text" class="form-control" name="username" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col md-3 control-label">Email address</label>
+            <div class="col md-5">
+                <input type="text" class="form-control" name="email" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col md-3 control-label">Password</label>
+            <div class="col md-5">
+                <input type="password" class="form-control" name="password" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col md-3 control-label">Gender</label>
+            <div class="col md-5">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gender" value="male" /> Male
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gender" value="female" /> Female
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gender" value="other" /> Other
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col md-3 control-label">Date of birth</label>
+            <div class="col md-5">
+                <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col md-9 col md-offset-3">
+                <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+                <button type="submit" class="btn btn-default">Sign up</button>
+            </div>
+        </div>
+    </form>
+  </div>
+{% highlight html %}
+<form id="registrationForm" method="post" class="form-horizontal">
+  <div class="form-group">
+    <label class="col md-3 control-label">Username</label>
+    <div class="col md-5">
+       <input type="text" class="form-control" name="username" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Email address</label>
+    <div class="col md-5">
+       <input type="text" class="form-control" name="email" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Password</label>
+    <div class="col md-5">
+      <input type="password" class="form-control" name="password" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Gender</label>
+  <div class="col md-5">
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="male" /> Male
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+           <input type="radio" name="gender" value="female" /> Female
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="other" /> Other
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Date of birth</label>
+    <div class="col md-5">
+      <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col md-9 col md-offset-3">
+      <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+      <button type="submit" class="btn btn-default">Sign up</button>
+    </div>
+  </div>
+</form>
+{% endhighlight %}
+    <hr class="ar-docs-separator">
+
+    <h2 id="validate-usage">Usage</h2>
+
+    <h3>Via data attributes</h3>
+    <p>Plugin options can be triggered by the <code>data-bv-*</code> tag. However, unlike Bootstrap plugins, this plugin cannot be initiated via data-attributes. You will need to also instantiate the validation object via Javascript, as shown below. Full examples and documentation on how to use data-attributes for this plugin <a href="http://bootstrapvalidator.com/examples/attribute/">can be found here</a>.</p>
+    
+    <h4>Example</h4>
+    <div class="ar-example">
+      <form id="attributeForm" method="post" class="form-horizontal"
+        data-bv-message="This value is not valid"
+        data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+        data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+        data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+        <div class="form-group">
+          <label class="col md-3 control-label">Full name</label>
+          <div class="col md-4">
+            <input type="text" class="form-control" name="firstName" placeholder="First name"
+              data-bv-notempty="true"
+              data-bv-notempty-message="The first name is required and cannot be empty" />
+          </div>
+          <div class="col md-4">
+            <input type="text" class="form-control" name="lastName" placeholder="Last name"
+              data-bv-notempty="true"
+              data-bv-notempty-message="The last name is required and cannot be empty" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col md-3 control-label">Username</label>
+          <div class="col md-5">
+            <input type="text" class="form-control" name="username"
+              data-bv-message="The username is not valid"
+
+              data-bv-notempty="true"
+              data-bv-notempty-message="The username is required and cannot be empty"
+
+              data-bv-regexp="true"
+              data-bv-regexp-regexp="^[a-zA-Z0-9_\.]+$"
+              data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore"
+
+              data-bv-stringlength="true"
+              data-bv-stringlength-min="6"
+              data-bv-stringlength-max="30"
+              data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
+
+              data-bv-different="true"
+              data-bv-different-field="password"
+              data-bv-different-message="The username and password cannot be the same as each other" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col md-3 control-label">Email address</label>
+          <div class="col md-5">
+            <input class="form-control" name="email" type="email"
+              data-bv-emailaddress="true"
+              data-bv-emailaddress-message="The input is not a valid email address" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col md-3 control-label">Password</label>
+          <div class="col md-5">
+            <input type="password" class="form-control" name="password"
+              data-bv-notempty="true"
+              data-bv-notempty-message="The password is required and cannot be empty"
+
+              data-bv-identical="true"
+              data-bv-identical-field="confirmPassword"
+              data-bv-identical-message="The password and its confirm are not the same"
+
+              data-bv-different="true"
+              data-bv-different-field="username"
+              data-bv-different-message="The password cannot be the same as username" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col md-3 control-label">Retype password</label>
+          <div class="col md-5">
+            <input type="password" class="form-control" name="confirmPassword"
+              data-bv-notempty="true"
+              data-bv-notempty-message="The confirm password is required and cannot be empty"
+
+              data-bv-identical="true"
+              data-bv-identical-field="password"
+              data-bv-identical-message="The password and its confirm are not the same"
+
+              data-bv-different="true"
+              data-bv-different-field="username"
+              data-bv-different-message="The password cannot be the same as username" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col md-3 control-label">Languages</label>
+          <div class="col md-5">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="languages[]" value="english"
+                  data-bv-message="Please specify at least one language you can speak"
+                  data-bv-notempty="true" /> English
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="languages[]" value="french" /> French
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="languages[]" value="german" /> German
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="languages[]" value="russian" /> Russian
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="languages[]" value="other" /> Other
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+{% highlight html %}
+<form id="attributeForm" method="post" class="form-horizontal"
+  data-bv-message="This value is not valid"
+  data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+  data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+  data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+  <div class="form-group">
+    <label class="col md-3 control-label">Full name</label>
+    <div class="col md-4">
+      <input type="text" class="form-control" name="firstName" placeholder="First name"
+        data-bv-notempty="true"
+        data-bv-notempty-message="The first name is required and cannot be empty" />
+    </div>
+    <div class="col md-4">
+      <input type="text" class="form-control" name="lastName" placeholder="Last name"
+        data-bv-notempty="true"
+        data-bv-notempty-message="The last name is required and cannot be empty" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Username</label>
+    <div class="col md-5">
+      <input type="text" class="form-control" name="username"
+        data-bv-message="The username is not valid"
+
+        data-bv-notempty="true"
+        data-bv-notempty-message="The username is required and cannot be empty"
+
+        data-bv-regexp="true"
+        data-bv-regexp-regexp="^[a-zA-Z0-9_\.]+$"
+        data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore"
+
+        data-bv-stringlength="true"
+        data-bv-stringlength-min="6"
+        data-bv-stringlength-max="30"
+        data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
+
+        data-bv-different="true"
+        data-bv-different-field="password"
+        data-bv-different-message="The username and password cannot be the same as each other" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Email address</label>
+    <div class="col md-5">
+      <input class="form-control" name="email" type="email"
+        data-bv-emailaddress="true"
+        data-bv-emailaddress-message="The input is not a valid email address" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Password</label>
+    <div class="col md-5">
+      <input type="password" class="form-control" name="password"
+        data-bv-notempty="true"
+        data-bv-notempty-message="The password is required and cannot be empty"
+
+        data-bv-identical="true"
+        data-bv-identical-field="confirmPassword"
+        data-bv-identical-message="The password and its confirm are not the same"
+
+        data-bv-different="true"
+        data-bv-different-field="username"
+        data-bv-different-message="The password cannot be the same as username" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Retype password</label>
+    <div class="col md-5">
+      <input type="password" class="form-control" name="confirmPassword"
+        data-bv-notempty="true"
+        data-bv-notempty-message="The confirm password is required and cannot be empty"
+
+        data-bv-identical="true"
+        data-bv-identical-field="password"
+        data-bv-identical-message="The password and its confirm are not the same"
+
+        data-bv-different="true"
+        data-bv-different-field="username"
+        data-bv-different-message="The password cannot be the same as username" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col md-3 control-label">Languages</label>
+    <div class="col md-5">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="languages[]" value="english"
+            data-bv-message="Please specify at least one language you can speak"
+            data-bv-notempty="true" /> English
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="languages[]" value="french" /> French
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="languages[]" value="german" /> German
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="languages[]" value="russian" /> Russian
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="languages[]" value="other" /> Other
+        </label>
+      </div>
+    </div>
+  </div>
+</form>
+{% endhighlight %}
+
+    <h3>Via JavaScript</h3>
+    <p>Call the <code>bootstrapValidator</code> object using jQuery. You may also add options to the object this way, or use data-attributes in the markup.</p>
+
+{% highlight js %}
+$(formSelector).bootstrapValidator({
+  excluded: ...,
+  feedbackIcons: ...,
+  live: 'enabled',
+  message: 'This value is not valid',
+  submitButtons: 'button[type="submit"]',
+  trigger: null,
+  fields: ...
+});
+{% endhighlight %}
+
+    <h3>Options</h3>
+    <p>A full list of options as well as more examples can be found at the <a href="http://bootstrapvalidator.com/settings/">Bootstrap Validator site</a>.</p>
+    <table class="table bordered striped">
+      <thead>
+          <tr>
+            <th style="width: 100px;">Option</th>
+            <th style="width: 50px;">Equivalent HTML attribute</th>
+            <th style="width: 100px;">default</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>container</td>
+              <td>data-bv-container</td>
+              <td>n/a</td>
+          </tr>
+          <tr>
+              <td>excluded</td>
+              <td>data-bv-excluded</td>
+              <td>[':disabled', ':hidden', ':not(:visible)']</td>
+          </tr>
+          <tr>
+              <td>feedbackIcons</td>
+              <td>data-bv-feedbackicons-valid, data-bv-feedbackicons-invalid, data-bv-feedbackicons-validating</td>
+              <td>{ valid: null, invalid: null, validating: null }</td>
+        </tr>
+        <tr>
+            <td>group</td>
+            <td>data-bv-group</td>
+            <td>'.form-group'</td>
+        </tr>
+        <tr>
+            <td>live</td>
+            <td>data-bv-live</td>
+            <td>'enabled'</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>data-bv-message</td>
+            <td>'This value is not valid'</td>
+        </tr>
+        <tr>
+            <td>submitButtons</td>
+            <td>data-bv-submitbuttons</td>
+            <td>'[type="submit"]'</td>
+        </tr>
+        <tr>
+            <td>threshold</td>
+            <td>data-bv-threshold</td>
+            <td>null</td>
+        </tr>
+        <tr>
+            <td>trigger</td>
+            <td>data-bv-trigger</td>
+            <td>null</td>
+        </tr>
+        <tr>
+            <td>fields</td>
+            <td>n/a</td>
+            <td>null</td>
+        </tr>
+    </tbody>
+    </table>
+
+
+    <h3>Methods</h3>
+    <p>Bootstrap Validator has numerous methods. Rather than add them all here, you can check out <a href="http://bootstrapvalidator.com/api/">the API documentation</a> at the Bootstrap Validator site.</p>
+  </div>

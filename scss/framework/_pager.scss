@@ -1,0 +1,88 @@
+//
+// Pager pagination
+// --------------------------------------------------
+
+
+.pager {
+  padding-left: 0;
+  margin: $line-height-computed 0;
+  list-style: none;
+  text-align: center;
+  @include clearfix();
+  li {
+    display: inline;
+    > a,
+    > span {
+      display: inline-block;
+      padding: .5em 1em;
+      background-color: $pager-bg;
+      border: 1px solid $pager-border;
+      border-radius: $pager-border-radius;
+    }
+
+    > a:hover,
+    > a:focus {
+      text-decoration: none;
+      color: $link-hover-color;
+      background-color: $pager-hover-bg;
+    }
+  }
+  
+  .fa {
+    @include rem-fallback(font-size, .8em);
+    position: relative;
+    top: -.0625em;
+    line-height: 1;
+  }
+  
+  .next {
+    > a,
+    > span {
+      float: right;
+    }
+    .fa {
+      margin-left: .2em;
+    }
+  }
+
+  .previous {
+    > a,
+    > span {
+      float: left;
+    }
+    .fa {
+      margin-right: .2em;
+    }
+  }
+
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
+      color: $pager-disabled-color;
+      background-color: $pager-bg;
+      cursor: not-allowed;
+    }
+  }
+  
+  &.plain {
+    li {
+      display: inline;
+      > a,
+      > span {
+        display: inline-block;
+        padding: .25em 0;
+        background-color: transparent;
+        border: 0;
+        border-radius: 0!important;
+      }
+      > a:hover,
+      > a:focus {
+        text-decoration: underline;
+        background-color: transparent;
+        color: $link-hover-color;
+      }
+    }
+  }
+}

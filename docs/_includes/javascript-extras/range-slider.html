@@ -1,0 +1,60 @@
+ <!-- Range slider :: Javascript
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="range-slider" class="page-header">Range Slider <small>range-slider.js</small></h1>
+    <p class="lead">You can create a range slider bar using minimal markup. The slider's value will be assigned to any <code><input type="hidden"></code> elements inside the data-slider div and as the value of the data-slider attribute. Requires the file <code>range-slider.scss</code>.</p>
+
+    <h2 id="range-slider-examples">Example</h2>
+    <div class="ar-example">
+      <h5>Horizontal</h5>
+      <div class="range-slider" data-slider>
+        <span class="range-slider-handle"></span>
+        <span class="range-slider-active-segment"></span>
+        <input type="hidden">
+      </div>
+      <h5>Vertical</h5>
+      <div class="range-slider vertical-range" data-slider data-options="vertical: true;">
+        <span class="range-slider-handle"></span>
+        <span class="range-slider-active-segment"></span>
+        <input type="hidden">
+      </div>
+      <h5>With label</h5>
+      <div class="row">
+        <div class="col sm-10 md-11">
+          <div class="range-slider" data-slider data-options="display_selector: #sliderOutput3;">
+            <span class="range-slider-handle"></span>
+            <span class="range-slider-active-segment"></span>
+          </div>
+        </div>
+        <div class="col sm-2 md-1">
+          <span id="sliderOutput3"></span>
+        </div>
+      </div>
+    </div><!-- /.ar-example -->
+{% highlight html %}
+<div class="range-slider" data-slider>
+  <span class="range-slider-handle"></span>
+  <span class="range-slider-active-segment"></span>
+  <input type="hidden">
+</div>
+
+<div class="range-slider vertical-range" data-slider data-options="vertical: true;">
+  <span class="range-slider-handle"></span>
+  <span class="range-slider-active-segment"></span>
+  <input type="hidden">
+</div>
+
+<div class="row">
+  <div class="col sm-10 md-11">
+    <div class="range-slider" data-slider data-options="display_selector: #sliderOutput3;">
+      <span class="range-slider-handle"></span>
+      <span class="range-slider-active-segment"></span>
+    </div>
+  </div>
+  <div class="col sm-2 md-1">
+    <span id="sliderOutput3"></span>
+  </div>
+</div>
+{% endhighlight %}
+    <h2 id="range-slider-usage">Usage</h2>
+  </div>

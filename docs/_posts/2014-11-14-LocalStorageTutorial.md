@@ -1,8 +1,89 @@
 ---
-layout: blog
+layout: default-style
 title: Local Storage Tutorial 2
 image: http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg
 ---
+
+<div class="row" style="border:red solid 1px">
+  <div class="col xs-1" style="border:red solid 1px">1</div>
+  <div class="col xs-3" style="border:red solid 1px">3, last</div>
+</div>
+<div class="row">
+  <div class="col xs-4 sm-6" style="border:red solid 1px">asdf</div>
+  <div class="col xs-4 sm-6" style="border:red solid 1px">asd</div>
+</div>
+<div class="row">
+  <div class="col xs-2 md-8" style="border:red solid 1px">asdf</div>
+  <div class="col xs-2 md-4" style="border:red solid 1px">asd</div>
+</div>
+<div class="row">
+  <div class="col sm-3 md-2" style="border:red solid 1px">asdf</div>
+  <div class="col sm-9 md-10" style="border:red solid 1px">
+		<!-- Standard button -->
+		<button type="button" class="btn default">Default</button>
+
+		<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+		<button type="button" class="btn primary">Primary</button>
+
+		<!-- Indicates a successful or positive action -->
+		<button type="button" class="btn success">Success</button>
+
+		<!-- Contextual button for informational alert messages -->
+		<button type="button" class="btn info">Info</button>
+
+		<!-- Indicates caution should be taken with this action -->
+		<button type="button" class="btn warning">Warning</button>
+
+		<!-- Indicates a dangerous or potentially negative action -->
+		<button type="button" class="btn danger">Danger</button>
+
+		<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+		<button type="button" class="btn link">Link</button>
+
+  </div>
+</div>
+
+
+<h5>Simple switch</h5>
+<div class="switch">
+  <input id="exampleCheckboxSwitch" type="checkbox">
+  <label for="exampleCheckboxSwitch"></label>
+</div> 
+
+<h5>Radio switch - one switch changes the other</h5>
+<div class="switch small">
+  <input id="exampleRadioSwitch1" type="radio" checked name="testGroup">
+  <label for="exampleRadioSwitch1"></label>
+</div> 
+<div class="switch small">
+  <input id="exampleRadioSwitch2" type="radio" name="testGroup">
+  <label for="exampleRadioSwitch2"></label>
+</div> 
+
+<h5>Round switch</h5>
+<div class="switch round large">
+  <input id="exampleCheckboxSwitch2" type="checkbox" name="testGroup">
+  <label for="exampleCheckboxSwitch2"></label>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--!!!!!!!!!!!!!!!!! PRISMjs need class language-css-->
 

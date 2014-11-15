@@ -1,0 +1,719 @@
+  <!-- Grid system
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="grid" class="page-header">Grid system</h1>
+    <p class="lead">The Arrow framework includes a responsive, mobile-first fluid grid system that appropriately scales as the device or viewport size increases. It includes <a class="inline-link" href="#grid-example-basic">predefined classes</a> for easy layout options, as well as powerful <a class="inline-link" href="#grid-sass">mixins for generating more semantic layouts</a>.</p>
+
+    <h3 id="grid-intro">How the grid works</h3>
+    <p>Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the this framework grid system works:</p>
+    <ul>
+      <li>Rows must be placed within a <code>.container</code> or <code>.container-fluid</code> for proper alignment and padding.</li>
+      <li>Use rows to create horizontal groups of columns.</li>
+      <li>Content should be placed within columns, and only columns may be immediate children of rows. Columns are defined with the <code>.col</code> class.</li>
+      <li>Columns create gutters (gaps between column content) via <code>padding</code>. That padding is offset in rows for the first and last column via negative margin on <code>.row</code>s.</li>
+      <li>The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.</li>
+      <li>Grid columns are created by resizing the <code>.col</code> elements with screen size and column width modifiers (such as <code>.md-4</code> which reads "four columns on a medium-sized screen or more" or <code>.lg-6</code>, which reads "six columns on a large-screen screen or more" etc.).</li>
+      <li>Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, applying any <code>.md-</code> class to an element will not only affect its styling on medium devices but also on large devices if a <code>.lg-</code> class is not present.</li>
+      <li>SASS mixins can also be used for <a class="inline-link" href="#grid-sass">more semantic layouts</a>.</li>
+    </ul>
+    <p>Look to the examples for applying these principles to your code.</p>
+    <div class="callout info">
+      <h4>Grids and full-width layouts</h4>
+      <p>If you are using the full width of the container, <strong>there is no need to define anything but the container class</strong>. However, if you want the content to go to the edges of your screen, the element must be put into either a element with a <code>.row</code> class or add to that element  <code>margin: 0 -1em</code> to offset the <code>padding: 0 -1em;</code> defined on the <code>.container</code> element.</p>
+    </div>
+
+
+    <h3 id="grid-media-queries">Media queries</h3>
+    <p>We use the following media queries to create the key breakpoints in our grid system. These are all optional and can be turned on and off as needed</p>
+
+{% highlight html %}
+/* Extra-small devices (phones up to 479px) */
+@media screen and (min-width: $breakpoint-sm) { ... }
+
+/* Small devices (large phones and small tablets up to 767px) */
+@media screen and (min-width: $breakpoint-md) { ... }
+
+/* Medium devices (tablets to small desktops up to 959px) */
+@media screen and (min-width: $breakpoint-lg) { ... }
+
+/* Large devices (laptops and desktops up to 1199px) */
+@media screen and (min-width: $breakpoint-xl) { ... }
+
+/* Extra large screens (screens up to 1400px) */
+@media screen and (max-width: $site-max-width) { ... }
+
+{% endhighlight %}
+
+    <p>We occasionally expand on these media queries to include a max-width to limit CSS to a narrower set of devices.</p>
+
+{% highlight html %}
+@media (max-width: $breakpoint-sm-max) { ... }
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-sm-max) { ... }
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) { ... }
+@media (min-width: $breakpoint-lg) { ... }
+{% endhighlight %}
+
+
+    <h3 id="grid-options">Grid options</h3>
+    <p>This framework's default grid contains five breakpoints by default. See how aspects of the grid system work across multiple devices below:</p>
+    <div class="table-responsive">
+      <table class="table bordered striped">
+        <thead>
+          <tr>
+            <th>&nbsp;<br/><br/></th>
+            <th>
+              Extra small devices<br/>
+              <small>Phones (&lt;480px)</small>
+            </th>
+            <th>
+              Small devices<br/>
+              <small>Tablets (&ge;480px)</small>
+            </th>
+            <th>
+              Medium devices<br/>
+              <small>Desktops (&ge;768px)</small>
+            </th>
+            <th>
+              Large devices<br/>
+              <small>Desktops (&ge;960px)</small>
+            </th>
+            <th>
+              Extra large devices<br/>
+              <small>Desktops (&ge;1200px)</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Grid behavior</th>
+            <td colspan="1">Horizontal at all times</td>
+            <td colspan="4">Collapsed to start, horizontal above breakpoints</td>
+          </tr>
+          <tr>
+            <th>Max container width</th>
+            <td>479px</td>
+            <td>767px</td>
+            <td>959px</td>
+            <td>1199px</td>
+            <td>9999px</td>
+          </tr>
+          <tr>
+            <th>Class prefix</th>
+            <td><code>.xs-</code></td>
+            <td><code>.sm-</code></td>
+            <td><code>.md-</code></td>
+            <td><code>.lg-</code></td>
+            <td><code>.xl-</code></td>
+          </tr>
+          <tr>
+            <th># of columns</th>
+            <td colspan="5">12</td>
+          </tr>
+          <tr>
+            <th>Gutter width</th>
+            <td colspan="5">32px (16px on each side of a column)</td>
+          </tr>
+          <tr>
+            <th>Nestable</th>
+            <td colspan="5">Yes</td>
+          </tr>
+          <tr>
+            <th>Offsets</th>
+            <td colspan="5">Yes</td>
+          </tr>
+          <tr>
+            <th>Column ordering</th>
+            <td colspan="5">Yes</td>
+          </tr>
+          <tr>
+            <th>Centered columns</th>
+            <td colspan="2" class="text-muted">N/A</td>
+            <td colspan="3">Yes</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<h3 id="grid-example-basic">Basic grid: Stacked-to-horizontal</h3>
+<p>This framework uses <code>box-sizing: border-box</code> so that borders and padding do not affect the overall width of the column, making the math dead-simple. Since this framework is mobile-first, we'll stack content by default. You do have access to an entirely separate small grid to use up to the 768px breakpoint. This means you can create some pretty complex layouts and even drop columns if you want.</p>
+<div class="row show-grid">
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-4"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+  <div class="col md-4"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+  <div class="col md-4"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-8"><span class="hidden-md-up">full</span><span class="visible-md-up">8</span></div>
+  <div class="col md-4"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-3"><span class="hidden-md-up">full</span><span class="visible-md-up">3</span></div>
+  <div class="col md-3"><span class="hidden-md-up">full</span><span class="visible-md-up">3</span></div>
+  <div class="col md-5"><span class="hidden-md-up">full</span><span class="visible-md-up">5</span></div>
+</div>
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+</div>
+<div class="row">
+  <div class="col md-4">...</div>
+  <div class="col md-4">...</div>
+  <div class="col md-4">...</div>
+</div>
+<div class="row">
+  <div class="col md-8">...</div>
+  <div class="col md-4">...</div>
+</div>
+<div class="row">
+  <div class="col md-1">...</div>
+  <div class="col md-3">...</div>
+  <div class="col md-3">...</div>
+  <div class="col md-5">...</div>
+</div>
+{% endhighlight %}
+
+<h3 id="grid-small">Small and Extra-small Grids: Mobile and tablet</h3>
+<p>In addition to the medium grid, you also have access to a small and xtra-small grid. If you know that your grid structure will be the same for xtra-small devices as it will be on medium devices, just use the xtra-small grid. You can override your grid classes by adding <code>.sm</code>, <code>.md</code>, <code>.lg</code> or <code>.xl</code> grid classes to it.</p>
+<div class="row show-grid">
+  <div class="col xs-3">3</div>
+  <div class="col xs-9">9</div>
+</div>
+<div class="row show-grid">
+  <div class="col xs-12 sm-6"><span class="visible-xs">full</span><span class="hidden-xs">6</span></div>
+  <div class="col xs-12 sm-6"><span class="visible-xs">full</span><span class="hidden-xs">6</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col xs-6 md-8"><span class="hidden-md-up">6</span><span class="visible-md-up">8</span></div>
+  <div class="col xs-6 md-4"><span class="hidden-md-up">6</span><span class="visible-md-up">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col sm-3 md-2"><span class="visible-xs">full</span><span class="visible-sm">3</span><span class="visible-md-up">2</span></div>
+  <div class="col sm-9 md-10"><span class="visible-xs">full</span><span class="visible-sm">9</span><span class="visible-md-up">10</span></div>
+</div>
+{% highlight html %}
+<div class="row">
+  <div class="col xs-1">1</div>
+  <div class="col xs-3">3, last</div>
+</div>
+<div class="row">
+  <div class="col xs-4 sm-6">...</div>
+  <div class="col xs-4 sm-6">...</div>
+</div>
+<div class="row">
+  <div class="col xs-2 md-8">...</div>
+  <div class="col xs-2 md-4">...</div>
+</div>
+<div class="row">
+  <div class="col sm-3 md-2">...</div>
+  <div class="col sm-9 md-10">...</div>
+</div>
+{% endhighlight %}
+
+<h3 id="grid-large">Large Grid: Mobile, tablet and desktop</h3>
+<p>Build on the previous examples by creating even more dynamic and powerful layouts with desktop <code>.lg</code> classes.</p>
+<div class="row show-grid">
+  <div class="col sm-12 md-6 lg-8"><span class="hidden-md-up">full</span><span class="visible-md">6</span><span class="visible-lg-up">8</span></div>
+  <div class="col sm-6 md-6 lg-4"><span class="visible-xs">full</span><span class="visible-sm">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg-up">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col sm-9 md-4 lg-6"><span class="visible-xs">full</span><span class="visible-sm">9</span><span class="visible-md">4</span><span class="visible-lg-up">6</span></div>
+  <div class="col sm-3 md-8 lg-6"><span class="visible-xs">full</span><span class="visible-sm">3</span><span class="visible-md">8</span><span class="visible-lg-up">6</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col sm-6 md-8 lg-10"><span class="visible-xs">full</span><span class="visible-sm">6</span><span class="visible-md">8</span><span class="visible-lg-up">10</span></div>
+  <div class="col sm-6 md-4 lg-2"><span class="visible-xs">full</span><span class="visible-sm">6</span><span class="visible-md">4</span><span class="visible-lg-up">2</span></div>
+</div>
+{% highlight html %}
+<div class="row">
+  <div class="col sm-12 md-6 lg-8">...</div>
+  <div class="col sm-6 md-6 lg-4">...</div>
+</div>
+<div class="row">
+  <div class="col sm-9 md-4 lg-6">...</div>
+  <div class="col sm-3 md-8 lg-6">...</div>
+</div>
+<div class="row">
+  <div class="col sm-6 md-8 lg-10">...</div>
+  <div class="col sm-6 md-4 lg-2">...</div>
+</div>
+{% endhighlight %}
+
+<h3 id="grid-nesting">Infinitely Nest Your Grid</h3>
+<p>The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</p>
+
+<div class="row show-grid">
+  <div class="col md-8"><span class="hidden-md-up">full</span><span class="visible-md-up">8</span>
+    <div class="row">
+      <div class="col md-8"><span class="hidden-md-up">full</span><span class="visible-md-up">8 Nested</span>
+        <div class="row">
+          <div class="col md-8"><span class="hidden-md-up">full</span><span class="visible-md-up">8 Nested Again</span></div>
+          <div class="col md-4"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+        </div>
+      </div>
+      <div class="col md-4"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+    </div>
+  </div>
+  <div class="col md-4"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+</div>
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-8">8
+    <div class="row">
+      <div class="col md-8">8 Nested
+        <div class="row">
+          <div class="col md-8">8 Nested Again</div>
+          <div class="col md-4">4</div>
+        </div>
+      </div>
+      <div class="col md-4">4</div>
+    </div>
+  </div>
+  <div class="col md-4">4</div>
+</div>
+{% endhighlight %}
+
+<h3 id="grid-offsetting">Offsets</h3>
+<p>Offsets allow you to create additional space between col in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.md-offset-1</code> and <code>.lg-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.</p>
+
+
+<div class="row show-grid">
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-11"><span class="hidden-md-up">full</span><span class="visible-md-up">11</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-10 md-offset-1"><span class="hidden-md-up">full</span><span class="visible-md-up">10, offset 1</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-9 md-offset-2"><span class="hidden-md-up">full</span><span class="visible-md-up">9, offset 2</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="hidden-md-up">full</span><span class="visible-md-up">1</span></div>
+  <div class="col md-8 md-offset-3"><span class="hidden-md-up">full</span><span class="visible-md-up">8, offset 3</span></div>
+</div>
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-1">1</div>
+  <div class="col md-11">11</div>
+</div>
+<div class="row">
+  <div class="col md-1">1</div>
+  <div class="col md-10 md-offset-1">10, offset 1</div>
+</div>
+<div class="row">
+  <div class="col md-1">1</div>
+  <div class="col md-9 md-offset-2">9, offset 2</div>
+</div>
+<div class="rows">
+  <div class="col md-1">1</div>
+  <div class="col md-8 md-offset-3">8, offset 3</div>
+</div>
+{% endhighlight %}
+
+<h3 id="grid-centering">Centered columns</h3>
+<p>Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>.centered</code>. The centering will begin on the first breakpoint on which that column is defined, for example, if the column is defined at the <code>.md-*</code> size, the column will center at the point when the page reaches the <code>$breakpoint-md</code>, the default of which is 48em, or 768px.</p>
+<div class="row show-grid">
+  <div class="col xs-9 centered">9 centered at all sizes</div>
+</div>
+<div class="row show-grid">
+  <div class="col md-3 centered">3 centered at medium sizes</div>
+</div>
+<div class="row show-grid">
+  <div class="col lg-11 centered">11 centered at large sizes</div>
+</div>
+{% highlight html %}
+<div class="row show-grid">
+  <div class="col xs-9 centered">9 centered at all sizes</div>
+</div>
+<div class="row show-grid">
+  <div class="col md-3 centered">3 centered at medium sizes</div>
+</div>
+<div class="row show-grid">
+  <div class="col lg-11 centered">11 centered at large sizes</div>
+</div>
+{% endhighlight %}
+
+<h3 id="grid-column-ordering">Column Ordering</h3>
+<p>Using these source ordering classes, you can shift columns around between our breakpoints. This means you can have a sub-nav on the left on medium show-grids, but go below on small ones. <code>.push-#</code> is the syntax you'll use.</p>
+<div class="row show-grid">
+  <div class="col md-2 push-10"><span class="hidden-md-up">full</span><span class="visible-md-up">2</span></div>
+  <div class="col md-10 pull-2"><span class="hidden-md-up">full</span><span class="visible-md-up">10, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-3 push-9"><span class="hidden-md-up">full</span><span class="visible-md-up">3</span></div>
+  <div class="col md-9 pull-3"><span class="hidden-md-up">full</span><span class="visible-md-up">9, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-4 push-8"><span class="hidden-md-up">full</span><span class="visible-md-up">4</span></div>
+  <div class="col md-8 pull-4"><span class="hidden-md-up">full</span><span class="visible-md-up">8, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-5 push-7"><span class="hidden-md-up">full</span><span class="visible-md-up">5</span></div>
+  <div class="col md-7 pull-5"><span class="hidden-md-up">full</span><span class="visible-md-up">7, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-6 push-6"><span class="hidden-md-up">full</span><span class="visible-md-up">6</span></div>
+  <div class="col md-6 pull-6"><span class="hidden-md-up">full</span><span class="visible-md-up">6, last</span></div>
+</div>
+
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-2 push-10">2</div>
+  <div class="col md-10 pull-2">10, last</div>
+</div>
+<div class="row">
+  <div class="col md-3 push-9">3</div>
+  <div class="col md-9 pull-3">9, last</div>
+</div>
+<div class="row">
+  <div class="col md-4 push-8">4</div>
+  <div class="col md-8 pull-4">8, last</div>
+</div>
+<div class="row">
+  <div class="col md-5 push-7">5</div>
+  <div class="col md-7 pull-5">5, last</div>
+</div>
+<div class="row">
+  <div class="col md-6 push-6">6</div>
+  <div class="col md-6 pull-6">6, last</div>
+</div>
+{% endhighlight %}
+
+<div class="callout info">
+<h4>More grid examples</h4>
+<p>If you are having a hard time viewing these examples here, or want to see more grid combinations, <a href="../examples/grid">this page</a> may help</p>
+</div>
+
+  <h3 id="grid-example-fluid">Fluid container</h3>
+  <p>Turn any fixed-width grid layout into a full-width layout by changing your outermost <code>.container</code> to <code>.container-fluid</code>.</p>
+{% highlight html %}
+<div class="container-fluid">
+  <div class="row">
+    ...
+  </div>
+</div>
+{% endhighlight %}
+<div class="callout warning">
+  <h4>Using container versus container-fluid</h4>
+<p>Using <code>.container-fluid</code> is recommended <strong class="text-danger">only if you are using the pre-complied files</strong>. If you are using SASS files to compile your CSS and you do not want the default static widths that occur at certain breakpoints, comment out the <code>grid-stops.scss</code> file in your <code>arrow.scss</code> file and <code>.container</code> will work just like <code>.container-fluid</code>.</p>
+</div>
+
+
+<h3 id="grid-static">Static grid</h3>
+<p>If you are using SASS to create a custom CSS file, you can create a static grid by swapping out a couple of imports in your <code>arrow.scss</code> file. This option freezes the container width and uses <code>.col-*</code> classes for styling.</p>
+<p>Accomplishing this requires the <code>grid-fluid.scss</code> and <code>grid-stop.scss</code> files be commented out and the <code>grid-static.scss</code> file be uncommented.</p>
+<p>Various items, such as navbars, will still react to browser resizing, so some other adjustments may be required. For a more detailed explanation on that and other issues, read the entry on <a href="../getting-started/#disable-responsive">disabling responsiveness</a> and <a href="../examples/static-grid/">visit the example page</a>.</p>
+
+
+    <h3 id="grid-block">Block Grid</h3>
+    <p>Block grids give you a way to evenly split contents of a list within the grid. If you wanted to create a row of 5 images or paragraphs that need to stay evenly spaced no matter the screen size, the block grid is for you.</p>
+    
+    <div class="bs-docs-example">
+      <ul class="sm-block-grid-2 md-block-grid-3 lg-block-grid-6">
+        <li><img class="thumbnail" src="../assets/img/demo1.jpg"></li>
+        <li><img class="thumbnail" src="../assets/img/demo2.jpg"></li>
+        <li><img class="thumbnail" src="../assets/img/demo3.jpg"></li>
+        <li><img class="thumbnail" src="../assets/img/demo4.jpg"></li>
+        <li><img class="thumbnail" src="../assets/img/demo1.jpg"></li>
+        <li><img class="thumbnail" src="../assets/img/demo2.jpg"></li>
+      </ul>
+    </div>
+
+{% highlight html %}
+<!-- Using only the small-block-grid -->
+<ul class="sm-block-grid-2">
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+</ul>
+
+<!-- Using only the medium-block-grid -->
+<ul class="md-block-grid-4">
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+</ul>
+
+<!-- Using block grids together for different layouts -->
+<ul class="sm-block-grid-2 md-block-grid-3 lg-block-grid-6">
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+</ul>
+{% endhighlight %}
+
+        <h3>Building With Predefined HTML Classes</h3>
+        <p>Block grids are made from a <code>.sm-block-grid-#</code>, <code>.md-block-grid-#</code> or <code>.lg-block-grid-#</code>. These are ideal for blocked-in content generated by an application, as they do not require rows or even numbers of elements to display correctly.</p>
+        <p>If you use the sm-block-grid only, the grid will keep its spacing and configuration no matter the screen size. If you use md- or lg-block-grid only, the list items will stack on top of each other for small devices. If you use any of those classes combined, you can control the configuration and layout separately for each breakpoint.</p>
+        <p><span class="label info">Want more details?</span> Visit the <a href="http://foundation.zurb.com/docs/components/block_grid.html">Foundation documents</a> for more information.</p>
+
+
+<h3 id="grid-sass">SASS mixins and variables</h3>
+<p>In addition to <a class="inline-link" href="#grid-example-basic">prebuilt grid classes</a> for fast layouts, this framework includes SASS variables and mixins for quickly generating your own simple, semantic layouts.</p>
+<h4>Variables</h4>
+<p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
+{% highlight html %}
+// Number of columns in the grid system
+$grid-columns:              12 !default;
+// Padding, to be divided by two and applied to the left and right of all columns
+$grid-gutter-width:         2em !default;
+
+// Columns
+$grid-columns-xs:         4 !default;
+$grid-columns-sm:         $grid-columns !default;
+$grid-columns-md:         $grid-columns-sm !default;
+$grid-columns-lg:         $grid-columns-md !default;
+$grid-columns-xl:         $grid-columns-lg !default;
+
+// Minimum widths
+$site-min-width:          em(320) !default;
+$breakpoint-xs:           $site-min-width !default;
+$breakpoint-sm:           em(480) !default;
+$breakpoint-md:           em(768) !default;
+$breakpoint-lg:           em(960) !default;
+$breakpoint-xl:           em(1200) !default;
+
+// Maximum widths
+$site-max-width:          em(1320) !default;
+$breakpoint-xs-max:       ($breakpoint-sm - .0625em) !default;
+$breakpoint-sm-max:       ($breakpoint-md - .0625em) !default;
+$breakpoint-md-max:       ($breakpoint-lg - .0625em) !default;
+$breakpoint-lg-max:       ($breakpoint-xl - .0625em) !default;
+$breakpoint-xl-max:       $site-max-width !default;
+
+// Point at which the navbar stops collapsing
+$grid-float-breakpoint:     $breakpoint-md !default;
+
+
+// Container sizes -- used in optional 'grid-stops.scss' file
+// ---------------------------------------------------------
+
+// Small screen / tablet
+$container-tablet:             (($breakpoint-md - $grid-gutter-width)) !default;
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (($breakpoint-lg - $grid-gutter-width)) !default;
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-lg-desktop:         (($breakpoint-xl - $grid-gutter-width)) !default;
+$container-lg:                 $container-lg-desktop !default;
+
+// For static width sites
+$site-static-width:            ($container-md + $grid-gutter-width) !default;
+
+
+// Block grid -- used in optional block-grid.scss' file
+// ---------------------------------------------------------
+
+$block-grid-elements:          $grid-columns !default;
+$block-grid-default-spacing:   .75em !default;
+$align-block-grid-to-grid:     false !default;
+{% endhighlight %}
+
+<h4>Mixins</h4>
+<p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns. These are found in <code>_grid-main.scss</code> in the <code>framework/mixins</code> folder.</p>
+
+{% highlight html %}
+// Centered container element
+// ------------------------------------------
+@mixin create-container($class-name: container) {
+  position: relative;
+  padding: 0 ($grid-gutter-width / 2);
+  margin-right: auto;
+  margin-left: auto;
+  // Fix for nested containers
+  .#{$class-name} {
+    width: auto !important;
+  }
+}
+
+// Create a row
+@mixin create-rows($gutter: $grid-gutter-width) {
+  position: relative;
+  width: auto;
+  margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);
+}
+
+// Grid generator
+// ------------------
+
+@mixin calc-grid($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .#{$class}-#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .#{$class}-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .#{$class}-push-0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .#{$class}-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .#{$class}-pull-0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+
+// The loop engine that creates the grid
+@mixin loop-grid($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid($i, $class, $type);
+  }
+}
+
+// Create grid for a specific class
+@mixin create-grid($class) {
+  @include loop-grid($grid-columns, $class, width);
+  @include loop-grid($grid-columns, $class, pull);
+  @include loop-grid($grid-columns, $class, push);
+  @include loop-grid($grid-columns, $class, offset);
+}
+
+@mixin calc-grid($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .#{$class}-#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .#{$class}-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .#{$class}-push-0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .#{$class}-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .#{$class}-pull-0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+{% endhighlight %}
+
+<h4>Original Bootstrap mixins are still available</h4>
+<p>If you prefer the original mixins, by all means use them. Here's a sample of the default mixins located in the <code>mixins/_grid-bootstrap.scss</code> file.</p>
+{% highlight html %}
+// Generate the medium columns
+@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+
+  @media (min-width: $breakpoint-md) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-offset($columns) {
+  @media (min-width: $breakpoint-md) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-push($columns) {
+  @media (min-width: $breakpoint-md) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-pull($columns) {
+  @media (min-width: $breakpoint-md) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+{% endhighlight %}
+
+<h4>Example usage</h4>
+<p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.</p>
+
+{% highlight html %}
+.wrapper {
+  @include make-rows();
+}
+.content-main {
+  @include make-md-column(8);
+}
+.content-secondary {
+  @include make-md-column(3);
+  @include make-md-column-offset(1);
+}
+
+{% endhighlight %}
+
+{% highlight html %}
+<div class="wrapper">
+  <div class="content-main">...</div>
+  <div class="content-secondary">...</div>
+</div>
+{% endhighlight %}
+  <h3 id="grid-neat">Neat mixins</h3>
+  <p>As an alternative to the grid system above, we have also included the <a href="http://neat.bourbon.io/">Neat grid system</a>, which works with <a href="http://bourbon.io/">Bourbon</a>, the mixin foundation for this framework. Neat is a series of SASS mixins that can be used to generate a semantic grid, much like the Bootstrap mixins show above, but they have far more power and many more options.</p>
+  <p>Neat's documentation is too large to include here, but you can <a href="http://neat.bourbon.io/docs/">visit the documentation page</a>, <a href="http://neat.bourbon.io/examples/">see some examples</a> of how Neat works and <a href="https://github.com/thoughtbot/neat">view the source code on GitHub</a>.
+</div>

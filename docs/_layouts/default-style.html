@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include header.html %}
+    <!-- Place anything custom after this. -->
+  </head>
+
+<!-- 
+  {% case page.slug %}
+    {% when "css" %}
+    <body id="top" class="animated fadeIn css-color">
+    {% when "getting-started" or "browser-support" %}
+    <body id="top" class="animated fadeIn gs-color">
+    {% when "components-input-nav" or "components-ui" or "components-arrow" or "components-third-party" %}
+    <body id="top" class="animated fadeIn components-color">
+    {% when "javascript" or "javscript-extras" %}
+    <body id="top" class="animated fadeIn js-color">
+    {% when "browser-bugs" or "releases" %}
+    <body id="top" class="bb-color">
+    {% else %}
+    <body id="top" class="animated fadeIn"> 
+  {% endcase %}
+    <a class="sr-only sr-only-focusable" href="#content">Skip navigation</a> -->
+    
+<!--     {% case page.slug %}
+      {% when "browser-support" %}
+        {% include nav/nav-browser.html %}
+      {% else %}
+        {% include nav/nav-main.html %}
+    {% endcase %} -->
+              {{ content }}
+
+<!--     <div class="wrapper">
+      {% include nav/nav-header.html %}
+      <div class="ar-docs-content" role="main">
+        <div class="ar-header">
+          <div class="ar-docs-container">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.lead }}</p> 
+          </div>
+        </div>
+        <div class="ar-docs-container" id="content">
+          {{ content }}
+        </div>
+      </div>
+      {% include footer.html %}
+    </div> --> <!-- /.wrapper -->
+    {% include footer.html %}
+  </body>
+</html>

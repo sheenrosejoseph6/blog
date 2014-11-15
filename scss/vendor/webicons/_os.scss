@@ -1,0 +1,29 @@
+// Android
+.no-svg .fc-webicon.android { background-image: url('#{$web-icon-path}webicon-android-m.png'); }
+.no-svg .fc-webicon.android.large { background-image: url('#{$web-icon-path}webicon-android.png'); }
+.no-svg .fc-webicon.android.small { background-image: url('#{$web-icon-path}webicon-android-s.png'); }
+.fc-webicon.android { background-image: url('#{$web-icon-path}webicon-android.svg'); }
+
+// Apple
+.no-svg .fc-webicon.apple { background-image: url('#{$web-icon-path}webicon-apple-m.png'); }
+.no-svg .fc-webicon.apple.large { background-image: url('#{$web-icon-path}webicon-apple.png'); }
+.no-svg .fc-webicon.apple.small { background-image: url('#{$web-icon-path}webicon-apple-s.png'); }
+.fc-webicon.apple { background-image: url('#{$web-icon-path}webicon-apple.svg'); }
+
+// HTML5
+.no-svg .fc-webicon.html5 { background-image: url('#{$web-icon-path}webicon-html5-m.png'); }
+.no-svg .fc-webicon.html5.large { background-image: url('#{$web-icon-path}webicon-html5.png'); }
+.no-svg .fc-webicon.html5.small { background-image: url('#{$web-icon-path}webicon-html5-s.png'); }
+.fc-webicon.html5 { background-image: url('#{$web-icon-path}webicon-html5.svg'); }
+
+// Mercurial
+.no-svg .fc-webicon.mercurial { background-image: url('#{$web-icon-path}webicon-mercurial-m.png'); }
+.no-svg .fc-webicon.mercurial.large { background-image: url('#{$web-icon-path}webicon-mercurial.png'); }
+.no-svg .fc-webicon.mercurial.small { background-image: url('#{$web-icon-path}webicon-mercurial-s.png'); }
+.fc-webicon.mercurial { background-image: url('#{$web-icon-path}webicon-mercurial.svg'); }
+
+// Windows
+.no-svg .fc-webicon.windows { background-image: url('#{$web-icon-path}webicon-windows-m.png'); }
+.no-svg .fc-webicon.windows.large { background-image: url('#{$web-icon-path}webicon-windows.png'); }
+.no-svg .fc-webicon.windows.small { background-image: url('#{$web-icon-path}webicon-windows-s.png'); }
+.fc-webicon.windows { background-image: url('#{$web-icon-path}webicon-windows.svg'); }

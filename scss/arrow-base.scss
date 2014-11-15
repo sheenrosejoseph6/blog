@@ -1,0 +1,60 @@
+/*  Arrow Framework version 0.5.0
+/*  Base styles
+/*  Adpated from open source libraries licensed under the MIT license
+/*  such as Bootstrap, Foundation, Animate.css, Font Awesome and Bourbon.
+*/
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Core variables and mixins
+// --------------------------------------
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
+@import "vendor/foundation/mixins";
+@import "prop/arrow-styles";
+@import "prop/variables";
+@import "framework/mixins";
+
+// Reset
+// --------------------------------------
+@import "framework/reset";
+@import "framework/print";
+@import "prop/fonts";
+
+// Core CSS
+// --------------------------------------
+@import "framework/scaffolding";
+@import "framework/type-base";
+@import "framework/typography";
+@import "framework/type-rare";
+
+// Utilties
+// --------------------------------------
+@import "framework/utilities";
+@import "framework/component-animations";
+
+// Grid
+// --------------------------------------
+@import "framework/grid-base";
+
+// Fluid grid libraries
+@import "framework/grid-fluid"; // Fluid grid :: Comment out static grid file to use this
+@import "framework/grid-visibility"; // Hides and shows elements based on width
+@import "framework/grid-block"; // Foundation's excellent block grid
+
+// Grid options (not for use in base Arrow framework, but for special projects)
+//@import "framework/grid-stops"; // Comment out to have no stopping points in fluid layout
+//@import "framework/grid-static"; // Static grid: WARNING: Comment out grid-fluid files to use this!
+
+// Base UI
+// --------------------------------------
+@import "framework/code";
+@import "framework/tables";
+@import "framework/forms";
+@import "framework/buttons";
+
+// Icon files
+// --------------------------------------
+@import "vendor/font-awesome/font-awesome";
+@import "vendor/webicons/webicons";

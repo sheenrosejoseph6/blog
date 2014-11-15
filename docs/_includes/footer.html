@@ -1,0 +1,71 @@
+<footer class="ar-footer" role="contentinfo">
+  <section class="colophon">
+    <img class="five-years-logo" width="213" height="40" alt="Arrow Electronics :: Five Years Out" src="{% include assets/five-years-logo.txt %}" />
+        
+    <ul class="list inline">
+      <li>Framework v{{ site.current_version }}</li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}">GitHub</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}/issues?state=open">Issues</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}/releases">Releases</a></li>
+    </ul>
+  </section>
+  <section class="copyright-info">
+    <p class="copyright">&copy; 2011 - 2014 Arrow Electronics, Inc. All Rights Reserved</p>
+    <ul class="footer-links">
+      <li><a href="http://www.arrow.com/about_arrow/contact_us.html">Contact Us</a></li>
+      <li><a href="http://www.arrow.com/privacy.html">Privacy Policy</a></li>
+      <li><a href="http://www.arrow.com/terms_use.html">Terms of Use</a></li>
+    </ul>
+  </section>
+</footer>
+{% if page.layout == "home" %}
+
+<!-- JavaScript
+================================================== -->
+<!-- IE8 support
+     Includes Selectivizr, Respond.js and IE8 Resposive File Warning -->
+<!--[if lt IE 9]>
+<script src="assets/js/ie/selectivizr-1.0.2.min.js"></script>
+<script src="assets/js/ie/respond-1.4.2.min.js"></script>
+<script src="assets/js/ie/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+
+<!-- Docs min Javascript
+     Includes jQuery 1.11.1, Holder 2.4.0, Zero Clipboard 1.3.5 and the application JS -->
+<script src="assets/js/docs.min.js"></script>
+<!-- More IE stuff:
+     Includes IE10 Grayscale fix, emulation modes warning & viewport hacks for Surface/desktop Windows 8 bug -->
+<!--[if IE]>
+<script src="assets/js/docs-ie.js"></script>
+<![endif]-->
+
+{% else %}
+
+<!-- JavaScript
+================================================== -->
+
+<script src="https://apex.oracle.com/i/libraries/apex/minified/desktop_all.min.js?v=4.2.5.00.08"></script>
+<script src="https://apex.oracle.com/i/libraries/apex/minified/legacy.min.js?v=4.2.5.00.08"></script>
+
+
+<!-- IE8 support
+     Includes Selectivizr, Respond.js and IE8 Resposive File Warning -->
+<!--[if lt IE 9]>
+<script src="../assets/js/ie/selectivizr-1.0.2.min.js"></script>
+<script src="../assets/js/ie/respond-1.4.2.min.js"></script>
+<script src="../assets/js/ie/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+
+<!-- Docs min Javascript
+     Includes jQuery 1.11.1, Holder 2.4.0, Zero Clipboard 1.3.5 and the application JS -->
+<!-- <script src="../assets/js/docs.min.js"></script> -->
+<!-- More IE stuff:
+     Includes IE10 Grayscale fix, emulation modes warning & viewport hacks for Surface/desktop Windows 8 bug -->
+<!--[if IE]>
+<script src="../assets/js/docs-ie.js"></script>
+<![endif]-->
+
+{% endif %}

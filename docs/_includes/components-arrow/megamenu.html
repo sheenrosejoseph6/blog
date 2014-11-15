@@ -1,0 +1,76 @@
+  <!-- Arrow megamenu
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="arw-megamenu" class="page-header">Arrow Megamenu <small>megamenu.js</small></h1>
+    <p class="lead">Arrow's dropdown megamenu that turns into an off-canvas layout for mobile.</p>
+    
+    <h3 id="arw-megamenu-example">Example</h3>
+    <p>For a full working example, visit <a href="../examples/arrow-megamenu/">the mega menu example page</a>. The basic structure of the code is show below.</p>
+    <div class="ar-example">
+
+    <!-- MENU ExAMPLE GOES HERE -->
+
+    </div><!--/. ar-example -->
+
+{% highlight html %}
+<nav class="navbar ar-offcanvas-megamenu" data-spy="megamenu">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bars"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="path/to/arrow/logo" alt="Arrow logo" /><span class="sr-only">Arrow Electronics</span></a>
+  </div> <!--/.navbar-header -->
+  <div class="sidenav fixed-left">
+    <a class="sidenav-brand" href="#"><img src="path/to/arrow/logo" width="96" alt="Arrow logo" /><span class="sr-only">Arrow Electronics</span></a>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Grow My Business <span class="caret"></span></a>
+        <!-- For megamenu items, add class .megamenu to top <ul> -->
+        <ul class="dropdown-menu megamenu">
+          <!-- For each full-width dropdown section, add class .megamenu-section to the top <li> -->
+          <li class="megamenu-section">
+            <!-- Then add each of the menu blocks in a separate <ul> -->
+            <ul>
+              <li class="dropdown-header">Solutions</li>
+              <li>...</li>
+            </ul>
+          </li>
+    <ul class="nav navbar-nav navbar-right">
+      <!-- These are the buttons on the right. We've included the first one as an example -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle navbar-btn" id="user-settings" data-toggle="dropdown">
+          <span class="hidden-md-up">Settings</span>
+          <span class="caret hidden-md-up"></span>
+          <span class="fa fa-cog"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="user-settings">
+          ...
+        </ul>
+      </li>
+  </div> <!--/.navbar-collapse -->
+</nav> <!-- /.ar-megamenu -->
+{% endhighlight %}
+
+
+
+
+    <h2 id="arw-megamenu-usage">Usage</h2>
+    <p>Add <code>.ar-offcanvas-megamenu</code> to the navbar for propert styling and try to follow the example above. The <a href="../examples/arrow-megamenu/">full page example</a> can give you a better idea of how to manage this plugin.</p>
+
+    <h3>Via data attributes</h3>
+    <p>Add <code>data-spy="megamenu"</code> to the <code>.ar-offcanvas-megamenu</code> element.
+
+    <h3>Via JavaScript</h3>
+{% highlight js %}
+$('.ar-offcanvas-megamenu').megamenu()
+{% endhighlight %}
+
+
+
+
+
+  </div>

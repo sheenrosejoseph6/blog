@@ -1,0 +1,92 @@
+// Settings
+@import "source/_base";
+
+// Attention seekers
+@import "source/attention_seekers/bounce",
+        "source/attention_seekers/flash",
+        "source/attention_seekers/pulse",
+        "source/attention_seekers/rubberBand",
+        "source/attention_seekers/shake",
+        "source/attention_seekers/swing",
+        "source/attention_seekers/tada",
+        "source/attention_seekers/wobble";
+                
+// Bouncing entrances
+@import "source/bouncing_entrances/bounceIn",
+        "source/bouncing_entrances/bounceInDown",
+        "source/bouncing_entrances/bounceInLeft",
+        "source/bouncing_entrances/bounceInRight",
+        "source/bouncing_entrances/bounceInUp";
+                
+// Bouncing exits
+@import "source/bouncing_exits/bounceOut",
+        "source/bouncing_exits/bounceOutDown",
+        "source/bouncing_exits/bounceOutLeft",
+        "source/bouncing_exits/bounceOutRight",
+        "source/bouncing_exits/bounceOutUp";
+        
+// Fading entrances
+@import "source/fading_entrances/fadeIn",
+        "source/fading_entrances/fadeInDown",
+        "source/fading_entrances/fadeInDownBig",
+        "source/fading_entrances/fadeInLeft",
+        "source/fading_entrances/fadeInLeftBig",
+        "source/fading_entrances/fadeInRight",
+        "source/fading_entrances/fadeInRightBig",
+        "source/fading_entrances/fadeInUp",
+        "source/fading_entrances/fadeInUpBig";
+        
+// Fading exits
+@import "source/fading_exits/fadeOut",
+        "source/fading_exits/fadeOutDown",
+        "source/fading_exits/fadeOutDownBig",
+        "source/fading_exits/fadeOutLeft",
+        "source/fading_exits/fadeOutLeftBig",
+        "source/fading_exits/fadeOutRight",
+        "source/fading_exits/fadeOutRightBig",
+        "source/fading_exits/fadeOutUp",
+        "source/fading_exits/fadeOutUpBig";
+        
+// Flippers
+@import "source/flippers/flip",
+        "source/flippers/flipInX",
+        "source/flippers/flipInY",
+        "source/flippers/flipOutX",
+        "source/flippers/flipOutY";
+        
+// Lightspeed
+@import "source/lightspeed/lightspeedIn",
+        "source/lightspeed/lightspeedOut";
+        
+// Rotating entrances
+@import "source/rotating_entrances/rotateIn",
+        "source/rotating_entrances/rotateInDownLeft",
+        "source/rotating_entrances/rotateInDownRight",
+        "source/rotating_entrances/rotateInUpLeft",
+        "source/rotating_entrances/rotateInUpRight";
+        
+// Rotating exits
+@import "source/rotating_exits/rotateOut",
+        "source/rotating_exits/rotateOutDownLeft",
+        "source/rotating_exits/rotateOutDownRight",
+        "source/rotating_exits/rotateOutUpLeft",
+        "source/rotating_exits/rotateOutUpRight";
+        
+// Specials
+@import "source/specials/hinge",
+        "source/specials/rollIn",
+        "source/specials/rollOut";
+        
+// Zooming entrances
+@import "source/zooming_entrances/zoomIn",
+        "source/zooming_entrances/zoomInDown",
+        "source/zooming_entrances/zoomInLeft",
+        "source/zooming_entrances/zoomInRight",
+        "source/zooming_entrances/zoomInUp";
+        
+// Zooming exits
+@import "source/zooming_exits/zoomOut",
+        "source/zooming_exits/zoomOutDown",
+        "source/zooming_exits/zoomOutLeft",
+        "source/zooming_exits/zoomOutRight",
+        "source/zooming_exits/zoomOutUp";

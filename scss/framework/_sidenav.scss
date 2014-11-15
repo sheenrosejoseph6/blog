@@ -1,0 +1,164 @@
+// 
+// Sidenav
+// Developed by Arnold Daniels (https://github.com/jasny/bootstrap)
+// Example: http://jasny.github.io/bootstrap/components/#navmenu
+// ----------------------------------------------------------------
+
+// Wrapper and base class
+//
+// Provide a static sidenav from which we expand to create the fixed sidenav
+// variations.
+
+.sidenav {
+  width: $sidenav-width;
+  height: 100%;
+  border: 1px solid $sidenav-border;
+  border-radius: $sidenav-border-radius;
+  background-color: $sidenav-bg;
+  line-height: $line-height-base;
+}
+
+.sidenav.fixed-left,
+.sidenav.fixed-right {
+  position: fixed;
+  z-index: $zindex-sidenav-fixed;
+  top: 0;
+  border-radius: 0;
+}
+.sidenav.fixed-left {
+  left: 0;
+  right: auto;
+  border-width: 0 1px 0 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+.sidenav.fixed-right {
+  left: auto;
+  right: 0;
+  border-width: 0 0 0 1px;
+}
+
+.sidenav-nav {
+  // Caret should match text color on hover
+  > .dropdown > a:hover .caret,
+  > .dropdown > a:focus .caret {
+    border-top-color: $sidenav-link-hover-color;
+    border-bottom-color: $sidenav-link-hover-color;
+  }
+
+  // Remove background color from open dropdown
+  > .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $sidenav-link-active-bg;
+      color: $sidenav-link-active-color;
+      .caret {
+        border-top-color: $sidenav-link-active-color;
+        border-bottom-color: $sidenav-link-active-color;
+      }
+    }
+  }
+  > .dropdown > a .caret {
+    border-top-color: $sidenav-link-color;
+    border-bottom-color: $sidenav-link-color;
+  }
+  &.dropdown-menu {
+    position: static;
+    margin: 0;
+    padding-top: 0;
+    float: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: $sidenav-link-active-bg;
+    & > .divider {
+      background-color: $sidenav-bg;
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: darken($sidenav-link-active-bg, 6.5%);
+      }
+    }
+  }
+  > li > a {
+    color: $sidenav-link-color;
+    &:hover,
+    &:focus {
+      color: $sidenav-link-hover-color;
+      background-color: $sidenav-link-hover-bg;
+    }
+  }
+  > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: $sidenav-link-active-color;
+      background-color: $sidenav-link-active-bg;
+    }
+  }
+  > .disabled > a {
+    &,
+    &:hover,
+    &:focus {
+      color: $sidenav-link-disabled-color;
+      background-color: $sidenav-link-disabled-bg;
+    }
+  }
+}
+
+.navbar-offcanvas {
+  .sidenav {
+    .navbar-nav {
+      margin: 0;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      width: auto;
+      border-top: 0;
+      box-shadow: none;
+
+      &.offcanvas {
+        position: static;
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0; // Override default setting
+        overflow: visible !important;
+      }
+
+      // Account for first and last children spacing
+      .navbar-nav.navbar-left:first-child {
+        margin-left: ($navbar-padding-horizontal * -1);
+      }
+      .navbar-nav.navbar-right:last-child {
+        margin-right: ($navbar-padding-horizontal * -1);
+      }
+
+      .sidenav-brand {
+        display: none;
+      }
+    }
+  }
+}
+
+// Brand/project name
+
+.sidenav-brand {
+  display: block;
+  @include rem-fallback(font-size, $font-size-large);
+  line-height: $line-height-computed;
+  padding: 1em .8em;
+  color: $sidenav-brand-color;
+  &:hover,
+  &:focus {
+    color: $sidenav-brand-hover-color;
+    background-color: $sidenav-brand-hover-bg;
+    text-decoration: none;
+  }
+}
+
+.sidenav-text {
+  color: $sidenav-color;
+}

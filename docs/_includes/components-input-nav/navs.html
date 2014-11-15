@@ -1,0 +1,306 @@
+  <!-- Navs
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="nav" class="page-header">Navs</h1>
+    <p class="lead">Navs available in this framework have shared markup, starting with the base <code>.nav</code> class, as well as shared states. Swap modifier classes to switch between each style.</p>
+    <h2 id="nav-tabs">Tabs</h2>
+    <p>Note the <code>.tabs</code> class requires the <code>.nav</code> base class.</p>
+    <div class="ar-example">
+      <ul class="nav tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="nav tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+{% endhighlight %}
+<div class="callout info">
+  <h4>Requires JavaScript tabs plugin</h4>
+  <p>For tabs with tabbable areas, you must use the <a href="../javascript-base/#tabs">tabs JavaScript plugin</a>.</p>
+</div>
+
+
+    <h2 id="nav-pills">Pills</h2>
+    <p>Take that same HTML, but use <code>.pills</code> instead:</p>
+    <div class="ar-example">
+      <ul class="nav pills" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="nav pills" role="tablist">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+{% endhighlight %}
+    <p>Pills are also vertically stackable. Just add <code>.stacked</code>.</p>
+    <div class="ar-example">
+      <ul class="nav pills stacked" role="tablist" style="max-width: 300px;">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="nav pills stacked" role="tablist">
+  ...
+</ul>
+{% endhighlight %}
+
+
+    <h2 id="nav-justified">Justified nav</h2>
+    <p>Easily make tabs or pills equal widths of their parent at screens wider than 768px with <code>.justified</code>. On smaller screens, the nav links are stacked.</p>
+    <div class="callout warning">
+      <h4>Safari and responsive justified navs</h4>
+      <p>As of v7.0.1, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
+    </div>
+    <div class="ar-example">
+      <ul class="nav tabs justified" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+      <br>
+      <ul class="nav pills justified" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="nav tabs justified" role="tablist">
+  ...
+</ul>
+<ul class="nav pills justified" role="tablist">
+  ...
+</ul>
+{% endhighlight %}
+
+
+    <h2 id="nav-disabled-links">Disabled links</h2>
+    <p>For any nav component (tabs or pills), add <code>.disabled</code> for <strong>gray links and no hover effects</strong>.</p>
+
+    <div class="callout warning">
+      <h4>Link functionality not impacted</h4>
+      <p>This class will only change the <code>&lt;a&gt;</code>'s appearance, not its functionality. Use custom JavaScript to disable links here.</p>
+    </div>
+
+    <div class="ar-example">
+      <ul class="nav pills" role="tablist">
+        <li role="presentation"><a href="#">Clickable link</a></li>
+        <li role="presentation"><a href="#">Clickable link</a></li>
+        <li role="presentation" class="disabled"><a href="#">Disabled link</a></li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="nav pills" role="tablist">
+  ...
+  <li role="presentation" class="disabled"><a href="#">Disabled link</a></li>
+  ...
+</ul>
+{% endhighlight %}
+
+    <h2 id="nav-alignment">Alignment options</h2>
+<h3>Tabs on the bottom</h3>
+<p>Flip the order of the HTML and add a class to put tabs on the bottom.</p>
+<div class="ar-example">
+  <div class="tabbable tabs-below">
+    <div class="tab-content">
+      <div class="tab-pane active" id="A">
+        <p>I'm in Section A.</p>
+      </div>
+      <div class="tab-pane" id="B">
+        <p>Howdy, I'm in Section B.</p>
+      </div>
+      <div class="tab-pane" id="C">
+        <p>Hello there, this is Section C.</p>
+      </div>
+    </div>
+    <ul class="nav tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#A" role="tab" data-toggle="tab">Section 1</a></li>
+      <li role="presentation"><a href="#B" role="tab" data-toggle="tab">Section 2</a></li>
+      <li role="presentation"><a href="#C" role="tab" data-toggle="tab">Section 3</a></li>
+    </ul>
+  </div> <!-- /tabbable -->
+</div>
+{% highlight html %}
+<div class="tabbable tabs-below">
+  <div class="tab-content">
+    <div class="tab-pane active" id="A">
+      <p>I'm in Section A.</p>
+    </div>
+    <div class="tab-pane" id="B">
+      <p>Howdy, I'm in Section B.</p>
+    </div>
+    <div class="tab-pane" id="C">
+      <p>Hello there, this is Section C.</p>
+    </div>
+  </div>
+  <ul class="nav tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#A" role="tab" data-toggle="tab">Section 1</a></li>
+    <li role="presentation"><a href="#B" role="tab" data-toggle="tab">Section 2</a></li>
+    <li role="presentation"><a href="#C" role="tab" data-toggle="tab">Section 3</a></li>
+  </ul>
+</div>
+</ul>
+{% endhighlight %}
+
+<h3>Tabs on the left</h3>
+<p>Swap the class to put tabs on the left.</p>
+<div class="ar-example">
+<div class="tabbable tabs-left">
+  <ul class="nav tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#lA" role="tab" data-toggle="tab">Section 1</a></li>
+    <li role="presentation"><a href="#lB" role="tab" data-toggle="tab">Section 2</a></li>
+    <li role="presentation"><a href="#lC" role="tab" data-toggle="tab">Section 3</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="lA">
+      <p>I'm in Section A.</p>
+    </div>
+    <div class="tab-pane" id="lB">
+      <p>Howdy, I'm in Section B.</p>
+    </div>
+    <div class="tab-pane" id="lC">
+      <p>Hello there, this is Section C.</p>
+    </div>
+  </div>
+</div>
+</div>
+{% highlight html %}
+<div class="tabbable tabs-left">
+  ...
+</div>
+</ul>
+{% endhighlight %}
+
+<h3>Tabs on the right</h3>
+<p>Swap the class to put tabs on the right.</p>
+<div class="ar-example">
+  <div class="tabbable tabs-right">
+    <ul class="nav tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#rA" role="tab" data-toggle="tab">Section 1</a></li>
+      <li role="presentation"><a href="#rB" role="tab" data-toggle="tab">Section 2</a></li>
+      <li role="presentation"><a href="#rC" role="tab" data-toggle="tab">Section 3</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="rA">
+        <p>I'm in Section A.</p>
+      </div>
+      <div class="tab-pane" id="rB">
+        <p>Howdy, I'm in Section B.</p>
+      </div>
+      <div class="tab-pane" id="rC">
+        <p>Hello there, this is Section C.</p>
+      </div>
+    </div>
+  </div> <!-- /tabbable -->
+</div>
+{% highlight html %}
+<div class="tabbable tabs-right">
+  ...
+</div>
+</ul>
+{% endhighlight %}
+
+
+    <h2 id="nav-dropdowns">Using dropdowns</h2>
+    <p>Add dropdown menus with a little extra HTML and the <a href="../javascript-base/#dropdowns">dropdowns JavaScript plugin</a>.</p>
+
+    <h3>Tabs with dropdowns</h3>
+    <div class="ar-example">
+  <ul class="nav tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Help</a></li>
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Dropdown <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li role="presentation"><a href="#">Action</a></li>
+        <li role="presentation"><a href="#">Another action</a></li>
+        <li role="presentation"><a href="#">Something else here</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a href="#">Separated link</a></li>
+      </ul>
+    </li>
+  </ul>
+    </div>
+{% highlight html %}
+<ul class="nav tabs" role="tablist">
+  ...
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Dropdown <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+      ...
+    </ul>
+  </li>
+  ...
+</ul>
+{% endhighlight %}
+
+    <h3>Pills with dropdowns</h3>
+    <div class="ar-example">
+      <ul class="nav pills" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Help</a></li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Dropdown <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a href="#">Action</a></li>
+            <li role="presentation"><a href="#">Another action</a></li>
+            <li role="presentation"><a href="#">Something else here</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /example -->
+{% highlight html %}
+<ul class="nav pills" role="tablist">
+  ...
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Dropdown <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+      ...
+    </ul>
+  </li>
+  ...
+</ul>
+{% endhighlight %}
+
+   <h2 id="nav-sub">Sub nav</h2>
+    <p>This simple sub nav is great for moving between different states of a page, and they're also handy for filters like these.</p>
+    <div class="ar-example">
+      <ul class="sub-nav">
+        <li class="nav-label">Filter:</li>
+        <li class="active"><a href="#">All</a></li>
+        <li><a href="#">Active</a></li>
+        <li><a href="#">Pending</a></li>
+        <li><a href="#">Suspended</a></li>
+      </ul>
+    </div>
+{% highlight html %}
+  <ul class="sub-nav">
+    <li class="nav-label">Filter:</li>
+    <li class="active"><a href="#">All</a></li>
+    <li><a href="#">Active</a></li>
+    <li><a href="#">Pending</a></li>
+    <li><a href="#">Suspended</a></li>
+  </ul>
+{% endhighlight %}
+  </div>

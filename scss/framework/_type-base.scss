@@ -1,0 +1,169 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 ($line-height-computed/2);
+  text-rendering: optimizeLegibility;
+}
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+  letter-spacing: $headings-kerning;
+  margin-top: ($line-height-computed / 4);
+  margin-bottom: ($line-height-computed / 4);
+  text-rendering: optimizeLegibility;
+
+  small,
+  .small {
+    font-family: $arrow-font-family-normal;
+    font-weight: $font-weight-base;
+    line-height: 1;
+    color: $headings-small-color;
+  }
+  
+  code {
+    font-size: 70%;
+  }
+}
+
+h1,
+h2,
+h3 {
+  small,
+  .small {
+    font-size: 60%;
+  }
+}
+h4,
+h5,
+h6 {
+  small,
+  .small {
+    font-size: 70%;
+  }
+}
+
+h1 { 
+  @include rem-fallback(font-size, $font-size-h1);
+  line-height: $line-height-h1-small;
+}
+h2 { @include rem-fallback(font-size, $font-size-h2); }
+h3 { @include rem-fallback(font-size, $font-size-h3); }
+h4 { @include rem-fallback(font-size, $font-size-h4); }
+h5 { @include rem-fallback(font-size, $font-size-h5); }
+h6 { @include rem-fallback(font-size, $font-size-h6); }
+
+@media (min-width: $breakpoint-md) {
+  h1 { 
+    @include rem-fallback(font-size, $font-size-h1-medium);
+    font-family: $arrow-font-family-normal;
+    font-weight: font-weight-base;
+    line-height: $line-height-h1-medium;
+  }
+  h2 { @include rem-fallback(font-size, $font-size-h2-medium); }
+  h3 { @include rem-fallback(font-size, $font-size-h3-medium); }
+  h4 { @include rem-fallback(font-size, $font-size-h4-medium); }
+}
+
+@media (min-width: $breakpoint-lg) {
+  h1 { 
+    @include rem-fallback(font-size, $font-size-h1-large); 
+    line-height: $line-height-h1-large;
+  }
+  h2 { @include rem-fallback(font-size, $font-size-h2-large); }
+  h3 { @include rem-fallback(font-size, $font-size-h3-large); }
+  h4 { @include rem-fallback(font-size, $font-size-h4-large); }
+}
+
+
+// Lists
+// -------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list.unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list.inline {
+  padding-left: 0;
+  list-style: none;
+  margin-left: em(-5);
+
+  > li {
+    display: inline-block;
+    padding-left: em(5);
+    padding-right: em(5);
+  }
+}
+
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: $line-height-computed;
+}
+dt,
+dd {
+  line-height: $line-height-base;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0; // Undo browser default
+}
+
+// Horizontal description lists
+// -------------------------------
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+.dl-horizontal {
+  dd {
+    @extend .clearfix; // Clear the floated `dt` if an empty `dd` is present
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    dt {
+      float: left;
+      width: ($component-offset-horizontal - 1.25em);
+      clear: left;
+      text-align: right;
+      @include ellipsis();
+    }
+    dd {
+      margin-left: $component-offset-horizontal;
+    }
+  }
+}
+
+// Emphasis (sensible defaults)
+// ------------------------------
+small, .small  { font-size: 85%; line-height: inherit; } // Address inconsistent and variable font size in all browsers. (nm v3.0.1)
+strong         { font-weight: $font-weight-bold; line-height: inherit; } // Address style set to `bolder` in Firefox 4+, Safari, and Chrome. (nm v3.0.1)
+em             { font-weight: italic; line-height: inherit; }

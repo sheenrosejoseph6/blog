@@ -1,0 +1,16 @@
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+
+[class*="block-grid-"] { @include block-grid; }
+
+@media only screen and (min-width: $site-min-width) {
+  @include block-grid-html-classes($size:sm,$include-spacing:false);
+}
+@media only screen and (min-width: $breakpoint-md) {
+  @include block-grid-html-classes($size:md,$include-spacing:false);
+}
+@media only screen and (min-width: $breakpoint-lg) {
+  @include block-grid-html-classes($size:lg,$include-spacing:false);
+}

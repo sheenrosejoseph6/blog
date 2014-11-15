@@ -1,32 +1,116 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset=utf-8 />
-  <title>  Local Storage Tutorial 2 |  HTML5 APP </title>
-  <link rel="stylesheet" href="/assets/css/style-jekyll.css" />
-  <link rel="stylesheet" href="/assets/css/prism.css" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Blog Framework">
+<meta name="author" content="Michael Bowlin">
 
-</head>
-<body>
- 
-  <div id="main">
- 
-    <header>
-      <h1> </h1>
-    <header>
- 
-    <nav role="navigation">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog/">Blog Posts</a></li>
-      </ul>
-    </nav>
- 
-    <h2 class="content">Local Storage Tutorial 2</h2>
+<title>
+  
+    Local Storage Tutorial 2 &middot; 5daily.io || Blog
+  
+</title>
 
-<img src="http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg">
 
-<div id="content">
+  <!-- Stylesheets -->
+  <link href="/dist/css/blog-base.css" rel="stylesheet">
+  <link href="/dist/css/blog-components.css" rel="stylesheet">
+<!--   <link href="/assets/css/docs.css" rel="stylesheet"> -->
+
+  <!-- Favicons -->
+  <link rel="../apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-precomposed.png">
+  <link rel="../shortcut icon" href="../assets/ico/favicon.ico">
+
+
+
+
+  <!-- Modernizr for touch detection and IE8 support of HTML5 elements
+       Keep this at the top for as long as you support IE8 -->
+<!-- 
+  <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+ -->
+
+<!-- App stuff -->
+<meta name="apple-mobile-web-app-title" content="Blog Framework">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Place anything custom after this. -->
+  </head>
+
+<!-- 
+  
+    <body id="top" class="animated fadeIn"> 
+  
+    <a class="sr-only sr-only-focusable" href="#content">Skip navigation</a> -->
+    
+<!--     
+        
+     -->
+              <div class="row" style="border:red solid 1px">
+  <div class="col xs-1" style="border:red solid 1px">1</div>
+  <div class="col xs-3" style="border:red solid 1px">3, last</div>
+</div>
+<div class="row">
+  <div class="col xs-4 sm-6" style="border:red solid 1px">asdf</div>
+  <div class="col xs-4 sm-6" style="border:red solid 1px">asd</div>
+</div>
+<div class="row">
+  <div class="col xs-2 md-8" style="border:red solid 1px">asdf</div>
+  <div class="col xs-2 md-4" style="border:red solid 1px">asd</div>
+</div>
+<div class="row">
+  <div class="col sm-3 md-2" style="border:red solid 1px">asdf</div>
+  <div class="col sm-9 md-10" style="border:red solid 1px">
+		<!-- Standard button -->
+		<button type="button" class="btn default">Default</button>
+
+		<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+		<button type="button" class="btn primary">Primary</button>
+
+		<!-- Indicates a successful or positive action -->
+		<button type="button" class="btn success">Success</button>
+
+		<!-- Contextual button for informational alert messages -->
+		<button type="button" class="btn info">Info</button>
+
+		<!-- Indicates caution should be taken with this action -->
+		<button type="button" class="btn warning">Warning</button>
+
+		<!-- Indicates a dangerous or potentially negative action -->
+		<button type="button" class="btn danger">Danger</button>
+
+		<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+		<button type="button" class="btn link">Link</button>
+
+  </div>
+</div>
+
+<h5>Simple switch</h5>
+<div class="switch">
+  <input id="exampleCheckboxSwitch" type="checkbox" />
+  <label for="exampleCheckboxSwitch"></label>
+</div>
+
+<h5>Radio switch - one switch changes the other</h5>
+<div class="switch small">
+  <input id="exampleRadioSwitch1" type="radio" checked="" name="testGroup" />
+  <label for="exampleRadioSwitch1"></label>
+</div>
+<div class="switch small">
+  <input id="exampleRadioSwitch2" type="radio" name="testGroup" />
+  <label for="exampleRadioSwitch2"></label>
+</div>
+
+<h5>Round switch</h5>
+<div class="switch round large">
+  <input id="exampleCheckboxSwitch2" type="checkbox" name="testGroup" />
+  <label for="exampleCheckboxSwitch2"></label>
+</div>
+
 <!--!!!!!!!!!!!!!!!!! PRISMjs need class language-css-->
 
 <h2 id="local-storage-tutorial">Local Storage Tutorial</h2>
@@ -449,46 +533,600 @@ $(document).ready(function(){
  	<p id="doClearAll"><a href="#"> Clear All </a></p>
  </div>
 
-</div> <!--/. content-->
 
- 
-    <footer>
-      <p>@copy; 5daily 2014-15 | All Rights Reserved. </p>
-    </footer>
- 
+<!--     <div class="wrapper">
+      
+      <div class="ar-docs-content" role="main">
+        <div class="ar-header">
+          <div class="ar-docs-container">
+            <h1>Local Storage Tutorial 2</h1>
+            <p></p> 
+          </div>
+        </div>
+        <div class="ar-docs-container" id="content">
+          <div class="row" style="border:red solid 1px">
+  <div class="col xs-1" style="border:red solid 1px">1</div>
+  <div class="col xs-3" style="border:red solid 1px">3, last</div>
+</div>
+<div class="row">
+  <div class="col xs-4 sm-6" style="border:red solid 1px">asdf</div>
+  <div class="col xs-4 sm-6" style="border:red solid 1px">asd</div>
+</div>
+<div class="row">
+  <div class="col xs-2 md-8" style="border:red solid 1px">asdf</div>
+  <div class="col xs-2 md-4" style="border:red solid 1px">asd</div>
+</div>
+<div class="row">
+  <div class="col sm-3 md-2" style="border:red solid 1px">asdf</div>
+  <div class="col sm-9 md-10" style="border:red solid 1px">
+		<!-- Standard button -->
+		<button type="button" class="btn default">Default</button>
+
+		<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+		<button type="button" class="btn primary">Primary</button>
+
+		<!-- Indicates a successful or positive action -->
+		<button type="button" class="btn success">Success</button>
+
+		<!-- Contextual button for informational alert messages -->
+		<button type="button" class="btn info">Info</button>
+
+		<!-- Indicates caution should be taken with this action -->
+		<button type="button" class="btn warning">Warning</button>
+
+		<!-- Indicates a dangerous or potentially negative action -->
+		<button type="button" class="btn danger">Danger</button>
+
+		<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+		<button type="button" class="btn link">Link</button>
+
   </div>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="/assets/js/prism.js"></script>
-  <script src="/assets/js/jquery.sortable.min.js"></script>
-  <script src="/assets/js/mySortable.js"></script>
+</div>
 
-<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
-<script>
-  $(document).ready(function(){
- 
-    var theList = document.getElementById('list2');
-    $("#saveAll").click(function(e) {
-      e.preventDefault();
-      localStorage.setItem('todoList', theList.innerHTML);
-    });
-    $("#clearAll").click(function(e) {
-      e.preventDefault();
-      localStorage.clear();
-      location.reload();
-    });
-    
-    loadToDo();
-    
-    function loadToDo() {
-      if ( localStorage.getItem('todoList') ) {
-      theList.innerHTML = localStorage.getItem('todoList'); 
-      }
-    }
-  });
- </script>
+<h5>Simple switch</h5>
+<div class="switch">
+  <input id="exampleCheckboxSwitch" type="checkbox" />
+  <label for="exampleCheckboxSwitch"></label>
+</div>
 
-<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+<h5>Radio switch - one switch changes the other</h5>
+<div class="switch small">
+  <input id="exampleRadioSwitch1" type="radio" checked="" name="testGroup" />
+  <label for="exampleRadioSwitch1"></label>
+</div>
+<div class="switch small">
+  <input id="exampleRadioSwitch2" type="radio" name="testGroup" />
+  <label for="exampleRadioSwitch2"></label>
+</div>
+
+<h5>Round switch</h5>
+<div class="switch round large">
+  <input id="exampleCheckboxSwitch2" type="checkbox" name="testGroup" />
+  <label for="exampleCheckboxSwitch2"></label>
+</div>
+
+<!--!!!!!!!!!!!!!!!!! PRISMjs need class language-css-->
+
+<h2 id="local-storage-tutorial">Local Storage Tutorial</h2>
+
+<blockquote>
+  <p>HTML 5 technologies used:</p>
+
+  <ul>
+    <li><a href="#contenteditable-overview">Contenteditable</a></li>
+    <li><a href="#local-storage-overview">Local Storage</a> </li>
+    <li><a href="#drag-and-drop-overview">Drag and Drop</a>
+      <ul>
+        <li><i style="font-size:10px;">based on Advanced To-Do List with Joseph Lowery</i></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<!--
+	*
+	*
+	*	Contenteditable Overview
+	*
+	*
+-->
+
+<h2 id="contenteditable-overview">Contenteditable Overview</h2>
+
+<ul>
+  <li>makes any page area editable in the browser</li>
+  <li>single attribute: contenteditable
+    <ul>
+      <li>“true”</li>
+      <li>“false”</li>
+      <li>“inherit”</li>
+    </ul>
+  </li>
+  <li>Browser support
+    <ul>
+      <li><a href="http://caniuse.com/#search=contenteditable">Current support - Caniuse.com </a></li>
+    </ul>
+  </li>
+  <li>Making content editable
+    <ul>
+      <li>To make content editable to any element in an HTML document you simply need to add the contentediable attribute:</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Code Snippet -->
+<pre><code>&lt;div id="container"&gt;
+	&lt;ul id="list" contenteditable&gt;
+		&lt;li&gt;Item 1&lt;/li&gt;
+		&lt;li&gt;Item 2&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+<!-- CodePen -->
+<p data-height="204" data-theme-id="10000" data-slug-hash="RNwMeJ" data-default-tab="result" data-user="5daily" class="codepen">See the Pen <a href="http://codepen.io/5daily/pen/RNwMeJ/">HTML5 - contenteditable example</a> by 5daily (<a href="http://codepen.io/5daily">@5daily</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<!--
+	*
+	*
+	*	Local Storage Overview
+	*
+	*
+-->
+
+<h2 id="local-storage-overview">Local Storage Overview</h2>
+
+<ul>
+  <li>Simple and brings the concept of “state” to websites without server-side coding.
+    <ul>
+      <li>Local Storage vs. Cookies
+        <ul>
+          <li>Unlike cookie, it is stored in the browser</li>
+          <li>5 MB limit vs. 4kb for cookie</li>
+        </ul>
+      </li>
+      <li>Uses simple name/value pair structure (string only)
+        <ul>
+          <li>Two simple commands:
+            <ul>
+              <li>Set Item
+                <ul>
+                  <li>localStorage.setItem(“ItemName”, “ItemValue”);</li>
+                </ul>
+              </li>
+              <li>Get Item
+                <ul>
+                  <li>localStorage.getItem(“ItemName”);</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="http://caniuse.com/#search=web%20storage">Current support - Caniuse.com </a>	</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Code Snippet -->
+<p>HTML code:</p>
+
+<pre><code>&lt;div id="container"&gt;
+	&lt;ul id="list2" contenteditable&gt;
+		&lt;li&gt;Item 1&lt;/li&gt;
+		&lt;li&gt;Item 2&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;p&gt;&lt;a href=javascript.void(); id="saveAll"&gt; Save All &lt;/a&gt;&lt;/p&gt;
+	&lt;p&gt;&lt;a href=javascript.void(); id="clearAll"&gt; Clear All &lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<!-- Code Snippet -->
+<p>Javascript code:</p>
+
+<pre><code>&lt;script&gt;
+	$(document).ready(function(){
+		var theList = document.getElementById('list2');
+		$('#saveAll').click(function(e){
+			e.preventDefault();
+			// set item (todoList) and put in theList
+			localStorage.setItem('todoList', theList.innerHTML);
+		});
+		$('#clearAll').click(function(e){
+			e.preventDefault();
+			// clear all the items
+			localStorage.clear();
+			// reload the page
+			location.reload();
+		});
+
+		// Bring in local storage items when page loads
+		loadToDo();
+
+		function loadToDo(){
+			// only load in entries if they exist
+			if(localStorage.getItem('todoList')) {
+
+				theList.innerHTML = localStorage.getItem('todoList');
+			}
+		}
+	});
+&lt;/script&gt;
+</code></pre>
+
+<!-- 
+	Above code in practice
+	script lives in default.html
+ -->
+
+<div id="container">
+    <ul id="list2" contenteditable="">
+      <li>Enjoy life :)</li>
+    </ul>
+  <p>
+  	<a href="#" id="saveAll">Save All</a>
+  	<a href="#" id="clearAll">Clear All</a></p>
+</div>
+
+<!--
+	*
+	*
+	*	Drag and Drop Overview
+	*
+	*
+-->
+
+<h2 id="drag-and-drop-overview">Drag and Drop Overview</h2>
+
+<ul>
+  <li>HTML5 Attribute
+    <ul>
+      <li>One attribute called draggable.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code>&lt;div id="" class="" draggable="true"&gt;&lt;/div&gt;
+</code></pre>
+<ul>
+  <li>Javascript API
+    <ul>
+      <li>Seven JS Events
+        <ul>
+          <li>dragstart();</li>
+          <li>drag();</li>
+          <li>dragover();</li>
+          <li>dragenter();</li>
+          <li>dragleave();</li>
+          <li>dragenter();</li>
+          <li>drop();</li>
+        </ul>
+      </li>
+      <li>Data Transfer (key related object)
+        <ul>
+          <li>dataTransfer
+      * used to drag the data from a dragged object
+            <ul>
+              <li>Set: in the dragstart() event</li>
+              <li>Put: in the drop() event</li>
+            </ul>
+          </li>
+          <li><a href="http://caniuse.com/#search=drag%20and%20drop">Current support - Caniuse.com </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Code Snippet -->
+<p>HTML code:</p>
+
+<pre><code> &lt;div id="drag-container"&gt;
+ 	&lt;form name="form1" method="post" action=""&gt;
+	 	&lt;input type="text" name="toDoItem" id="toDoItem" autofocus&gt;&lt;/input&gt;
+	 	&lt;input type="button" name="addToDo" id="addToDo" value="Add List Item"&gt;&lt;/input&gt;
+ 	&lt;/form&gt;
+ 	&lt;ul id="theList" class="sortable list"&gt;
+ 	&lt;/ul&gt;
+ 	&lt;p id="doClearAll"&gt;&lt;a href="#"&gt; Clear All &lt;/a&gt;&lt;/p&gt;
+ &lt;/div&gt;
+
+&lt;!-- 
+ !!! Need to also add html5 sortable plugin
+	this is a lighter version of the jQueryUI sortable
+	&lt;script src="/assets/js/jquery.sortable.min.js"&gt;&lt;/script&gt;
+ !!! add mySortable.js
+ 	** detailed notes in file
+	&lt;script src="/assets/js/mySortable.js"&gt;&lt;/script&gt;
+--&gt;
+</code></pre>
+
+<!-- Code Snippet -->
+<p>Javascript code: mySortable.js</p>
+
+<pre><code>&lt;script&gt;
+$(document).ready(function(){
+	// holds the code for the new list item
+	var newListItem; 
+	// flag to determine if we've done a list or not
+	var newList = true;
+	var theList = document.getElementById('theList');
+
+	$('#addToDo').on('click', function(e){
+		e.preventDefault();
+		// is this the first time a new list item has been added by checking the flag
+		if (newList == true){
+			// get the value from the input feild
+			var theValue = $("#toDoItem").val();
+			// build up list item code
+			// !!! we're using the input tag instead of the contenteditable due to conflict
+			// in the current webkit browsers
+			newListItem = '&lt;li&gt;&lt;span class="handle"&gt; :: &lt;/span&gt; &lt;input class="listItem" value="' + theValue + '"&gt;&lt;a class="removeListItem" style="display:none;" href="#"&gt; X &lt;/a&gt; &lt;/li&gt;';
+			newList = false;
+		} else {
+			var theValue = $("#toDoItem").val();
+			// clone the last item in the list 
+			// substitute it's value with what the user input
+			newListItem = $('#theList li:last').clone();
+			newListItem.find('input').attr('value', theValue);
+		}
+
+		// determine if showing the clearall link
+		// it's hidden when there is just one list item
+		var theCount = $("#theList li").length + 1;
+		if(theCount &gt; 1) {
+			$('#doClearAll').css('display','block');
+		}
+
+		// add new item
+		$('#theList').append(newListItem);
+
+		// house-keeping
+
+		// clear the value the user put in to the newListItem
+		$('#toDoItem').val('');
+		// reset it's focus
+		$('#toDoItem').focus();
+		// bring sortable library in
+		$('.sortable').sortable('destroy');
+		// target span to act as our handle
+		$('.sortable').sortable({
+			handle: '.handle'
+		});
+
+		// LOCAL STORAGE (this step is repeated)
+		localStorage.setItem('todoListPlus',theList.innerHTML);
+	});
+
+	// if user clicks return
+	$('input[type="text"]').on('keydown', function(e){
+		// charCode is Character Code
+		// Ternary Operator
+		var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+
+		if(key == 13) {
+			// stop it from it's normal focusing
+			e.preventDefault();
+			// put the focus on the input feild
+			var inputs = $(this).closest('form').find(':input:visible');
+			// set the focus. + 1 moves it out one
+			inputs.eq( inputs.index(this) + 1).focus();
+		}
+	});
+
+	// handle and edits that are made to the list items
+	// look for a change event on the .listitem which is inside the list
+
+	// set up event handler -- #theList is our ul tag
+	$('#theList').on('change', '.listItem', function(){
+		// pick up the just entered current value
+		currentValue = $(this).val();
+		// doing it this way to ensure that the DOM is changed
+		// instead of just using the jQuery val property
+		// critical for saving our list later
+		$(this).attr('value', currentValue);
+
+		// LOCAL STORAGE (this step is repeated)
+		localStorage.setItem('todoListPlus',theList.innerHTML);
+	});
+
+	// create an empty function that checks to see if the list has been resorted
+	// need for automatically saving our list
+	// HTML5 sortable plugin makes it easy
+	$('.sortable').sortable().bind('sortupdate', function(){
+		// LOCAL STORAGE (this step is repeated)
+		localStorage.setItem('todoListPlus',theList.innerHTML)
+	});
+
+	// add the functionality to remove list items one at a time
+
+	// 1) show the red x when a user hovers
+	$('#theList').on('mouseover','li',function(){
+		var $thisA = $(this).find('a');
+		$thisA.css('display','block');
+
+	});
+	// 2) Hide hover out
+	$('#theList').on('mouseout','li',function(){
+		var $thisA = $(this).find('a');
+		$thisA.css('display','none');
+		
+	});
+	// 3) Delete the li when the x is clicked
+	$('#theList').on('click','.removeListItem', function(e){
+		e.preventDefault();
+		$(this).parent().remove();
+
+		// LOCAL STORAGE (this step is repeated)
+		localStorage.setItem('todoListPlus',theList.innerHTML)
+	});
+
+	// clear all link
+	// #doClearAll assigned to p tag that's holding link
+	$('#doClearAll').on('click','#clearAll', function(){
+		e.preventDefault();
+		// remove all childen of the list
+		$('#thisList').childen().remove();
+
+		// House-keeping
+		newList = true;
+		// reset flag to true
+		$('#toDoItem').val();
+		$('#doClearAll').css('display','none');
+		// reset the focus to input feild
+		$('#toDoItem').focus();
+
+		// LOCAL STORAGE (this step is repeated)
+		localStorage.setItem('todoListPlus',theList.innerHTML)
+	});
+
+	// on page load retrive all of the list items
+	loadToDo();
+
+	function loadToDo() {
+		// if our local storage exists: get it and set it to the innerHTML of the list
+		if(localStorage.getItem('todoListPlus')) {
+			theList.innerHTML = localStorage.getItem('todoListPlus');
+		
+			// house-keeping
+
+			// bring sortable library in
+			$('.sortable').sortable('destroy');
+			// target span to act as our handle
+			$('.sortable').sortable({
+				handle: '.handle'
+			});
+
+			// determine if showing the clearall link
+			// it's hidden when there is just one list item
+			var theCount = $("#theList li").length + 1;
+			if(theCount &gt; 1) {
+				$('#doClearAll').css('display','block');
+			}
+
+		}
+	}
+
+});
+
+&lt;/script&gt;
+</code></pre>
+
+<!-- 
+	Above code in practice
+	script lives in default.html
+ -->
+<div id="drag-container">
+ 	<form name="form1" method="post" action="">
+	 	<input type="text" name="toDoItem" id="toDoItem" autofocus="" />
+	 	<input type="button" name="addToDo" id="addToDo" value="Add List Item" />
+ 	</form>
+ 	<ul id="theList" class="sortable list">
+ 	</ul>
+ 	<p id="doClearAll"><a href="#"> Clear All </a></p>
+ </div>
+
+        </div>
+      </div>
+      <footer class="ar-footer" role="contentinfo">
+  <section class="colophon">
+    <img class="five-years-logo" width="213" height="40" alt="" />
+        
+    <ul class="list inline">
+      <li>Framework v0.1.0</li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog">GitHub</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog/issues?state=open">Issues</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog/releases">Releases</a></li>
+    </ul>
+  </section>
+  <section class="copyright-info">
+    <p class="copyright">&copy; 2014 - 2016 5daily, Inc. All Rights Reserved</p>
+    <ul class="footer-links">
+      <li><a href=" ">Contact Us</a></li>
+      <li><a href=" ">Privacy Policy</a></li>
+      <li><a href=" ">Terms of Use</a></li>
+    </ul>
+  </section>
+</footer>
 
 
-</body>
+<!-- JavaScript
+================================================== -->
+
+<script src="https://apex.oracle.com/i/libraries/apex/minified/desktop_all.min.js?v=4.2.5.00.08"></script>
+<script src="https://apex.oracle.com/i/libraries/apex/minified/legacy.min.js?v=4.2.5.00.08"></script>
+
+
+<!-- IE8 support
+     Includes Selectivizr, Respond.js and IE8 Resposive File Warning -->
+<!--[if lt IE 9]>
+<script src="../assets/js/ie/selectivizr-1.0.2.min.js"></script>
+<script src="../assets/js/ie/respond-1.4.2.min.js"></script>
+<script src="../assets/js/ie/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+
+<!-- Docs min Javascript
+     Includes jQuery 1.11.1, Holder 2.4.0, Zero Clipboard 1.3.5 and the application JS -->
+<!-- <script src="../assets/js/docs.min.js"></script> -->
+<!-- More IE stuff:
+     Includes IE10 Grayscale fix, emulation modes warning & viewport hacks for Surface/desktop Windows 8 bug -->
+<!--[if IE]>
+<script src="../assets/js/docs-ie.js"></script>
+<![endif]-->
+
+
+    </div> --> <!-- /.wrapper -->
+    <footer class="ar-footer" role="contentinfo">
+  <section class="colophon">
+    <img class="five-years-logo" width="213" height="40" alt="  Out" src="data:image/png;base64,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" />
+        
+    <ul class="list inline">
+      <li>Framework v0.1.0</li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog">GitHub</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog/issues?state=open">Issues</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="https://github.com/michaelbowlin/blog/releases">Releases</a></li>
+    </ul>
+  </section>
+  <section class="copyright-info">
+    <p class="copyright"> </p>
+    <ul class="footer-links">
+
+    </ul>
+  </section>
+</footer>
+
+
+<!-- JavaScript
+================================================== -->
+
+<script src="https://apex.oracle.com/i/libraries/apex/minified/desktop_all.min.js?v=4.2.5.00.08"></script>
+<script src="https://apex.oracle.com/i/libraries/apex/minified/legacy.min.js?v=4.2.5.00.08"></script>
+
+
+<!-- IE8 support
+     Includes Selectivizr, Respond.js and IE8 Resposive File Warning -->
+<!--[if lt IE 9]>
+<script src="../assets/js/ie/selectivizr-1.0.2.min.js"></script>
+<script src="../assets/js/ie/respond-1.4.2.min.js"></script>
+<script src="../assets/js/ie/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+
+<!-- Docs min Javascript
+     Includes jQuery 1.11.1, Holder 2.4.0, Zero Clipboard 1.3.5 and the application JS -->
+<!-- <script src="../assets/js/docs.min.js"></script> -->
+<!-- More IE stuff:
+     Includes IE10 Grayscale fix, emulation modes warning & viewport hacks for Surface/desktop Windows 8 bug -->
+<!--[if IE]>
+<script src="../assets/js/docs-ie.js"></script>
+<![endif]-->
+
+
+  </body>
 </html>

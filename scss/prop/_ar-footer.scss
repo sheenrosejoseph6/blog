@@ -1,0 +1,67 @@
+// Arrow Universal Footer
+//
+// Separated section of content at the bottom of all pages, save the homepage.
+
+.ar-footer {
+  position: relative;
+  padding: 2em 0 4em;
+  border-top: 1px solid $border-color;
+  color: $gray-lightest;
+  background: #000;
+  text-align: center;
+  font-size: $font-size-small;
+  @media (min-width: $breakpoint-md) {
+    padding: 2em 4em 3em;
+    text-align: left;
+  }
+  &.fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+.colophon {
+  .five-years-logo {
+    display: inline-block;
+    margin-bottom: .5em;
+  }
+}
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    padding: 0 .5em;
+  }
+  a {
+    color: $gray-lighter;
+    &:hover {
+      text-decoration: underline;
+      color: $gray-faint;
+    }
+  }
+}
+.copyright-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: .5em 1em;
+  font-size: 85%;
+  background: $gray-dark;
+  color: $gray-lighter;
+  ul, p { margin-bottom: 0; }
+  .copyright {
+    margin-bottom: .25em;
+  }
+  @media (min-width: $breakpoint-md) {
+    padding: .5em 4.6em;
+    .copyright { float: left; margin-bottom: 0;}
+    .footer-links {
+      margin-left: -.5em;
+      float: right;
+    }
+  }
+}

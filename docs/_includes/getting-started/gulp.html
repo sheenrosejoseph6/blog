@@ -1,0 +1,352 @@
+ <div class="ar-docs-section">
+    <h1 id="gulp" class="page-header">Compliation with Gulp.js</h1>
+    <p class="lead">
+    The Arrow framework uses Gulp, a task runner which uses Node.js, as a way of compiling not only SASS but also creating documentation, compiling distribution folders and compressing Javascript and image files. The following is a primer on Gulp, but more information can be found at <a href="http://gulpjs.com/">Gulp's offical site</a>.</p>
+    <h3 id="gulp-basics">Gulp basics</h3>
+    <p>The most important Gulp concept is streams. Think of your files passing through a pipe; at one or more points along that pipe, an action is taken. For example, we could insert all our JavaScript files into a scripts pipe which:</p>
+    <ul>
+      <li>Concatenates files into one</li>
+      <li>Removes console and debugger statements</li>
+      <li>Minifies the code</li>
+      <li>Puts the resulting file in a specific location</li>
+    </ul>
+    <h3 id="gulp-installation">Installing Gulp</h3>
+    <h4>Step 1: Install Node.js</h4>
+    <p>Node.js can be downloaded for Windows, Mac and Linux at <a href="http://nodejs.org/download/">nodejs.org/download/</a>. You can also install it from the command line using a package manager.</p>
+    <p>Once installed, open a command prompt and enter:</p>
+{% highlight bash %}
+node -v
+{% endhighlight %}
+    <p>The installed Node.js version number will be displayed. You can do the same for <strong>npm</strong> — the Node.js package manager which is used to install modules.</p>
+{% highlight bash %}
+npm -v
+{% endhighlight %}
+    <h4>Step 2: Install Gulp</h4>
+    <p>We can now install Gulp using the <code>npm</code> command. We’ll add a <code>-g</code> flag to ensure Gulp is available globally for any project:</p>
+{% highlight bash %}
+npm install gulp -g
+{% endhighlight %}
+    <p>If you’re using Mac or Linux, you may need to prepend <code>sudo</code> to the start of this command to grant administrator access, i.e.</p>
+{% highlight bash %}
+sudo npm install gulp -g
+{% endhighlight %}
+    <p>Verify that Gulp has installed the following command:</p>
+{% highlight bash %}
+gulp -v
+{% endhighlight %}
+    <h3 id="gulp-usage">Using Gulp</h3>
+    <p>For this example, our project files will be contained in a folder named <code>test/</code>. Navigate to this folder from the command line, e.g.</p>
+{% highlight bash %}
+cd test
+{% endhighlight %}
+    <p>Our test folder contains the following sub-folders:</p>
+    <ul>
+      <li><code>src</code> The location of pre-processed HTML source files and folders:</li>
+        <ul>
+          <li><code>images</code> Uncompressed images</li>
+          <li><code>scripts</code> Multiple pre-processed Javascript files</li>
+          <li><code>styles</code> Multiple pre-processed CSS files</li>
+        </ul>
+      <li><code>build</code> The location of production files for upload including:</li>
+        <ul>
+          <li><code>images</code> Compressed images</li>
+          <li><code>scripts</code> A single minified Javascript file</li>
+          <li><code>styles</code> A single minified CSS file</li>
+        </ul>
+    </ul>
+    <p>First, we must install Gulp locally:</p>
+{% highlight bash %}
+npm install gulp --save-dev
+{% endhighlight %}
+    <p>This will create a <code>node_modules/</code> folder within test where Gulp and plug-in code resides.</p>
+    <p>Finally, create an empty <code>gulpfile.js</code> configuration file within the test folder. This is used to define our tasks.</p>
+    <h4>Install your first plug-in</h4>
+    <p>Gulp won’t do much on it’s own — we need to install and configure plug-ins to perform specific tasks. First, let’s check the quality of our JavaScript source files using <code>jshint</code>. Install the plug-in from the command-line:</p>
+{% highlight bash %}
+npm install gulp-jshint --save-dev
+{% endhighlight %}
+    <p>Open your <code>gulpfile.js</code> configuration file in a text editor and add the following JavaScript code:</p>
+{% highlight bash %}
+// include gulp
+var gulp = require('gulp'); 
+
+// include plug-ins
+var jshint = require('gulp-jshint');
+
+// JS hint task
+gulp.task('jshint', function() {
+  gulp.src('./src/scripts/*.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
+});
+{% endhighlight %}
+
+    <p>This performs the following operations:</p>
+    <ul>
+      <li>Includes Gulp.js</li>
+      <li>The <code>gulp-jshint</code> plug-in is included as an object named <code>jshint</code>.</li>
+      <li>A new Gulp task named <code>jshint</code> is defined. This pipes all scripts in the <code>src/scripts/</code> folder to the <code>jshint</code> object and outputs errors to the console.</li>
+    </ul>
+
+    <p>Save <code>gulpfile.js</code> and run this task from the command line using:</p>
+
+{% highlight bash %}
+gulp jshint
+{% endhighlight %}
+
+    <h4>Add other tasks</h4>
+    <p>We’ll look for new or changed image files in <code>src/images/</code>, compress them and output to build/images. For this, we’ll need to install the <code>gulp-changed</code> and <code>gulp-imagemin</code> plug-ins:</p>
+
+{% highlight bash %}
+npm install gulp-changed --save-dev
+npm install gulp-imagemin --save-dev
+{% endhighlight %}
+
+    <p>Next, add them as dependencies to the top of our <code>gulpfile.js</code> configuration file:</p>
+
+{% highlight bash %}
+var changed = require('gulp-changed');
+var imagemin = require('gulp-imagemin');
+{% endhighlight %}
+
+    <p>And, create a new Gulp task to do the hard work:</p>
+
+{% highlight bash %}
+ // minify new images
+gulp.task('imagemin', function() {
+var imgSrc = './src/images/**/*',
+    imgDst = './build/images';
+    gulp.src(imgSrc)
+      .pipe(changed(imgDst))
+      .pipe(imagemin())
+      .pipe(gulp.dest(imgDst));
+  });
+{% endhighlight %}
+
+    <p>Save <code>gulpfile.js</code>, then enter the following command:</p>
+
+{% highlight bash %}
+gulp imagemin
+{% endhighlight %}
+
+    <p>The images are compressed, copied to the build folder, and savings are reported.</p>
+    <p>Similarly, we can minify all HTML files in the root of src using the <code>gulp-minify-html</code> plug-in:</p>
+{% highlight bash %}
+npm install gulp-minify-html --save-dev
+{% endhighlight %}
+
+    <p>Then, add a <code>htmlpage</code> task to <code>gulpfile.js</code></p>
+{% highlight bash %}
+// include plug-ins
+var minifyHTML = require('gulp-minify-html');
+
+// minify new or changed HTML pages
+gulp.task('htmlpage', function() {
+   var htmlSrc = './src/*.html',
+       htmlDst = './build';
+
+gulp.src(htmlSrc)
+      .pipe(changed(htmlDst))
+      .pipe(minifyHTML())
+      .pipe(gulp.dest(htmlDst));
+});
+{% endhighlight %}
+
+    <p>Save <code>gulpfile.js</code>, then test HTML compression using:</p>
+
+{% highlight bash %}
+gulp htmlpage
+{% endhighlight %}
+
+    <h3 id="gulp-compile">Compiling Javascript and CSS</h3>
+    <p>Let’s build our production JavaScript by concatenating all source files, stripping console and debugger statements, and ripping out whitespace using the plug-ins:</p>
+
+{% highlight bash %}
+npm install gulp-concat --save-dev 
+npm install gulp-strip-debug --save-dev 
+npm install gulp-uglify --save-dev
+{% endhighlight %}
+
+    <p>A scripts task can then be added to gulpfile.js:</p>
+
+{% highlight bash %}
+// include plug-ins
+var concat = require('gulp-concat');
+var stripDebug = require('gulp-strip-debug');
+var uglify = require('gulp-uglify');
+
+// JS concat, strip debugging and minify
+gulp.task('scripts', function() {
+  gulp.src(['./src/scripts/lib.js','./src/scripts/*.js'])
+   .pipe(concat('script.js'))
+   .pipe(stripDebug())
+   .pipe(uglify())
+   .pipe(gulp.dest('./build/scripts/'));
+});
+{% endhighlight %}
+
+    <p>This example passes an array of filenames to <code>gulp.src()</code>; we want <code>lib.js</code> to appear at the top of the production file followed by all other JavaScript files in any order. As usual, we can run this task using:</p>
+
+{% highlight bash %}
+gulp scripts
+{% endhighlight %}
+
+    <p>Finally, let’s complete our operations by concatenating the CSS files, adding any required vendor prefixes, and minifying with the following plug-ins:</p>
+
+{% highlight bash %}
+npm install gulp-autoprefixer --save-dev 
+npm install gulp-minify-css --save-dev 
+{% endhighlight %}
+
+    <p>Update <code>gulpfile.js</code></p>
+
+{% highlight bash %}
+// include plug-ins
+var autoprefix = require('gulp-autoprefixer');
+var minifyCSS = require('gulp-minify-css');
+
+// CSS concat, auto-prefix and minify
+gulp.task('styles', function() {
+gulp.src(['./src/styles/*.css'])
+  .pipe(concat('styles.css'))
+  .pipe(autoprefix('last 2 versions'))
+  .pipe(minifyCSS())
+  .pipe(gulp.dest('./build/styles/'));
+});
+{% endhighlight %}
+
+    <p>And run the task:</p>
+
+{% highlight bash %}
+gulp styles
+{% endhighlight %}
+
+    <p>The <code>autoprefixer</code> plug-in is passed a string or array indicating the level of browser support — in this case, we want the current and previous versions of all mainstream browsers.</p>
+
+    <h3 id="gulp-automate">Automate Tasks</h3>
+
+    <p>Until now we’ve been running one task at a time from the command line. Fortunately, Gulp allows us to create a default task and run any number of dependent sub-tasks. Add this function to the end of <code>gulpfile.js</code></p>
+
+{% highlight bash %}
+// default gulp task
+gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles'], function() {
+});
+{% endhighlight %}
+
+    <p>Then, type the following command at the command prompt:</p>
+
+{% highlight bash %}
+gulp
+{% endhighlight %}
+
+    <p>All four tasks are now run in sequence. Gulp can monitor your source files using the <code>watch</code> method, then run an appropriate task when a file change is made. We can update the default task to autoupdate our HTML, CSS and JavaScript files:</p>
+
+{% highlight bash %}
+// default gulp task
+gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles'], function() {
+// watch for HTML changes
+gulp.watch('./src/*.html', function() {
+gulp.run('htmlpage');
+});
+
+// watch for JS changes
+gulp.watch('./src/scripts/*.js', function() {
+ gulp.run('jshint', 'scripts');
+});
+
+// watch for CSS changes
+gulp.watch('./src/styles/*.css', function() {
+ gulp.run('styles');
+});
+});
+{% endhighlight %}
+
+  <p>When we now run <code>gulp</code> the process will remain active and react to your file changes. You won’t need to type it again. Press <kbd>Ctrl+C</kbd> to abort monitoring and return to the command line.</p>
+
+    <h3 id="gulp-plugins">More plugins</h3>
+    <p> You can find many more Gulp plug-ins at <a href="https://www.npmjs.org/">npmjs.org</a>. Others of interest include:</p>
+    <h4><a href="https://www.npmjs.org/package/gulp-ruby-sass">Gulp-Ruby-Sass</a> A Node.js version of the CSS pre-processor.</h4>
+{% highlight bash %}
+npm install gulp-sass
+{% endhighlight %}
+    <h4>Usage</h4>
+{% highlight bash %}
+var gulp = require('gulp');
+var sass = require('gulp-sass')
+
+gulp.task('sass', function () {
+gulp.src('./scss/*.scss')
+  .pipe(sass())
+  .pipe(gulp.dest('./css'));
+});
+{% endhighlight %}
+    <p>Options passed as a hash into <code>sass()</code> will be passed along to node-sass.</p>
+    
+    <h4><a href="https://www.npmjs.org/package/gulp-clean">Gulp-Clean</a> Removes unnecessary files and folders.</h4>
+{% highlight bash %}
+npm install --save-dev gulp-clean
+{% endhighlight %}
+
+    <h4>Examples</h4>
+{% highlight bash %}
+var gulp = require('gulp');
+var clean = require('gulp-clean');
+
+gulp.task('default', function () {
+return gulp.src('app/tmp', {read: false})
+          .pipe(clean());
+});
+{% endhighlight %}
+
+    <p>Option <code>read:false</code> prevents Gulp from reading the contents of the file and makes this task a lot faster. If you need the file and its contents after cleaning in the same stream, do not set the <code>read</code> option to <code>false</code>.</p>
+
+{% highlight bash %}
+var gulp = require('gulp');
+var clean = require('gulp-clean');
+
+gulp.task('default', function () {
+return gulp.src('app/tmp/index.js')
+          .pipe(clean({force: true}))
+          .pipe(gulp.dest('dist'));
+});
+{% endhighlight %}
+</div>
+
+    <p>For safety files and folders outside the current working directory can be removed only with option <code>force</code> set to <code>true</code>.</p>
+
+{% highlight bash %}
+var gulp = require('gulp');
+var clean = require('gulp-clean');
+
+gulp.task('clean-scripts', function () {
+return gulp.src('app/tmp/*.js', {read: false})
+         .pipe(clean());
+});
+
+gulp.task('scripts', ['clean-scripts'], function () {
+gulp.src('app/scripts/*.js')
+  .pipe(gulp.dest('app/tmp'));
+});
+
+gulp.task('default', ['scripts']);
+{% endhighlight %}
+
+    <p>Make sure to return the stream so that Gulp knows the <code>clean</code> task is asynchronous and waits for it to terminate before starting the dependent one.</p>
+
+    <h4><a href="https://www.npmjs.org/package/gulp-size">Gulp-Size</a> Log file and project file savings.</h4>
+{% highlight bash %}
+npm install --save-dev gulp-size
+{% endhighlight %}
+
+    <h4>Usage</h4>
+
+{% highlight bash %}
+var gulp = require('gulp');
+var size = require('gulp-size');
+
+gulp.task('default', function () {
+return gulp.src('fixture.js')
+         .pipe(size())
+         .pipe(gulp.dest('dist'));
+});
+{% endhighlight %}
