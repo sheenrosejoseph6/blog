@@ -1,6 +1,7 @@
 ---
 layout: default-style
 title: UI/UX
+category: ui/ux
 ---
 
 <h2>UI/UX</h2>
@@ -10,3 +11,18 @@ title: UI/UX
 </section>
 
  
+<ul class="entries">
+	{% for uiux in site.categories.uiux %}
+
+	<li>
+		<a href="{{ uiux.url }}">
+			<img src="{{ uiux.image }}"/>
+			<h3>{{ uiux.title }}</h3>
+		</a>
+	</li>
+
+	{% endfor %}
+</ul>
+
+
+
