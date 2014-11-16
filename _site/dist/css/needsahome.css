@@ -55,3 +55,10 @@ pre[class*="language-"] {
   background: none;
   padding-bottom:190px;
    }
+
+#side-nav .sub-nav ul {
+  margin-top:44px;
+}
+#side-nav .sub-nav li {
+  border-left: #666 solid 2px;
+}
