@@ -2,6 +2,7 @@
 layout: default-style
 title: Local Storage Tutorial 2
 image: http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg
+category: html5
 ---
 
 <!--!!!!!!!!!!!!!!!!! PRISMjs need class language-css-->
@@ -380,3 +381,21 @@ $(document).ready(function(){
  	</ul>
  	<p id="doClearAll"><a href="#"> Clear All </a></p>
  </div>
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+{% if page.previous %}
+	<a rel="prev" href="{{ page.previous.url }}" Older</a>
+	{% endif %}
+	{% if page.next %}
+	<a rel="next" href="{{ page.next.url }}" Newer</a>
+	{% endif %}
+</div>
+
+
+
+
+

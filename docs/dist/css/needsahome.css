@@ -50,3 +50,8 @@ pre[class*="language-"] {
   border-left: #ccfe04 solid 4px;
   margin-bottom:30px;
 }
+.ar-footer {
+  border:none;
+  background: none;
+  padding-bottom:190px;
+   }
