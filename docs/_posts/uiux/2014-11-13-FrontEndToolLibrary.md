@@ -2,6 +2,7 @@
 layout: blog
 title: UI Asset Pipeline
 image: /assets/img/pipeline.png
+category: uiux
 ---
 
 

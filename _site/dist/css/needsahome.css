@@ -61,4 +61,5 @@ pre[class*="language-"] {
 }
 #side-nav .sub-nav li {
   border-left: #666 solid 2px;
+  margin: 0 0 0 9px;
 }
