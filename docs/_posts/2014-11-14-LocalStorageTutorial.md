@@ -370,6 +370,7 @@ $(document).ready(function(){
 	Above code in practice
 	script lives in default.html
  -->
+ <h2>DEMO </h2>
  <div id="drag-container">
  	<form name="form1" method="post" action="">
 	 	<input type="text" name="toDoItem" id="toDoItem" autofocus></input>
