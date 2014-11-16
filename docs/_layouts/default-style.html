@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include header.html %}
+    <!-- Place anything custom after this. -->
+  </head>
+  <body>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col md-12">
+      <div class="row">
+        <!-- HEADER -->
+        <div class="col xs-2 sm-2 md-2" id="side-nav">
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/html5">HTML5</a></li>
+            <li><a href="/css3">CSS3</a></li>
+            <li><a href="/javascript">JAVASCRIPT</a></li>
+            <li><a href="/uiux">UI/UX</a></li>
+          </ul>   
+        </div>
+        <div class="col xs-10 sm-10 md-10" id="body">
+          <div class="row">
+            <div class="col md-12" id="banner"></div>
+          </div>
+          <div class="row col md-12">
+             <div class="content">
+                {{ content }}
+            </div>            
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </div><!--/. row--> 
+
+
+
+
+</div><!--/. container-->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+ {% include footer.html %} 
+  </body>
+</html>

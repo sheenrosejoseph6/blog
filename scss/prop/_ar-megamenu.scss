@@ -1,0 +1,357 @@
+// Megamenu navbar
+// ------------------------------------------
+
+.ar-offcanvas-megamenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-navbar-fixed;
+  height: $navbar-height + $megamenu-color-bar-height;
+  padding-top: $megamenu-color-bar-height;
+  margin-bottom: 0;
+  border-width: 0 0 1px;
+  //-webkit-transform: translateZ(none); // this hack jacks up safari, so set to none
+  //transform: translateZ(0);
+  transition-property: transform, opacity;
+  transition:  $megamenu-transition-speed $megamenu-transition-easing;
+  -webkit-backface-visibility: hidden;
+
+  // Arrow Color bar
+  &:before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $megamenu-color-bar-height;
+    display: block;
+    content: "";
+    background: linear-gradient(to right,  $arrow-blue 0%, $arrow-blue 20%, $arrow-pink 20%, $arrow-pink 40%, $arrow-green 40%, $arrow-green 60%, $arrow-gold 60%, $arrow-gold 80%, $arrow-red 80%, $arrow-red 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ddc', endColorstr='#e31b23',GradientType=1 ); /* IE8-9 */
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    height: $navbar-height-large + $megamenu-color-bar-height;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+  }
+  .navbar-brand {
+    img {
+      max-width: none;
+      width: 74px;
+      @media (min-width: $grid-float-breakpoint) {
+        width: 96px;
+      }
+    }
+  }
+
+  .navbar-right {
+    margin-right: -1px;
+    .navbar-btn {
+      margin: 0;
+      text-align: center;
+      @media (min-width: $grid-float-breakpoint) {
+        height: $navbar-height-large;
+        min-width: $navbar-height-large;
+        border-radius: 0;
+        border: 1px solid $gray-dark;
+        border-width: 0 0 0 1px;
+        &:hover,
+        &:focus {
+          color: $gray-faint;
+          background: shade($brand-primary, 10%);
+          outline: none!important;
+        }
+        .badge {
+          position: relative;
+          top: -.1em;
+          margin-left: .2em;
+          background: $brand-danger;
+          font-family: $arrow-font-family-bold;
+        }
+      }
+    }
+  }
+  .sidenav {
+    display: none;
+    @media (min-width: $grid-float-breakpoint) {
+      width: auto;
+      border-top: 0;
+      box-shadow: none;
+      position: static;
+      display: block !important;
+      height: auto !important;
+      padding-bottom: 0; // Override default setting
+      overflow: visible !important;
+      .sidenav-brand {
+        display: none;
+      }
+    }
+  }
+}
+
+// Megamenu
+// ------------------------------------------
+@media (min-width: $grid-float-breakpoint) {
+  .megamenu {
+    position: fixed;
+    top: $navbar-height-large;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    border-width: 1px 0 0 0;
+    padding-bottom: 2em;
+  }
+}
+
+// Megamenu section
+// ------------------------------------------
+.megamenu-section {
+  .dropdown-header {
+    margin-bottom: .5em;
+    padding: .5em 1.25em;
+    font-weight: $font-weight-bold;
+    border: 1px solid $gray-dark;
+    border-width: 1px 0;
+    color: $gray-faint;
+    user-select: none;
+  }
+  > ul {
+    margin-bottom: 1em;
+    > li {
+      ul {
+        color: $gray;
+        li {
+          a {
+            display: block;
+            padding: .3em 0;
+            color: $gray-lighter;
+            &:hover {
+              text-decoration: none;
+              background: $gray-darker;
+              color: $gray-faint;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    > ul {
+      > li {
+        > a {
+          padding-left: 0 !important;
+        }
+      }
+    }
+    float: left;
+    width: 25%;
+    min-height: 420px;
+    margin: 0;
+    padding: .5em 1.5em;
+    font-size: 85%;
+    line-height: 1.3;
+    .dropdown-header {
+      padding: .5em 0;
+      border-width: 0 0 1px 0;
+    }
+  }
+  @media (min-width: $breakpoint-lg) {
+    width: 20%;
+  }
+  @media (min-width: $breakpoint-xl) {
+    width: 14.25%;
+    min-height: none;
+  }
+}
+
+.#{$megamenu-transition-class} {
+  .ar-offcanvas-megamenu {
+    transform: translateX($megamenu-offcanvas-nav-width);
+  }
+}
+
+// Run business height hack
+.run-business .megamenu .megamenu-section {
+  @media (min-width: $grid-float-breakpoint) {
+    min-height: 280px!important;
+  }
+  @media (min-width: $breakpoint-xl) {  
+    min-height: none!important;
+  }
+}
+
+// Megamenu offcanvas clone
+// ------------------------------------------
+.offcanvas-clone {
+  display: none;
+  left: 0;
+  z-index: -1!important;
+  @include rem-fallback(width, $megamenu-offcanvas-nav-width);
+  overflow-x: hidden;
+  &.in {
+    display: block;
+  }
+  .navbar-btn {
+    margin: 0;
+    @include clearfix();
+    span {
+      display: block;
+      float: left;
+    }
+    .fa {
+      display: none;
+    }
+    .caret {
+      margin-left: .75em;
+      margin-top: .75em;
+    }
+  }
+  .navbar-nav {
+    margin: 0;
+    > li {
+      border-bottom: 1px solid $gray-darker;
+    }
+    .open {
+      .dropdown-menu {
+        &.megamenu {
+          font-size: 90%;
+          .megamenu-section {
+            .dropdown-header {
+              margin-top: -4px;
+              padding: .5em 1.2em;
+            }
+              > ul {
+                > li {
+                  > a {
+                    padding: .5em 1.2em;
+                  }
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+}
+.#{$megamenu-transition-complete-class} {
+  .offcanvas-clone {
+    z-index: 1!important;
+  }
+}
+
+// User alert component
+.user-alert {
+  > a.alert-toggle {
+    .badge {
+      background: $brand-danger;
+    }
+  }
+  .dropdown-menu {
+    color: $gray-faint;
+    h5 {
+      color: $gray-lighter;
+    }
+    > li > a {
+      color: $gray-lighter;
+      &:hover {
+        color: $gray-lighter;
+      }
+    }
+  }
+}
+
+.user-name {
+  display: inline;
+  + .fa-user {
+    display: none!important;
+  }
+  @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+    display: none!important;
+    + .fa-user {
+      display: inline!important;
+    }
+  }
+}
+
+
+// transfer
+.navbar-btn.help {
+  @media (min-width: $grid-float-breakpoint) {
+    background: $brand-primary;
+    color: #fff;
+  }
+}
+.dropdown-wrapper {
+  padding: 1em;
+}
+.open {
+  .dropdown-menu {
+    > li {
+      ul {
+        font-size: 90%;
+        list-style: none;
+        padding: 0;
+        li {
+          a {
+            display: block;
+            padding: .5em .5em .5em 2em;
+            color: $gray-lighter;
+            &:hover {
+              text-decoration: none;
+              background: $gray-darker;
+              color: $gray-faint;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// IE8/9 handling
+// For some reason the positioning for IE9 works
+// despite its lack of support for transitions.
+// Since IE8 tests positive for .no-svg, unlike IE 9,
+// we put the relevant code for IE8 under .no-svg
+
+.no-svg {
+  // IE8 fix for weird buttons
+  .ar-offcanvas-megamenu {
+    .navbar-right {
+      @media (min-width: $grid-float-breakpoint) and (max-width: $breakpoint-md-max) {
+        .navbar-btn {
+          // weirdness in buttons
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    }
+  }
+  .#{$megamenu-transition-class} {
+    .ar-offcanvas-megamenu {
+      @include rem-fallback(left, $megamenu-offcanvas-nav-width);
+    }
+  }
+}
+
+// IE8 & IE9
+.no-cssanimations {
+  // that color bar doesn't work due to gradient support issues
+  .ar-offcanvas-megamenu {
+    height: $navbar-height;
+    padding-top: 0!important;
+    @media (min-width: $grid-float-breakpoint) {
+      height: $navbar-height-large;
+    }
+  }
+  
+  // make sure clone is always visible
+  .offcanvas-clone {
+    display: block !important;
+  }
+}

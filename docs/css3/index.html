@@ -1,0 +1,29 @@
+---
+layout: default-style
+title: CSS3
+---
+
+<h2>CSS3</h2>
+
+<section class="content">
+	<p>Posts coming soon</p>
+</section>
+
+
+<section class="content">
+	<h2>Library of cool CSS3 stuff.</h2>
+	<p>Check out my images below</p>
+</section>
+
+<ul class="entries">
+	{% for css3 in site.categories.css3 %}
+
+	<li>
+		<a href="{{ css3.url }}">
+			<img src="{{ css3.image }}"/>
+			<h3>{{ css3.title }}</h3>
+		</a>
+	</li>
+
+	{% endfor %}
+</ul>

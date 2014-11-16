@@ -1,0 +1,105 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  @include clearfix();
+}
+.center-block {
+  @include center-block();
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate)
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide();
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+// Square it off
+// -------------------------
+.square {
+  border-radius: 0!important;
+  * {
+    border-radius: 0!important;
+  }
+}
+
+// Round it
+// -------------------------
+.round {
+  border-radius: 50%!important;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased; 
+}
+
+// Vertical divider
+// -------------------------
+.divider {
+  color: $border-color!important;
+  line-height: inherit;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+// Grayscale
+// -------------------------
+.grayscale {
+  @if $local {
+    -webkit-filter: grayscale(100%); // Chrome 19+, Safari 6+, Safari 6+ iOS, Opera
+            filter: url('../images/filters/filters.svg#grayscale'); // Firefox
+            filter: gray; // IE8-9
+  } @else { 
+    @if $production {
+      -webkit-filter: grayscale(100%); // Chrome 19+, Safari 6+, Safari 6+ iOS, Opera
+              filter: url('#{$prod-base-url}#{$version-number}/images/filters/filters.svg#grayscale'); // Firefox
+              filter: gray; // IE8-9
+    } @else {
+      -webkit-filter: grayscale(100%); // Chrome 19+, Safari 6+, Safari 6+ iOS, Opera
+              filter: url('#{$dev-base-url}#{$version-number}/images/filters/filters.svg#grayscale'); // Firefox
+              filter: gray; // IE8-9
+    }
+  }
+
+}

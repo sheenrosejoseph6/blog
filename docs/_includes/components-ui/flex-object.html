@@ -1,0 +1,39 @@
+  <!-- Flex Object
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="flex-object" class="page-header">Flex object</h1>
+    <p class="lead">If you're embedding video from YouTube, Vimeo, or another site that uses <code>iframe</code>, <code>embed</code> or <code>object</code> elements you can wrap your element in <code>div.flex-object</code> to create an intrinsic ratio that will properly scale your element on any device.</p>
+
+    <div class="ar-example">
+    <ul class="nav tabs" id="flexVideos">
+      <li class="active"><a href="#video1" data-toggle="tab">4:3</a></li>
+      <li><a href="#video2" data-toggle="tab">Widescreen</a></li>
+      <li><a href="#video3" data-toggle="tab">Vimeo</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="video1">
+        <div class="flex-object">
+          <iframe width="420" height="315" src="http://www.youtube.com/embed/9otNWTHOJi8" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+      <p>4:3 is the default size for the <code>.flex-object</code> element, and the assumption for .flex-object for chrome (controls) height is based on YouTube.</p>
+    </div>
+    <div class="tab-pane" id="video2">
+      <div class="flex-object widescreen">
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/N966cATFWjI" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+      <p>By adding a class of <code>.widescreen</code> we change the ratio to 16:9, ideal for more recent video and most popular YouTube or Vimeo embeds.</p>
+    </div>
+    <div class="tab-pane" id="video3">
+      <div class="flex-object widescreen vimeo">
+        <iframe src="http://player.vimeo.com/video/21762736?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+      </div>
+      <p>Because Vimeo places their chrome on the player itself, adding a class of <code>.vimeo</code> creates a container that is sized for the video only &amp;emdash; no extra padding for the controls.</p>
+    </div>
+  </div>
+    </div><!-- /.ar-example -->
+{% highlight html %}
+<div class="flex-object">
+  <iframe width="xxx" height="xxx" src="vour-vid-file" frameborder="0" allowfullscreen=""></iframe>
+</div>
+{% endhighlight %}
+  </div>

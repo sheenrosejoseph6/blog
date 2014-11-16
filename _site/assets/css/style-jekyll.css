@@ -10,9 +10,35 @@ body
     padding: 0;
 
     color: #444;
-    background: #f3f3f3;
+    background: #333;
+    border-top: 10px #ccfe04 solid;
 }
 
+<<<<<<< HEAD
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    color: #ccc;
+}
+
+blockquote {
+    border:#f3f3f3 solid 4px;
+    padding: 10px 20px;
+    margin:0;
+    width:70%;
+    background: #fff !important;
+}
+ul {
+    background:#f3f3f3;
+    width:60%;
+}
+
+=======
+>>>>>>> 1134233390ef069ab75afbfcf414d659e602868a
 ul
 {
     margin: 0;
@@ -33,12 +59,18 @@ a:hover
     color: #444;
 }
 
+img {
+    position:absolute; top:10px;border-right:2000px solid #000;border-left:200px solid #000;left:0;
+}
+
 #main
 {
     width: 960px;
-    margin: 0 auto;
+    margin: 0;
 
-    background: #fff;
+    background: #444;
+    width: 83%;
+    float: right;
 }
 
 header
@@ -66,6 +98,12 @@ nav li a
     margin: 5px;
 }
 
+#content {
+    background:#f3f3f3;
+    width:80%;
+    margin-top:300px;
+    padding:20px;
+}
 .content
 {
     padding: 10px;
@@ -106,6 +144,29 @@ ul.entries a:hover
     color: #fff;
 }
 
+<<<<<<< HEAD
+/* Article */
+article
+{
+    margin: 0;
+    padding: 0;
+}
+article li
+{
+    margin: 4px 14px;
+
+    list-style-type: none;
+}
+article section
+{
+    padding: 10px;
+
+    border-bottom: #ccc solid 2px; 
+    background: #f3f3f3;
+}
+
+=======
+>>>>>>> 1134233390ef069ab75afbfcf414d659e602868a
 footer
 {
     font-size: .65em;

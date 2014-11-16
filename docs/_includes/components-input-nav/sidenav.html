@@ -1,0 +1,153 @@
+ <!-- Side nav
+  ================================================== -->
+  <div class="ar-docs-section">
+     <h1 id="sidenav" class="page-header">Side nav</h1>
+    <p class="lead">The side nav is useful for sections of either a site or a page. It can also be used in off-canvas applications for small devices. Developed by Arnold Daniels at <a href="http://jasny.github.io/bootstrap/components/#navmenu">Jansy Bootstrap</a>.</p>
+
+    <h2 id="sidenav-default">Default Side nav</h2>
+    <p>Side nav is a vertical navigation component. By default it shares it look and feel with the side nav component.</p>
+
+    <div class="callout info">
+      <h4>Custom width</h4>
+      <p>The side nav is 18.25em (~300px) wide by default. You can change this by customizing the <code>$sidenav-width</code> variable or by setting the width of <code>.sidenav</code> in your CSS.</p>
+    </div>
+
+    <div class="ar-example">
+      <nav class="sidenav" role="navigation">
+        <a class="sidenav-brand" href="#">Brand</a>
+
+        <ul class="nav sidenav-nav">
+          <li class="active"><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu sidenav-nav" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+{% highlight html %}
+<nav class="sidenav" role="navigation">
+  <a class="sidenav-brand" href="#">Brand</a>
+  <ul class="nav sidenav-nav">
+    <li class="active"><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+      <ul class="dropdown-menu sidenav-nav" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Separated link</a></li>
+        <li><a href="#">One more separated link</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+{% endhighlight %}
+
+    <div class="callout warning">
+      <h4>Make side navs accessible</h4>
+      <p>Be sure to add a <code>role="navigation"</code> to every side nav to help with accessibility.</p>
+    </div>
+
+
+    <h2 id="sidenav-fixed">Fixed to left or right</h2>
+    <p>Add either <code>.fixed-left</code> or <code>.fixed-right</code>.</p>
+    <div class="ar-example ar-sidenav-fixed-example-left">
+      <nav class="sidenav fixed-left" role="navigation">
+        <a class="sidenav-brand" href="#">Brand</a>
+        <ul class="nav sidenav-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+    </div><!-- /example -->
+{% highlight html %}
+<nav class="sidenav fixed-left offcanvas-sm" role="navigation">
+  ...
+</nav>
+{% endhighlight %}
+
+    <div class="ar-example ar-sidenav-fixed-example-right">
+      <nav class="sidenav fixed-right" role="navigation">
+        <a class="sidenav-brand" href="#">Brand</a>
+        <ul class="nav sidenav-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+    </div><!-- /example -->
+{% highlight html %}
+<nav class="sidenav fixed-right offcanvas-sm" role="navigation">
+  ...
+</nav>
+{% endhighlight %}
+
+    <div class="callout danger">
+      <h4>Body padding required</h4>
+      <p>The fixed side nav will overlay your other content, unless you add <code>padding</code> to the left or right of the <code>&lt;body&gt;</code>. Try out your own values or use our snippet below.</p>
+{% highlight css %}
+@media (min-width: 62em) {
+  body {
+    padding-left: 18.25em;
+  }
+}
+{% endhighlight %}
+      <p>Make sure to include this <strong>after</strong> the core this framework CSS.</p>
+    </div>
+
+
+    <h2 id="sidenav-offcanvas">Off canvas</h2>
+    <p>With the <a href="../javascript-extras/#offcanvas">offcanvas plugin</a>, you can hide the side nav off canvas. This is especially useful for screens with a small viewport.</p>
+    <div class="ar-example ar-sidenav-offcanvas-example">
+      <div id="mysidenavCanvas">
+        <nav id="mysidenav" class="mysidenav sidenav fixed-left offcanvas" role="navigation">
+          <a class="sidenav-brand" href="#">Brand</a>
+          <ul class="nav sidenav-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </nav>
+        <nav class="navbar fixed-top">
+          <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#mysidenav"  data-canvas="#mysidenavCanvas" data-placement="left">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bars"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </nav>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
+      </div>
+    </div><!-- /example -->
+{% highlight html %}
+<nav id="mysidenav" class="sidenav fixed-left offcanvas" role="navigation">
+...
+</nav>
+<nav class="navbar fixed-top">
+  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#mysidenav" data-canvas="body">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bars"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+</nav>
+{% endhighlight %}
+
+    <div class="callout info">
+      <h4>Examples</h4>
+      <p>There is a full example for an <a href="../examples/sidenav-push/">off canvas push menu</a> as well as examples for an off canvas sidenav with an <a href="../examples/sidenav/">slide in</a> and <a href="../examples/sidenav-reveal/">reveal</a> effect.</p>
+    </div>
+
+  </div>

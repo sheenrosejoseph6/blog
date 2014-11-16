@@ -1,0 +1,67 @@
+// Preloader
+// --------------------------------------------------
+// To use preloader, use <div class="preloader">Loading</div>.
+// 'Loading' is optional.
+
+.preloader {
+  position: relative;
+  @include size($preloader-size);
+  @include rem-fallback(font-size, $preloader-font-size);
+  font-family: $font-family-base;
+  line-height: $preloader-size;
+  text-align: center;
+  text-transform: uppercase;
+  color: $preloader-color;
+  z-index: 0;
+  &:before,
+  &:after {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: ($preloader-size / 2);
+    border: 5px solid $preloader-color;
+    box-shadow: 0 0 50px $preloader-color, inset 0 0 50px $preloader-color;
+    content: '\0020';
+  }
+  &:after {
+    z-index: 1;
+    animation: loader-anim 2s infinite 1s;
+  }
+  &:before {
+    z-index: 2;
+    animation: loader-anim 2s infinite;
+  }
+}
+
+// Fallback for old browsers without css animations 
+.no-cssanimations .preloader {
+  @if $local {                background-image: url("../images/preloader/482.gif");
+  } @else { @if $production { background-image: url("#{$prod-base-url}#{$version-number}/images/preloader/482.gif");
+  } @else {                   background-image: url("#{$dev-base-url}#{$version-number}/images/preloader/482.gif"); }
+  }
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  @include size(130px);
+  &:after,
+  &:before {
+    animation: none;
+    border: none !important;
+  }
+}
+
+@keyframes loader-anim {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

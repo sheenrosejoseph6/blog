@@ -1,0 +1,46 @@
+<svg width="67" height="67" xmlns="http://www.w3.org/2000/svg">
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="44.28571" x2="-41.34805" y1="44.33374" x1="-41.34805" id="SVGID_1_">
+  <stop stop-color="#A1D296" offset="0"/>
+  <stop stop-color="#5BC472" offset="1"/>
+ </linearGradient>
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="41.0107" x2="-41.34805" y1="41.05873" x1="-41.34805" id="SVGID_2_">
+  <stop stop-color="#A1D296" offset="0"/>
+  <stop stop-color="#5BC472" offset="1"/>
+ </linearGradient>
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="42.71368" x2="-39.80102" y1="42.76161" x1="-39.80102" id="SVGID_3_">
+  <stop stop-color="#A1D296" offset="0"/>
+  <stop stop-color="#5BC472" offset="1"/>
+ </linearGradient>
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="42.71368" x2="-42.76859" y1="42.76161" x1="-42.76859" id="SVGID_4_">
+  <stop stop-color="#A1D296" offset="0"/>
+  <stop stop-color="#5BC472" offset="1"/>
+ </linearGradient>
+ <g>
+  <title>YouVersion</title>
+  <rect id="svg_122" height="66.991" width="66.99" fill="#222222" y="0.005" x="0.005"/>
+  <ellipse id="svg_123" ry="5.714" rx="5.808" cy="15.236" cx="34.835" fill="url(#SVGID_1_)"/>
+  <ellipse id="svg_124" ry="5.714" rx="5.808" cy="50.949" cx="34.835" fill="url(#SVGID_2_)"/>
+  <ellipse id="svg_125" ry="5.714" rx="5.808" cy="32.379" cx="15.959" fill="url(#SVGID_3_)"/>
+  <ellipse id="svg_126" ry="5.714" rx="5.809" cy="32.379" cx="52.259" fill="url(#SVGID_4_)"/>
+  <g id="svg_127">
+   <g id="svg_128">
+    <path id="svg_129" d="m27.952,47.083c-3.532,-1.619 -6.352,-4.5 -7.856,-8.05c-2.698,1.717 -5.674,0.999 -5.674,0.999c2.091,5.884 6.777,10.578 12.701,12.745c-0.804,-3.347 0.829,-5.694 0.829,-5.694z" fill="#FFFFFF"/>
+   </g>
+  </g>
+  <g id="svg_130">
+   <g id="svg_131">
+    <path id="svg_132" d="m27.101,13.507c-5.359,1.968 -9.703,6.005 -12.022,11.116c0,0 3.019,-0.531 5.567,1.466c1.596,-3.032 4.188,-5.476 7.346,-6.914c-1.71,-3.119 -0.891,-5.668 -0.891,-5.668z" fill="#FFFFFF"/>
+   </g>
+  </g>
+  <g id="svg_133">
+   <g id="svg_134">
+    <path id="svg_135" d="m42.627,13.768c0,0 0.664,2.656 -1.088,5.635c2.807,1.392 5.132,3.594 6.655,6.29c2.874,-1.697 5.854,-0.915 5.854,-0.915c-2.206,-4.97 -6.319,-8.94 -11.421,-11.01z" fill="#FFFFFF"/>
+   </g>
+  </g>
+  <g id="svg_136">
+   <g id="svg_137">
+    <path id="svg_138" d="m48.799,39.396c-1.465,3.224 -4.029,5.863 -7.219,7.458c0,0 1.716,2.232 1.024,5.664c5.684,-2.301 10.14,-6.955 12.11,-12.722c-3.351,0.96 -5.915,-0.4 -5.915,-0.4z" fill="#FFFFFF"/>
+   </g>
+  </g>
+ </g>
+</svg>

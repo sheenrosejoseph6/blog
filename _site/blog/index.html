@@ -4,13 +4,15 @@
   <meta charset=utf-8 />
   <title>  Blog |  HTML5 APP </title>
   <link rel="stylesheet" href="/assets/css/style-jekyll.css" />
+  <link rel="stylesheet" href="/assets/css/prism.css" />
+
 </head>
 <body>
  
   <div id="main">
  
     <header>
-      <h1> 5daily | Blog</h1>
+      <h1> </h1>
     <header>
  
     <nav role="navigation">
@@ -21,7 +23,7 @@
     </nav>
  
     <section class="content">
-	<h2>Blog</h2>
+	<h2>Library of cool stuff.</h2>
 	<p>Check out my images below</p>
 </section>
 
@@ -29,36 +31,45 @@
 	
 
 	<li>
-		<a href="/2014/08/24/testpost4/">
-			<img src="/assets/img/road.jpg"/>
-			<h3>Road and Curb</h3>
+		<a href="/html5/2014/11/14/LocalStorageTutorial/">
+			<img src="http://cssmatter.com/wp-content/uploads/2013/05/html-black-logo.jpg"/>
+			<h3>Local Storage Tutorial 2</h3>
 		</a>
 	</li>
 
 	
 
 	<li>
-		<a href="/2014/08/23/testpost3/">
-			<img src="/assets/img/wing.jpg"/>
-			<h3>Wing and a Prayer</h3>
-		</a>
-	</li>
-
-	
-
-	<li>
-		<a href="/2014/08/21/testpost2/">
+		<a href="/css3/2014/11/13/SASS-NthFunction/">
 			<img src="/assets/img/bridge.jpg"/>
-			<h3>Stone Bridge</h3>
+			<h3>SASS</h3>
 		</a>
 	</li>
 
 	
 
 	<li>
-		<a href="/2014/08/20/testpost1/">
-			<img src="/assets/img/bikes.jpg"/>
-			<h3>Bikes, Black and White</h3>
+		<a href="/2014/11/13/JavascriptFundamentals/">
+			<img src="/assets/img/pipeline.png"/>
+			<h3>Javascript</h3>
+		</a>
+	</li>
+
+	
+
+	<li>
+		<a href="/2014/11/13/FrontEndToolLibrary/">
+			<img src="/assets/img/pipeline.png"/>
+			<h3>UI Asset Pipeline</h3>
+		</a>
+	</li>
+
+	
+
+	<li>
+		<a href="/2014/11/12/JunkDrawer/">
+			<img src=""/>
+			<h3>Junk Drawer - Intro to FrontEnd Development</h3>
 		</a>
 	</li>
 
@@ -70,5 +81,38 @@
     </footer>
  
   </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/jquery.sortable.min.js"></script>
+  <script src="/assets/js/mySortable.js"></script>
+
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+<script>
+  $(document).ready(function(){
+ 
+    var theList = document.getElementById('list2');
+    $("#saveAll").click(function(e) {
+      e.preventDefault();
+      localStorage.setItem('todoList', theList.innerHTML);
+    });
+    $("#clearAll").click(function(e) {
+      e.preventDefault();
+      localStorage.clear();
+      location.reload();
+    });
+    
+    loadToDo();
+    
+    function loadToDo() {
+      if ( localStorage.getItem('todoList') ) {
+      theList.innerHTML = localStorage.getItem('todoList'); 
+      }
+    }
+  });
+ </script>
+
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+
+
 </body>
 </html>

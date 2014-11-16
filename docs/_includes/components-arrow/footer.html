@@ -1,0 +1,62 @@
+  <!--  footer
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="arw-footer" class="page-header"> Site Footer</h1>
+    <p class="lead">Universal responsive footer for  applications and web pages.</p>
+    
+    <h3 id="arw-foot-example">Example</h3>
+    <div class="ar-example">
+      <footer class="ar-footer" role="contentinfo">
+        <section class="colophon">
+          <img class="five-years-logo" width="213" height="40" alt="" src="{% include assets/five-years-logo.txt %}">
+        
+          <ul class="list inline">
+            <li>Optional list of links can go here</li>
+            <li class="muted">·</li>
+            <li><a href="#k">Link</a></li>
+            <li class="muted">·</li>
+            <li><a href="#">Link</a></li>
+            <li class="muted">·</li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </section>
+        <section class="copyright-info">
+          <p class="copyright"> </p>
+          <ul class="footer-links">
+ 
+          </ul>
+        </section>
+      </footer>
+    </div>
+    
+{% highlight html %}
+<footer class="ar-footer" role="contentinfo">
+  <section class="colophon">
+    <img class="five-years-logo" width="213" height="40" alt=" " src="Link to logo image">
+    <ul class="list inline">
+      <li>Optional list of links can go here</li>
+      <li class="muted">·</li>
+      <li><a href="#k">Link</a></li>
+      <li class="muted">·</li>
+      <li><a href="#">Link</a></li>
+      <li class="muted">·</li>
+      <li><a href="#">Link</a></li>
+    </ul>
+  </section>
+  <section class="copyright-info">
+    <p class="copyright"> </p>
+    <ul class="footer-links">
+ 
+    </ul>
+  </section>
+</footer>
+{% endhighlight %}
+
+  <h3 id="arw-foot-fixed">Fixed option</h3>
+  <p>Add <code>.fixed</code> to the <code>.ar-footer</code> class to fix the footer to the bottom. A full-page demonstration of this option <a href="../examples/footer">can be seen here</a>.</p>
+{% highlight html %}
+<footer class="ar-footer fixed" role="contentinfo">
+...
+</footer>
+{% endhighlight %}
+  </div>

@@ -1,0 +1,44 @@
+  <!-- Animations
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="animations" class="page-header">Animate.css</h1>
+    <p class="lead">Baked in to this repo is the valuable CSS3 animation engine <a href="http://daneden.github.io/animate.css/">Animate.css</a>. More documentation and examples can be found on <a href="http://daneden.github.io/animate.css/">their website</a> and <a href="https://github.com/daneden/animate.css">GitHub repo</a>, but the basics of how to use the Animate classes are below.</p>
+    
+    <div class="callout danger">
+      <h4>Browser compatibility</h4>
+      <p>Because IE9 and below does not support CSS transitions, Animate.css <strong>will not</strong> work in those broswers. For that reason it is sreccommended that if the behavior of the element you are animating cannot work without the Animate.css transition you wish to apply, <strong>do not animate that object</strong>. The object should gracefully degrade for IE9 and below.</p>
+    </div>
+    
+    <h2 id="animations-examples">Examples</h2>
+    <p>To animate an object via Animate.css, you must first apply the <code>.animated</code> base class to the element. Then apply the classname of the animation you want to apply. Use the controls below to apply eight basic animations to the headlien to see how it works.</p>
+    
+    
+    <div class="ar-example">
+      <h1 id="animateMe" style="text-align: center;">Animate.css</h1>
+      <form class="form" style="width: 240px; margin: 0 auto;">
+        <select id="animator" class="form-control" style="margin-bottom: 1em;">
+          <optgroup label="Attention Seekers">
+            <option value="bounce">bounce</option>
+            <option value="flash">flash</option>
+            <option value="pulse">pulse</option>
+            <option value="rubberBand">rubberBand</option>
+            <option value="shake">shake</option>
+            <option value="swing">swing</option>
+            <option value="tada">tada</option>
+            <option value="wobble">wobble</option>
+          </optgroup>
+        </select>
+        <button id="anim-trigger" class="btn primary block">Animate it</button>
+      </form>
+    </div>
+{% highlight html %}
+<h1 class="animated bounce">Animate.css</h1>
+<h1 class="animated flash">Animate.css</h1>
+<h1 class="animated pulse">Animate.css</h1>
+<h1 class="animated rubberBand">Animate.css</h1>
+<h1 class="animated shake">Animate.css</h1>
+<h1 class="animated swing">Animate.css</h1>
+<h1 class="animated tada">Animate.css</h1>
+<h1 class="animated wobble">Animate.css</h1>
+{% endhighlight %}
+  </div>

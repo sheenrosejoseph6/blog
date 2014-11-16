@@ -1,0 +1,126 @@
+.wizard {
+  @include clearfix();
+  position: relative;
+  overflow: hidden;
+  background-color: $wizard-bg;
+  border: 1px solid $border-color;
+  border-radius: $wizard-border-radius;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+
+  ul {
+    width: 250em;
+    padding: 0;
+    margin: 0;
+    list-style: none outside none;
+    &.previous-disabled {
+      li.complete {
+        cursor: default;
+        &:hover {
+          color: $state-success-text;
+          cursor: default;
+          background: $wizard-hover-color;
+          .chevron:before {
+            border-left-color: $wizard-hover-color;
+          }
+        }
+      }
+    }
+    li {
+      position: relative;
+      float: left;
+      height: $wizard-height;
+      padding: 0 1.25em 0 2em;
+      margin: 0;
+      @include rem-fallback(font-size, $font-size-base);
+      line-height: $wizard-height;
+      color: $gray;
+      cursor: default;
+      background: $wizard-arrow-bg;
+      &.active {
+        color: $state-info-text;
+        background: $state-info-bg;
+        .chevron:before {
+          border-left: $wizard-chevron-height solid $state-info-bg;
+        }
+        .badge {
+          background: shade($brand-info, 20%);
+          color: $state-info-text;
+        }
+      }
+      &.complete {
+        color: $state-success-text;
+        background: $state-success-bg;
+        .chevron:before {
+          border-left: $wizard-chevron-height solid $state-success-bg;
+        }
+        .badge {
+          background: shade($brand-success, 20%);
+          color: $state-success-text;
+        }
+      }
+      &:first-child {
+        padding-left: 1.25em;
+        @include border-left-radius($wizard-border-radius);
+      }
+      .badge {
+        margin-right: .5em;
+      }
+      .chevron {
+        position: absolute;
+        top: 0;
+        right: -$wizard-chevron-height;
+        z-index: 1;
+        display: block;
+        border: 1.5em solid transparent;
+        border-right: 0;
+        border-left: $wizard-chevron-height solid $border-color;
+        &:before {
+          position: absolute;
+          top: -1.5em;
+          right: em(1);
+          display: block;
+          content: '';
+          border: 1.5em solid transparent;
+          border-right: 0;
+          border-left: $wizard-chevron-height solid $wizard-arrow-bg;
+        }
+      }
+    }
+  }
+
+  .actions {
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+    float: right;
+    padding-right: 1em;
+    padding-left: 1em;
+    line-height: 2.875;
+    vertical-align: middle;
+    background-color: $wizard-bg;
+    border-left: 1px solid $border-color;
+    a {
+      margin-right: .5em;
+      @include rem-fallback(font-size, .75em);
+      line-height: 2.8125;
+    }
+    .btn-prev span {
+      margin-right: .33em;
+    }
+    .btn-next span {
+      margin-left: .33em;
+    }
+  }
+}
+
+.step-content {
+  .step-pane {
+    display: none;
+  }
+  .active {
+    display: block;
+    .btn-group .active {
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-units(nth($values, $i));
+    @if ($value == 0) {
+      $pxValues: 0;
+    } @else {
+      $pxValues: #{$pxValues + $value*16}px;
+    }
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-units(nth($values, $i));
+    @if ($value == 0) {
+      $remValues: 0;
+    } @else {
+      $remValues: #{$remValues + $value}rem;
+    }
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+  
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}

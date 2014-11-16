@@ -1,0 +1,93 @@
+<footer class="ar-footer" role="contentinfo">
+<!--   <section class="colophon">
+
+        
+    <ul class="list inline">
+      <li>Framework v{{ site.current_version }}</li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}">GitHub</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}/issues?state=open">Issues</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}/releases">Releases</a></li>
+    </ul>
+  </section> -->
+  <section class="copyright-info">
+    <p class="copyright">&copy; 2014-15 || 5daily.io || All Rights Reserved</p>
+    <ul class="footer-links">
+<!--       <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Use</a></li> -->
+    </ul>
+  </section>
+</footer>
+{% if page.layout == "home" %}
+{% else %}
+{% endif %}
+<!-- JavaScript
+================================================== -->
+
+<script src="https://apex.oracle.com/i/libraries/apex/minified/desktop_all.min.js?v=4.2.5.00.08"></script>
+<script src="https://apex.oracle.com/i/libraries/apex/minified/legacy.min.js?v=4.2.5.00.08"></script>
+
+
+
+ 
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/jquery.sortable.min.js"></script>
+  <script src="/assets/js/mySortable.js"></script>
+
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+<script>
+  $(document).ready(function(){
+ 
+    var theList = document.getElementById('list2');
+    $("#saveAll").click(function(e) {
+      e.preventDefault();
+      localStorage.setItem('todoList', theList.innerHTML);
+    });
+    $("#clearAll").click(function(e) {
+      e.preventDefault();
+      localStorage.clear();
+      location.reload();
+    });
+    
+    loadToDo();
+    
+    function loadToDo() {
+      if ( localStorage.getItem('todoList') ) {
+      theList.innerHTML = localStorage.getItem('todoList'); 
+      }
+    }
+  });
+ </script>
+
+<!-- Injecting Prism class --> 
+<script>
+  $(document).ready(function(){
+    var codeblock = $('pre');
+    codeblock.addClass('language-css');
+  });
+</script>
+
+
+
+<!-- IE8 support
+     Includes Selectivizr, Respond.js and IE8 Resposive File Warning -->
+<!--[if lt IE 9]>
+<script src="../assets/js/ie/selectivizr-1.0.2.min.js"></script>
+<script src="../assets/js/ie/respond-1.4.2.min.js"></script>
+<script src="../assets/js/ie/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+
+<!-- Docs min Javascript
+     Includes jQuery 1.11.1, Holder 2.4.0, Zero Clipboard 1.3.5 and the application JS -->
+<!-- <script src="../assets/js/docs.min.js"></script> -->
+
+<!-- More IE stuff:
+     Includes IE10 Grayscale fix, emulation modes warning & viewport hacks for Surface/desktop Windows 8 bug -->
+
+<!--[if IE]>
+<script src="../assets/js/docs-ie.js"></script>
+<![endif]-->
+

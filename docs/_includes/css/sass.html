@@ -1,0 +1,385 @@
+  <!-- Using SASS
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="sass" class="page-header">Using SASS</h1>
+    <p class="lead">This framework's CSS is built on SASS, a preprocessor with additional functionality like variables, mixins, and functions for compiling CSS. Those looking to use the source SASS files instead of our compiled CSS files can make use of the numerous variables and mixins we use throughout the framework.</p>
+
+    <h2 id="sass-variables">Variables</h2>
+    <p>Variables are used throughout the entire project as a way to centralize and share commonly used values like colors, spacing, or font stacks. Grid variables and mixins are covered <a class="inline-link" href="#grid">within the Grid system section</a>.</p>
+
+    <h3 id="sass-variables-colors">Colors</h3>
+    <p>Easily make use of two color schemes: grayscale and semantic. Grayscale colors provide quick access to commonly used shades of black while semantic include various colors assigned to meaningful contextual values.</p>
+    <div class="ar-example">
+      <div class="color-swatches">
+        <div class="color-swatch gray-darkest"></div>
+        <div class="color-swatch gray-darker"></div>
+        <div class="color-swatch gray-dark"></div>
+        <div class="color-swatch gray"></div>
+        <div class="color-swatch gray-light"></div>
+        <div class="color-swatch gray-lighter"></div>
+        <div class="color-swatch gray-lightest"></div>
+      </div>
+    </div>
+{% highlight scss %}
+$gray-darkest:           shade($arrow-gray, 96%); //#050606
+$gray-darker:            shade($arrow-gray, 66%); //#323838
+$gray-dark:              shade($arrow-gray, 33%); //#636e6f
+$gray:                   $arrow-gray;             //#95a5a6
+$gray-light:             tint($arrow-gray, 20%);  //#aab7b7
+$gray-lighter:           tint($arrow-gray, 33%);  //#b7c2c3
+$gray-lightest:          tint($arrow-gray, 66%);  //#dae0e0
+{% endhighlight %}
+
+    <div class="ar-example">
+      <div class="color-swatches">
+        <div class="color-swatch brand-primary"></div>
+        <div class="color-swatch brand-secondary"></div>
+        <div class="color-swatch brand-success"></div>
+        <div class="color-swatch brand-info"></div>
+        <div class="color-swatch brand-warning"></div>
+        <div class="color-swatch brand-danger"></div>
+      </div>
+    </div>
+{% highlight scss %}
+$brand-primary:         $arrow-blue;       //#009ddc
+$brand-secondary:       $gray;             //#95a5a6
+$brand-success:         $arrow-green;      //#54b948
+$brand-info:            $arrow-light-blue; //#72cdf4
+$brand-warning:         $arrow-gold;       //#fdbb30
+$brand-danger:          $arrow-red;        //#e31b23
+{% endhighlight %}
+
+    <h3 id="sass-variables-scaffolding">Scaffolding</h3>
+    <p>A handful of variables for quickly customizing key elements of your site's skeleton.</p>
+{% highlight scss %}
+// Scaffolding
+$text-color:            $gray-darker;    //#050606
+$disabled-color:        $gray-light;     //#aab7b7
+$border-color:          $gray-lightest;  //#dae0e0
+$body-bg:               #fff;            //pure white
+$disabled-bg:           $gray-lightest;  //#dae0e0
+{% endhighlight %}
+
+    <h3 id="sass-variables-links">Links</h3>
+    <p>Easily style your links with the right color with only one value.</p>
+{% highlight scss %}
+// Variables
+$link-color:            $brand-primary;
+$link-hover-color:      shade($link-color, 25%);
+
+// Usage
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+}
+{% endhighlight %}
+    <p>Note that the <code>$link-color-hover</code> uses a function, another awesome tool from SASS, to automagically create the right hover color. You can use <code>darken</code>, <code>lighten</code>, <code>saturate</code>, and <code>desaturate</code> among others.</p>
+
+    <h3 id="sass-variables-typography">Typography</h3>
+    <p>Easily set your type face, text size, leading, and more with a few quick variables. This framework makes use of these as well to provide easy typographic mixins.</p>
+{% highlight scss %}
+$font-family-sans-serif:  "Helvetica Neue", Arial, sans-serif 
+$font-family-serif:       "Georgia", "Times New Roman", Times, serif;
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-sans-serif;
+
+$font-size-base:          1em; // ~16px
+$font-size-large:         1.25em; // ~20px
+$font-size-small:         0.85em; // ~12px
+
+$font-weight-base:        400;
+$font-weight-light:       200;
+$font-weight-bold:        700;
+$font-weight-heavy:       900;
+
+$font-size-h1:            ($font-size-base * 2);
+$font-size-h2:            ($font-size-base * 1.625);
+$font-size-h3:            ($font-size-base * 1.35);
+$font-size-h4:            ($font-size-base * 1.125);
+$font-size-h5:            ($font-size-base * 1);
+$font-size-h6:            ($font-size-base * .875);
+
+$font-size-h1-medium:     ($font-size-base * 2.5);
+$font-size-h2-medium:     ($font-size-base * 2);
+$font-size-h3-medium:     ($font-size-base * 1.5);
+$font-size-h4-medium:     ($font-size-base * 1.125);
+
+$font-size-h1-large:      ($font-size-base * 4);
+$font-size-h2-large:      ($font-size-base * 2.825);
+$font-size-h3-large:      ($font-size-base * 2);
+$font-size-h4-large:      ($font-size-base * 1.41);
+
+$line-height-base:        1.618;
+$line-height-computed:    ($font-size-base * $line-height-base);
+
+$headings-font-family:    "TheinhardtBold", Arial, sans-serif;
+$headings-font-weight:    400;
+$headings-line-height:    1.05;
+$line-height-h1-small:    ($font-size-base * 1.25);
+$line-height-h1-medium:   ($font-size-base * 1.125);
+$line-height-h1-large:    $headings-line-height;
+$headings-kerning:        -0.02em;
+$headings-color:          $gray-dark;
+{% endhighlight %}
+
+    <h3 id="sass-variables-icons">Icons</h3>
+    <p>Three quick variables for customizing the location and filename of your icons.</p>
+{% highlight scss %}
+// Iconography :: Font Awesome
+$fa-font-path:        "../fonts/fontawesome/";
+$fa-css-prefix:       fa;
+$fa-version:          "4.1.0";
+$fa-border-color:     $border-color;
+$fa-inverse:          #fff;
+$fa-li-width:         2em;
+
+// Iconography :: SVG social webicons 
+$web-icon-path:          "../images/webicons/";
+{% endhighlight %}
+
+    <h3 id="sass-variables-components">Components</h3>
+    <p>Components throughout this framework make use of some default variables for setting common values. Here are the most commonly used.</p>
+{% highlight scss %}
+$padding-base-vertical:     .5em;
+$padding-base-horizontal:   .75em;
+
+$padding-large-vertical:    .66em;
+$padding-large-horizontal:  1.33em;
+
+$padding-small-vertical:    .33em;
+$padding-small-horizontal:  .66em;
+
+$padding-xs-vertical:       .0625em;
+$padding-xs-horizontal:     .33em;
+
+$line-height-large:         1.414;
+$line-height-small:         1.375;
+
+$border-radius-base:        4px;
+$border-radius-large:       8px;
+$border-radius-small:       3px;
+//
+//$border-radius-base:        0;
+//$border-radius-large:       0;
+//$border-radius-small:       0;
+
+$component-active-color:    #fff;
+$component-active-bg:       $brand-primary;
+
+$caret-width-base:          4px;
+$caret-width-large:         5px;
+{% endhighlight %}
+
+
+    <h2 id="sass-arrow">Arrow specfic styles</h2>
+    <p>These are styles specifc to Arrow that are inherited in the <code>proj/_variables.scss</code> file. They can be found in the file named <code>proj/_arrow-styles.scss</code>.</p>
+{% highlight scss %}
+// Logo colors & dimensions
+// --------------------------
+
+$logo-primary-color:       #000;
+$logo-reverse-color:       #FFF;
+$logo-min-height:          .625em;
+
+// Font families -- chance to redo?
+// ---------------------------------
+
+$arrow-font-path:                "../fonts/arrow";
+$arrow-font-family-base:         "Helvetica Neue", Arial, sans-serif;
+$arrow-font-family-normal:       "TheinhardtRegular", Arial, sans-serif;
+$arrow-font-family-bold:         "TheinhardtBold", Arial, sans-serif;
+$arrow-font-family-light:        "TheinhardtThin", Arial, sans-serif;
+$arrow-font-family-light-small:  "TheinhardtLight", Arial, sans-serif;
+
+// Color palette
+// --------------------------
+
+$arrow-gray:                #95a5a6;
+$arrow-red:                 #e31b23;
+$arrow-orange:              #f68a33;
+$arrow-gold:                #fdbb30;
+$arrow-yellow:              #ffe512;
+$arrow-light-green:         #c1d82f;
+$arrow-green:               #54b948;
+$arrow-light-blue:          #72cdf4;
+$arrow-blue:                #009ddc;
+$arrow-dark-blue:           #00539b;
+$arrow-violet:              #92278f;
+$arrow-pink:                #e70082;
+
+// Brand offering colors
+$arrow-brand-aerospace:     $arrow-red;
+$arrow-brand-bi:            $arrow-orange;
+$arrow-brand-intel-sys:     $arrow-gold;
+$arrow-brand-lighting:      $arrow-yellow;
+$arrow-brand-data-center:   $arrow-light-green;
+$arrow-brand-power-mgmt:    $arrow-green;
+$arrow-brand-value-reco:    $arrow-light-blue;
+$arrow-brand-cloud:         $arrow-blue;
+$arrow-brand-corporate:     $arrow-dark-blue;
+$arrow-brand-mobility:      $arrow-violet;
+
+// Innovators colors
+$arrow-metallic-gold:       #a8996e;
+$arrow-process-gold:        #c2a204;
+{% endhighlight %}
+    
+    <h2 id="sass-mixins-vendor">Vendor mixins</h2>
+    <p>Vendor mixins are mixins to help support multiple browsers by including all relevant vendor prefixes in your compiled CSS. Some of these mixins come from <strong><a href="http://bourbon.io/">Bourbon</a></strong>, a SASS mixin library that is bundled with the Arrow framework. More information on Bourbon's mixins <a href="http://bourbon.io/docs/">can be found here</a>.</p>
+
+    <h3 id="sass-mixins-rounded-corners">Rounded corners</h3>
+    <p>Today all modern browsers support the non-prefixed <code>border-radius</code> property. As such, there is no <code>border-radius</code> mixin, but this framework does include shortcuts for quickly rounding two corners on a particular side of an object.</p>
+{% highlight scss %}
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+   border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+     border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+     border-top-left-radius: $radius;
+}
+{% endhighlight %}
+
+    <h3 id="sass-mixins-gradients">Gradients</h3>
+    <p>Easily turn any two colors into a background gradient. Get more advanced and set a direction, use three colors, or use a radial gradient. With a single mixin you get all the prefixed syntaxes you'll need.</p>
+{% highlight scss %}
+#gradient > .vertical(#333; #000);
+#gradient > .horizontal(#333; #000);
+#gradient > .radial(#333; #000);
+{% endhighlight %}
+    <p>You can also specify the angle of a standard two-color, linear gradient:</p>
+{% highlight scss %}
+#gradient > .directional(#333; #000; 45deg);
+{% endhighlight %}
+    <p>If you need a barber-stripe style gradient, that's easy, too. Just specify a single color and we'll overlay a translucent white stripe.</p>
+{% highlight scss %}
+#gradient > .striped(#333; 45deg);
+{% endhighlight %}
+    <p>Up the ante and use three colors instead. Set the first color, the second color, the second color's color stop (a percentage value like 25%), and the third color with these mixins:</p>
+{% highlight scss %}
+#gradient > .vertical-three-colors(#777; #333; 25%; #000);
+#gradient > .horizontal-three-colors(#777; #333; 25%; #000);
+{% endhighlight %}
+    <p><strong>Heads up!</strong> Should you ever need to remove a gradient, be sure to remove any IE-specific <code>filter</code> you may have added. You can do that by using the <code>reset-filter</code> mixin alongside <code>background-image: none;</code>.</p>
+
+
+    <h2 id="sass-mixins-utility">Utility mixins</h2>
+    <p>Utility mixins are mixins that combine otherwise unrelated CSS properties to achieve a specific goal or task.</p>
+
+    <h3 id="sass-mixins-clearfix">Clearfix</h3>
+    <p>Forget adding <code>class="clearfix"</code> to any element and instead add the <code>clearfix</code> mixin where appropriate. Uses the <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clearfix</a> from <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallager</a>.</p>
+{% highlight scss %}
+// Mixin
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+}
+
+// Usage
+.container {
+  @include clearfix();
+}
+{% endhighlight %}
+
+    <h3 id="sass-mixins-centering">Horizontal centering</h3>
+    <p>Quickly center any element within its parent. <strong>Requires <code>width</code> or <code>max-width</code> to be set.</strong></p>
+{% highlight scss %}
+// Mixin
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Usage
+.container {
+  width: 48em;
+  @include center-block();
+}
+{% endhighlight %}
+
+    <h3 id="sass-mixins-sizing">Sizing helpers</h3>
+    <p>Specify the dimensions of an object more easily.</p>
+{% highlight scss %}
+// Mixins
+// For an object with equal widths and height, just enter one parameter:
+@mixin size($width $height) {
+  // Output:
+  width: $width;
+  height: $height;
+}
+
+// Usage
+.image { .size(30em 24em); }
+.avatar { .size(3em); }
+{% endhighlight %}
+
+    <h3 id="sass-mixins-resizable">Resizable textareas</h3>
+    <p>Easily configure the resize options for any textarea, or any other element. Defaults to normal browser behavior (<code>both</code>).</p>
+{% highlight scss %}
+@mixin resizable($direction: both) {
+  // Options: horizontal, vertical, both
+  resize: $direction;
+  // Safari fix
+  overflow: auto;
+}
+{% endhighlight %}
+
+    <h3 id="sass-mixins-truncating">Truncating text</h3>
+    <p>Easily truncate text with an ellipsis with a single mixin.</p>
+{% highlight scss %}
+// Mixin
+@mixin ellipsis($max-width: 100%) {
+  display: inline-block;
+  max-width: $max-width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Usage
+.branch-name {
+  @include ellipsis(15em);
+}
+{% endhighlight %}
+
+    <h3 id="sass-mixins-retina-images">Retina images</h3>
+    <p>Specify two image paths and the $1x image dimensions, and this framework will provide an $2x media query. <strong>If you have many images to serve, consider writing your retina image CSS manually in a single media query.</strong></p>
+{% highlight scss %}
+.img-retina($file-1x; $file-2x; $width-1x; $height-1x) {
+  background-image: url("${file-1x}");
+
+  $media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("${file-2x}");
+    background-size: $width-1x $height-1x;
+  }
+}
+
+// Usage
+.jumbotron {
+  .img-retina("/img/bg-1x.png", "/img/bg-2x.png", 100px, 100px);
+}
+{% endhighlight %}
+  </div>

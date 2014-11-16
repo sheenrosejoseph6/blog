@@ -1,0 +1,24 @@
+// Validation styles
+// From BootstrapValidator (http://bootstrapvalidator.com)
+// 
+// @author      http://twitter.com/nghuuphuoc
+// @copyright   (c) 2013 - 2014 Nguyen Huu Phuoc
+// @license     MIT
+
+.bv-form {
+  .help-block {
+    margin-bottom: 0;
+  }
+  .tooltip-inner {
+    text-align: left;
+  }
+}
+
+.nav.tabs {
+  &.bv-tab-success > a {
+    color: $brand-success;
+  }
+  &.bv-tab-error > a {
+    color: $brand-danger;
+  }
+}

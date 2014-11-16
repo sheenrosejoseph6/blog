@@ -1,0 +1,28 @@
+<svg width="67" height="67" xmlns="http://www.w3.org/2000/svg">
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="19.57371" x2="-22.64543" y1="19.61151" x1="-22.64543" id="SVGID_1_">
+  <stop stop-color="#F0E13F" offset="0.4724"/>
+  <stop stop-color="#E2C033" offset="1"/>
+ </linearGradient>
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="14.31122" x2="-25.85073" y1="14.33993" x1="-25.85073" id="SVGID_2_">
+  <stop stop-color="#4E9F00" offset="0.4724"/>
+  <stop stop-color="#438200" offset="1"/>
+ </linearGradient>
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="12.31002" x2="-15.97392" y1="12.34922" x1="-15.97392" id="SVGID_3_">
+  <stop stop-color="#FF7D3F" offset="0"/>
+  <stop stop-color="#EA6632" offset="1"/>
+ </linearGradient>
+ <linearGradient gradientTransform="matrix(20.8333 0 0 -20.8333 9436.334 10763)" y2="11.39966" x2="-12.10461" y1="11.43126" x1="-12.10461" id="SVGID_4_">
+  <stop stop-color="#4BD0EF" offset="0"/>
+  <stop stop-color="#29AAE1" offset="1"/>
+ </linearGradient>
+ <g>
+  <title>MSN</title>
+  <rect id="svg_74" height="66.991" width="66.991" fill="#E3E3E3" y="0.005" x="0.005"/>
+  <path id="svg_75" d="m30.46,44.757c0,0 -2.294,4.972 3.439,9.175c5.735,4.205 12.809,8.793 9.75,-8.027c-3.06,-16.823 -12.997,-2.679 -13.189,-1.148z" fill="#CECECE"/>
+  <path id="svg_76" d="m43.951,50.314c0,0 2.737,9.128 10.771,7.302c8.034,-1.825 8.58,-12.049 3.834,-17.344c-4.747,-5.295 -16.98,3.103 -14.605,10.042z" fill="url(#SVGID_1_)"/>
+  <path id="svg_77" d="m30.46,47.899c0,0 -2.294,4.973 3.439,9.176c5.735,4.205 12.809,8.793 9.75,-8.027c-3.06,-16.823 -12.997,-2.679 -13.189,-1.149z" fill="url(#SVGID_2_)"/>
+  <path id="svg_78" d="m57.277,17.998c0,0 -4.018,-2.738 -10.771,4.2c-6.756,6.937 -10.042,10.771 -9.677,13.509c0.365,2.739 6.208,20.084 15.335,13.328c9.13,-6.756 14.789,-24.1 5.113,-31.037z" fill="url(#SVGID_3_)"/>
+  <path id="svg_79" d="m43.951,50.314c0,0 2.737,9.128 10.771,7.302c8.034,-1.825 8.58,-12.049 3.834,-17.344c-4.747,-5.295 -16.98,3.103 -14.605,10.042z" fill="none"/>
+  <path id="svg_80" d="m37.195,33.334c0,0 -22.638,-16.614 -27.02,-7.302c-4.381,9.312 27.567,34.322 33.411,23.004c-0.001,-0.001 -0.55,-8.399 -6.391,-15.702z" fill="url(#SVGID_4_)"/>
+ </g>
+</svg>

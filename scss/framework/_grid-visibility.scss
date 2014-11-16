@@ -1,0 +1,142 @@
+//
+// Responsive: Utility classes -- mashup of Foundation & Bootstrap
+// ---------------------------------------------------------------
+
+// IE10 in Windows (Phone) 8
+//
+// Support for responsive views via media queries is kind of borked in IE10, for
+// Surface/desktop in split view and for Windows Phone 8. This particular fix
+// must be accompanied by a snippet of JavaScript to sniff the user agent and
+// apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+// our Getting Started page for more information on this bug.
+//
+// For more information, see the following:
+//
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: http://getbootstrap.com/getting-started/#browsers
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+@-ms-viewport {
+  width: device-width;
+}
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+// Generate the visibility classes
+@include visibility-loop;
+
+// Orientation targeting
+.visible-landscape,
+.hidden-portrait { display: inherit !important; }
+.hidden-landscape,
+.visible-portrait { display: none !important; }
+
+/* Specific visibility for tables */
+table {
+  &.hidden-landscape,
+  &.visible-portrait { display: table; }
+}
+thead {
+  &.hidden-landscape,
+  &.visible-portrait { display: table-header-group !important; }
+}
+tbody {
+  &.hidden-landscape,
+  &.visible-portrait { display: table-row-group !important; }
+}
+tr {
+  &.hidden-landscape,
+  &.visible-portrait { display: table-row !important; }
+}
+td,
+th {
+  &.hidden-landscape,
+  &.visible-portrait { display: table-cell !important; }
+}
+
+@media only screen and (orientation: landscape) {
+  .visible-landscape,
+  .hidden-portrait { display: inherit !important; }
+  .hidden-landscape,
+  .visible-portrait { display: none !important; }
+
+  /* Specific visibility for tables */
+  table {
+    &.visible-landscape,
+    &.hidden-portrait { display: table; }
+  }
+  thead {
+    &.visible-landscape,
+    &.hidden-portrait { display: table-header-group !important; }
+  }
+  tbody {
+    &.visible-landscape,
+    &.hidden-portrait { display: table-row-group !important; }
+  }
+  tr {
+    &.visible-landscape,
+    &.hidden-portrait { display: table-row !important; }
+  }
+  td,
+  th {
+    &.visible-landscape,
+    &.hidden-portrait { display: table-cell !important; }
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .visible-portrait,
+  .hidden-landscape { display: inherit !important; }
+  .hidden-portrait,
+  .visible-landscape { display: none !important; }
+
+  /* Specific visibility for tables */
+  table {
+    &.visible-portrait,
+    &.hidden-landscape { display: table; }
+  }
+  thead {
+    &.visible-portrait,
+    &.hidden-landscape { display: table-header-group !important; }
+  }
+  tbody {
+    &.visible-portrait,
+    &.hidden-landscape { display: table-row-group !important; }
+  }
+  tr {
+    &.visible-portrait,
+    &.hidden-landscape { display: table-row !important; }
+  }
+  td,
+  th {
+    &.visible-portrait,
+    &.hidden-landscape { display: table-cell !important; }
+  }
+}
+
+// Touch-enabled device targeting
+.visible-touch { display: none !important; }
+.hidden-touch { display: inherit !important; }
+.touch .visible-touch { display: inherit !important; }
+.touch .hidden-touch { display: none !important; }
+
+// Specific visibility for tables
+table.hidden-touch { display: table; }
+.touch table.visible-touch { display: table; }
+thead.hidden-touch { display: table-header-group !important; }
+.touch thead.visible-touch { display: table-header-group !important; }
+tbody.hidden-touch { display: table-row-group !important; }
+.touch tbody.visible-touch { display: table-row-group !important; }
+tr.hidden-touch { display: table-row !important; }
+.touch tr.visible-touch { display: table-row !important; }
+td.hidden-touch { display: table-cell !important; }
+.touch td.visible-touch { display: table-cell !important; }
+th.hidden-touch { display: table-cell !important; }
+.touch th.visible-touch { display: table-cell !important; }

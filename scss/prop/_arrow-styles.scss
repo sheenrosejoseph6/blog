@@ -1,0 +1,55 @@
+// Base values
+$base-font-size: 100% !default;
+$base-line-height: 160% !default;
+
+// We use this to control font-smoothing
+$font-smoothing: antialiased !default;
+
+// Logo colors & dimensions
+// --------------------------
+
+$logo-primary-color:       #000 !default;
+$logo-reverse-color:       #FFF !default;
+$logo-min-height:          .625em !default;
+
+// Font families -- chance to redo?
+// ---------------------------------
+
+$arrow-font-path:                "fonts/arrow" !default;
+$arrow-font-family-base:         "Helvetica Neue", Arial, sans-serif !default;
+$arrow-font-family-normal:       "TheinhardtRegular", Arial, sans-serif !default;
+$arrow-font-family-bold:         "TheinhardtBold", Arial, sans-serif !default;
+$arrow-font-family-light:        "TheinhardtThin", Arial, sans-serif !default;
+$arrow-font-family-light-small:  "TheinhardtLight", Arial, sans-serif !default;
+
+// Color palette
+// --------------------------
+
+$arrow-gray:                #95a5a6 !default;
+$arrow-red:                 #e31b23 !default;
+$arrow-orange:              #f68a33 !default;
+$arrow-gold:                #fdbb30 !default;
+$arrow-yellow:              #ffe512 !default;
+$arrow-light-green:         #c1d82f !default;
+$arrow-green:               #54b948 !default;
+$arrow-light-blue:          #72cdf4 !default;
+$arrow-blue:                #009ddc !default;
+$arrow-dark-blue:           #00539b !default;
+$arrow-violet:              #92278f !default;
+$arrow-pink:                #e70082 !default;
+
+// Brand offering colors
+$arrow-brand-aerospace:     $arrow-red !default;
+$arrow-brand-bi:            $arrow-orange !default;
+$arrow-brand-intel-sys:     $arrow-gold !default;
+$arrow-brand-lighting:      $arrow-yellow !default;
+$arrow-brand-data-center:   $arrow-light-green !default;
+$arrow-brand-power-mgmt:    $arrow-green !default;
+$arrow-brand-value-reco:    $arrow-light-blue !default;
+$arrow-brand-cloud:         $arrow-blue !default;
+$arrow-brand-corporate:     $arrow-dark-blue !default;
+$arrow-brand-mobility:      $arrow-violet !default;
+
+// Innovators colors
+$arrow-metallic-gold:       #a8996e !default;
+$arrow-process-gold:        #c2a204 !default;

@@ -1,0 +1,29 @@
+//
+// Foundation -- Flex Object
+// Thanks to http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+// ---------------------------------------------------------------------------------
+
+.flex-object {
+  position: relative;
+  padding-top: em(25);
+  padding-bottom: 67.5%;
+  height: 0;
+  margin-bottom: $line-height-computed;
+  overflow: hidden;
+}
+.flex-object.widescreen {
+  padding-bottom: 56.34%;
+}
+.flex-object.vimeo {
+  padding-top: 0;
+}
+.flex-object iframe,
+.flex-object object,
+.flex-object embed,
+.flex-object video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

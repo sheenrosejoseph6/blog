@@ -1,0 +1,18 @@
+//
+// Pricing tables -- from Foundation
+// --------------------------------------------------
+
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+.pricing-table {
+  padding-left: 0;
+  list-style: none;
+  @include pricing-table-container;
+  .title { @include pricing-table-title; }
+  .price { @include pricing-table-price; }
+  .description { @include pricing-table-description; }
+  .bullet-item { @include pricing-table-bullet; }
+  .cta-button { @include pricing-table-cta; }
+}

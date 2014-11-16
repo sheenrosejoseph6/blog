@@ -1,0 +1,49 @@
+  <!-- Overview
+  ================================================== -->
+  <div class="ar-docs-section">
+    <h1 id="overview" class="page-header">Overview</h1>
+    <p class="lead">Get the lowdown on the key pieces of this framework's infrastructure, including our approach to better, faster, stronger web development.</p>
+
+    <h3 id="overview-doctype">HTML5 doctype</h3>
+    <p>The Arrow framework makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all projects.</p>
+{% highlight html %}
+<!DOCTYPE html>
+<html lang="en">
+  ...
+</html>
+{% endhighlight %}
+
+    <h3 id="overview-mobile">Mobile first</h3>
+    <p>Instead of adding on optional mobile styles, <strong>the Arrow framework is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
+    <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% endhighlight %}
+    <p>You can disable zooming capabilities on mobile devices by adding <code>user-scalable=no</code> to the viewport meta tag. This disables zooming, meaning users are only able to scroll, and results in your site feeling a bit more like a native application.</p>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{% endhighlight %}
+
+    <h3 id="overview-type-links">Typography and links</h3>
+    <p>This framework sets basic global show-grid, typography, and link styles. Specifically, we:</p>
+    <ul class="list">
+      <li>Remove <code>margin</code> on the body</li>
+      <li>Set <code>background-color: #fff;</code> on the <code>body</code></li>
+      <li>Use the <code>$font-family-base</code>, <code>$font-size-base</code>, and <code>$line-height-base</code> attributes as our typographic base</li>
+      <li>Set the global link color via <code>$link-color</code> and apply link underlines only on <code>:hover</code></li>
+    </ul>
+    <p>These styles can be found within <code>framework/_scaffolding.scss</code> in the <code>scss</code> folder.</p>
+
+    <h3 id="overview-normalize">Normalize</h3>
+    <p>For improved cross-browser rendering, we use <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize</a>, a project by <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> and <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>. However, rather than one large file, Normalize is split up within the framework where the appropriate styles are added to the SASS file that they impact.</p>
+    <p>For example, you'll find Normalize's font styles within <code>scss/framework/_forms.scss</code>.</p><p>The advantage of this approach is that you use only the styles you need, so if you did not need <code>scss/framework/_forms.scss</code>, you would not get the reset styles, either. The disadvantage is that it is harder to maintain when Normalize updates. For that reason, each Normalize style is commented with a version number e.g.: <code>//(nm v3.0.1)</code>.</p>
+
+    <h3 id="overview-container">Containers</h3>
+      <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>.</p>
+      <p>Note that, due to <code>padding</code>, containers are not nestable by default.</p>
+{% highlight html %}
+<div class="container">
+  ...
+</div>
+{% endhighlight %}
+  </div>

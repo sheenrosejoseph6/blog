@@ -4,13 +4,15 @@
   <meta charset=utf-8 />
   <title> {% if page.title %} {{ page.title }} | {% endif %} HTML5 APP </title>
   <link rel="stylesheet" href="/assets/css/style-jekyll.css" />
+  <link rel="stylesheet" href="/assets/css/prism.css" />
+
 </head>
 <body>
  
   <div id="main">
  
     <header>
-      <h1> 5daily | Blog</h1>
+      <h1> </h1>
     <header>
  
     <nav role="navigation">
@@ -27,5 +29,38 @@
     </footer>
  
   </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/jquery.sortable.min.js"></script>
+  <script src="/assets/js/mySortable.js"></script>
+
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+<script>
+  $(document).ready(function(){
+ 
+    var theList = document.getElementById('list2');
+    $("#saveAll").click(function(e) {
+      e.preventDefault();
+      localStorage.setItem('todoList', theList.innerHTML);
+    });
+    $("#clearAll").click(function(e) {
+      e.preventDefault();
+      localStorage.clear();
+      location.reload();
+    });
+    
+    loadToDo();
+    
+    function loadToDo() {
+      if ( localStorage.getItem('todoList') ) {
+      theList.innerHTML = localStorage.getItem('todoList'); 
+      }
+    }
+  });
+ </script>
+
+<!-- Script for 2014-11-14-LocalStorageTutorial (need to move)-->      
+
+
 </body>
 </html>

@@ -1,0 +1,11 @@
+// Callout
+// -------------------------
+@mixin callout-variant($state, $border, $bg-color, $text-color) {
+  .callout.#{$state} {
+    border-color: $border;
+    background-color: $bg-color;
+    h1, h2, h3, h4, h5, h6 {
+      color: $text-color;
+    }
+  }
+}

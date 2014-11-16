@@ -1,0 +1,12 @@
+<svg  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 67 67">
+ <defs>
+ 	<filter id="data">
+ 		<fecolormatrix type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"></fecolormatrix>
+ 	</filter>
+ </defs>
+ <g>
+  <title>Facebook</title>
+  <rect fill="#3A589B" width="67" height="67" id="svg_2"></rect>
+  <path fill="#FFFFFF" d="m26.651,58.467h10.111v-24.469h6.745l0.894,-8.432h-7.639l0.01,-4.222c0,-2.198 0.213,-3.378 3.365,-3.378h4.217v-8.434h-6.747c-8.104,0 -10.956,4.092 -10.956,10.97v5.063h-5.052v8.434h5.052v24.468l0,0z" id="svg_3"></path>
+ </g>
+</svg>

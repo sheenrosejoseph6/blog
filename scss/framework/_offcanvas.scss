@@ -1,0 +1,68 @@
+//
+// Off canvas navigation
+// --------------------------------------------------
+
+.offcanvas {
+  display: none;
+  &.in {
+    display: block;
+  }
+}
+
+@media (max-width: $breakpoint-xs-max) {
+  .offcanvas-xs {
+    display: none;
+    &.in {
+      display: block;
+    }
+  }
+}
+@media (max-width: $breakpoint-sm-max) {
+  .offcanvas-sm {
+    display: none;
+    &.in {
+      display: block;
+    }
+  }
+}
+@media (max-width: $breakpoint-md-max) {
+  .offcanvas-md {
+    display: none;
+    &.in {
+      display: block;
+    }
+  }
+}
+@media (max-width: $breakpoint-lg-max) {
+  .offcanvas-lg {
+    display: none;
+    &.in {
+      display: block;
+    }
+  }
+}
+.offcanvas-xl {
+  display: none;
+  &.in {
+    display: block;
+  }
+}
+
+.canvas-sliding {
+  transition: top $default-transition-time, left $default-transition-time, bottom $default-transition-time, right $default-transition-time;
+}
+
+//.offcanvas-clone {
+//  height: 0 !important;
+//  width: 0 !important;
+//  overflow: hidden !important;
+//  border: none !important;
+//  margin: 0 !important;
+//  padding: 0 !important;
+//  position: absolute !important;
+//  top: auto !important;
+//  left: auto !important;
+//  bottom: 0 !important;
+//  right: 0 !important;
+//  opacity: 0 !important;
+//}
