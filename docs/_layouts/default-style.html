@@ -20,24 +20,24 @@
             <li><a href="/css3">CSS3</a></li>
             <li><a href="/javascript">JAVASCRIPT</a></li>
             <li><a href="/uiux">UI/UX</a></li>
-          </ul>  
-
-          {% if page.title == "Javascript" %}
-            {% include nav/subnav-js.html %}             
-          {% else if page.title == "HTML5" %}
-            {% include nav/subnav-html5.html %}               
-          {% else if page.title == "CSS3" %}
-            {% include nav/subnav-css3.html %}               
-          {% else if page.title == "UIUX" %}
-            {% include nav/subnav-uiux.html %}             
-          {% endif %}
-
-
- 
+          </ul>   
         </div>
         <div class="col xs-10 sm-10 md-10" id="body">
           <div class="row">
-            <div class="col md-12" id="banner"></div>
+            <div class="col md-12" id="banner">
+              
+              {% if page.title == "Javascript" %}
+                {% include nav/subnav-js.html %}             
+              {% else if page.title == "HTML5" %}
+                {% include nav/subnav-html5.html %}               
+              {% else if page.title == "CSS3" %}
+                {% include nav/subnav-css3.html %}               
+              {% else if page.title == "UI/UX" %}
+                {% include nav/subnav-uiux.html %}             
+              {% endif %}
+
+
+            </div>
           </div>
           <div class="row col md-12">
              <div class="content">

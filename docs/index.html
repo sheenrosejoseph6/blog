@@ -1,14 +1,25 @@
 ---
-layout: default
-title: 5daily Blog
+layout: default-style
+title: 5daily.io
 base_url: "./"
 ---
-<section role="banner">
-  <img src="../assets/img/placeholder-img.jpg" />
-</section>
- 
+
 <section class="content">
   <p>
-  This blog is simply a library of tools, techniques, and knowledge for front-end web development. <a href="/blog/">Blog</a>.
+  This blog is simply a library of tools, techniques, and knowledge for front-end web development.  
   </p> 
 </section>
+
+<h3>Recent Post:</h3>
+<ul class="entries">
+	{% for html5 in site.categories.html5 %}
+
+	<li>
+		<a href="{{ html5.url }}">
+			<img src="{{ html5.image }}"/>
+			<h3>{{ html5.title }}</h3>
+		</a>
+	</li>
+
+	{% endfor %}
+</ul>

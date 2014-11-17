@@ -385,16 +385,6 @@ $(document).ready(function(){
 
 
 
-<!-- Pagination links -->
-<div class="pagination">
-{% if page.previous %}
-	<a rel="prev" href="{{ page.previous.url }}" Older</a>
-	{% endif %}
-	{% if page.next %}
-	<a rel="next" href="{{ page.next.url }}" Newer</a>
-	{% endif %}
-</div>
-
 
 
 

@@ -1,49 +1,91 @@
 body {
     background:#333;
-    border-top: 4px #ccfe04 solid;
+    border-top: 5px #009ddc solid;
 
 }
 #banner {
-  height: 20px;
+  height: auto;
+  background: url(/assets/img/geo-blk.jpg) 100% -200px  no-repeat #111;
+  background-size:40%;
+  height:100px
 }
+#banner .sub-nav {
+  margin:10px 0 3px 0;
+  background:rgba(0,0,0,.13);
+  width:97%;
+}
+#banner .sub-nav ul {
+  margin:0;
+  padding:0;
+  
+  
+}
+#banner .sub-nav li {
+  float:left;
+  margin:0 1px;
+  font-size:18px;
+  background:none;
+}
+#banner .sub-nav a {
+  margin:0 1px;
+  padding:4px 12px;
+  display:inline-block;
+  font-size:18px;
+  background:none;
+  color:#ccc;
+}
+#banner .sub-nav a:hover {
+  color:#009ddc;
+}
+
 #body {
   background:#444 !important;
+  border-top: 0px solid #000;
+  padding-bottom:16px;
 }
 
 h1,h2,h3,h4,h5 {
-  color:#009ddc;
+  color: #009ddc;
 }
 
 .content {
   background:#fff;
   padding:10px 20px;
-  margin:10px 0 0 0;
+  margin: 18px 0 0 0;
 }
 
 #side-nav {
-  background: url(/assets/img/5html-logo.jpg) 50px 25px no-repeat #111;
-  background-size:50%;
+  background: url(/assets/img/5html-logo.jpg) 50% 15px no-repeat #111;
+  background-size: 56%;
   height: 303px;
   padding:0;
   
  }
 #side-nav ul {
   margin:165px 0 0 0;
-  padding: 0px 0 100px 0px;
+  padding: 0px 0 00px 0px;
   float:left;
   background:#222;
   
+  border-bottom: 1px solid #444;
 }
 #side-nav li {
   margin:0;
-  padding:10px 0 10px 10px;
+  padding:10px 0 10px 20px;
   list-style-type:none;
   display: block;
-  border-left: #ccfe04 solid 4px;
-  background:#222;
+  border-left: #009ddc solid 4px;
+  background: #333;
   width:100%;
   float:left;
-  border-bottom:#888 solid 1px;
+  border-bottom: #444 solid 1px;
+}
+#side-nav a {
+  color:#ccc;
+}
+#side-nav a:hover {
+  color:#009ddc;
+  text-decoration:none;
 }
 /* Code blocks */
 pre[class*="language-"] {
@@ -61,6 +103,8 @@ pre[class*="language-"] {
   border:none;
   background: none;
   padding-bottom:190px;
+  background: url(/assets/img/geo-blk.jpg) 100% -200px  no-repeat #000;
+  opacity:.4
    }
 
 #side-nav .sub-nav ul {
