@@ -5,6 +5,15 @@ title: Javascript
 
 <h2>Javascript</h2>
 
-<section class="content">
-	<p>Posts coming soon</p>
-</section>
+<ul class="entries">
+	{% for javascript in site.categories.javascript %}
+
+	<li>
+		<a href="{{ javascript.url }}">
+			<img src="{{ javascript.image }}"/>
+			<h3>{{ javascript.title }}</h3>
+		</a>
+	</li>
+
+	{% endfor %}
+</ul>

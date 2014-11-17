@@ -1,10 +1,11 @@
 ---
 layout: blog
 title: Javascript
-image: /assets/img/pipeline.png
+image: /assets/img/javascript-logo.png
+category: javascript
 ---
 
 
 <article>
-	<h1>This is Javascipt</h1>
+	<p>Posts coming soon</p>
 </article>
