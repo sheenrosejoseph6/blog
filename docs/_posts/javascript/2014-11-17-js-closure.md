@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Javascript
+title: Javascript - Closure
 image: /assets/img/javascript-logo.png
 category: javascript
 ---
