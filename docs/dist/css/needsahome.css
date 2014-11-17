@@ -4,8 +4,7 @@ body {
 
 }
 #banner {
-  background: url(/assets/img/5html-logo.jpg) 3px 25px no-repeat #111;
-  height: 303px;
+  height: 20px;
 }
 #body {
   background:#444 !important;
@@ -22,21 +21,29 @@ h1,h2,h3,h4,h5 {
 }
 
 #side-nav {
-  background: #111;
+  background: url(/assets/img/5html-logo.jpg) 50px 25px no-repeat #111;
+  background-size:50%;
   height: 303px;
-}
+  padding:0;
+  
+ }
 #side-nav ul {
-  margin:0;
-  padding: 78px 0 0 10px;
+  margin:165px 0 0 0;
+  padding: 0px 0 100px 0px;
+  float:left;
+  background:#222;
   
 }
 #side-nav li {
   margin:0;
-  padding:0 0 0 20px;
+  padding:10px 0 10px 10px;
   list-style-type:none;
-  
   display: block;
-  border-left: #ccfe04 solid 1px;
+  border-left: #ccfe04 solid 4px;
+  background:#222;
+  width:100%;
+  float:left;
+  border-bottom:#888 solid 1px;
 }
 /* Code blocks */
 pre[class*="language-"] {
